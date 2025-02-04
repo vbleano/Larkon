@@ -171,15 +171,15 @@
   resolved "https://registry.npmjs.org/@popperjs/core/-/core-2.11.8.tgz"
   integrity sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==
 
-"@rollup/rollup-darwin-arm64@4.19.1":
-  version "4.19.1"
-  resolved "https://registry.npmjs.org/@rollup/rollup-darwin-arm64/-/rollup-darwin-arm64-4.19.1.tgz"
-  integrity sha512-8o6eqeFZzVLia2hKPUZk4jdE3zW7LCcZr+MD18tXkgBBid3lssGVAYuox8x6YHoEPDdDa9ixTaStcmx88lio5Q==
+"@rollup/rollup-darwin-arm64@4.34.1":
+  version "4.34.1"
+  resolved "https://registry.npmjs.org/@rollup/rollup-darwin-arm64/-/rollup-darwin-arm64-4.34.1.tgz"
+  integrity sha512-f2AJ7Qwx9z25hikXvg+asco8Sfuc5NCLg8rmqQBIOUoWys5sb/ZX9RkMZDPdnnDevXAMJA5AWLnRBmgdXGEUiA==
 
-"@types/estree@1.0.5":
-  version "1.0.5"
-  resolved "https://registry.npmjs.org/@types/estree/-/estree-1.0.5.tgz"
-  integrity sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==
+"@types/estree@1.0.6":
+  version "1.0.6"
+  resolved "https://registry.npmjs.org/@types/estree/-/estree-1.0.6.tgz"
+  integrity sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==
 
 "@vitejs/plugin-vue@^5.2.1":
   version "5.2.1"
@@ -1093,10 +1093,10 @@ jsvectormap@^1.5.1:
   resolved "https://registry.npmjs.org/jsvectormap/-/jsvectormap-1.6.0.tgz"
   integrity sha512-4b/v4GWqiggHGN+CBOJBhIdpSGLY6wVetmMKiOlQ7oVM1PIzsLlSBJDMQd9ycLk6Rmzg4aFua35QDrk5HPb1YQ==
 
-laravel-vite-plugin@^1.0:
-  version "1.0.5"
-  resolved "https://registry.npmjs.org/laravel-vite-plugin/-/laravel-vite-plugin-1.0.5.tgz"
-  integrity sha512-Zv+to82YLBknDCZ6g3iwOv9wZ7f6EWStb9pjSm7MGe9Mfoy5ynT2ssZbGsMr1udU6rDg9HOoYEVGw5Qf+p9zbw==
+laravel-vite-plugin@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.npmjs.org/laravel-vite-plugin/-/laravel-vite-plugin-1.2.0.tgz"
+  integrity sha512-R0pJ+IcTVeqEMoKz/B2Ij57QVq3sFTABiFmb06gAwFdivbOgsUtuhX6N2MGLEArajrS3U5JbberzwOe7uXHMHQ==
   dependencies:
     picocolors "^1.0.0"
     vite-plugin-full-reload "^1.1.0"
@@ -1215,7 +1215,7 @@ picomatch@^2.0.4, picomatch@^2.2.1, picomatch@^2.3.1:
   resolved "https://registry.npmjs.org/picomatch/-/picomatch-2.3.1.tgz"
   integrity sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==
 
-postcss@^8.4.39, postcss@^8.4.48:
+postcss@^8.4.43, postcss@^8.4.48:
   version "8.5.1"
   resolved "https://registry.npmjs.org/postcss/-/postcss-8.5.1.tgz"
   integrity sha512-6oz2beyjc5VMn/KV1pPw8fliQkhBXrVn1Z3TVyqZxU8kZpzEKhBdmCFqI6ZbmGtamQvQGuU1sgPTk8ZrXDD7jQ==
@@ -1304,29 +1304,32 @@ robust-predicates@^3.0.2:
   resolved "https://registry.npmjs.org/robust-predicates/-/robust-predicates-3.0.2.tgz"
   integrity sha512-IXgzBWvWQwE6PrDI05OvmXUIruQTcoMDzRsOd5CDvHCVLcLHMTSYvOK5Cm46kWqlV3yAbuSpBZdJ5oP5OUoStg==
 
-rollup@^4.13.0:
-  version "4.19.1"
-  resolved "https://registry.npmjs.org/rollup/-/rollup-4.19.1.tgz"
-  integrity sha512-K5vziVlg7hTpYfFBI+91zHBEMo6jafYXpkMlqZjg7/zhIG9iHqazBf4xz9AVdjS9BruRn280ROqLI7G3OFRIlw==
+rollup@^4.20.0:
+  version "4.34.1"
+  resolved "https://registry.npmjs.org/rollup/-/rollup-4.34.1.tgz"
+  integrity sha512-iYZ/+PcdLYSGfH3S+dGahlW/RWmsqDhLgj1BT9DH/xXJ0ggZN7xkdP9wipPNjjNLczI+fmMLmTB9pye+d2r4GQ==
   dependencies:
-    "@types/estree" "1.0.5"
+    "@types/estree" "1.0.6"
   optionalDependencies:
-    "@rollup/rollup-android-arm-eabi" "4.19.1"
-    "@rollup/rollup-android-arm64" "4.19.1"
-    "@rollup/rollup-darwin-arm64" "4.19.1"
-    "@rollup/rollup-darwin-x64" "4.19.1"
-    "@rollup/rollup-linux-arm-gnueabihf" "4.19.1"
-    "@rollup/rollup-linux-arm-musleabihf" "4.19.1"
-    "@rollup/rollup-linux-arm64-gnu" "4.19.1"
-    "@rollup/rollup-linux-arm64-musl" "4.19.1"
-    "@rollup/rollup-linux-powerpc64le-gnu" "4.19.1"
-    "@rollup/rollup-linux-riscv64-gnu" "4.19.1"
-    "@rollup/rollup-linux-s390x-gnu" "4.19.1"
-    "@rollup/rollup-linux-x64-gnu" "4.19.1"
-    "@rollup/rollup-linux-x64-musl" "4.19.1"
-    "@rollup/rollup-win32-arm64-msvc" "4.19.1"
-    "@rollup/rollup-win32-ia32-msvc" "4.19.1"
-    "@rollup/rollup-win32-x64-msvc" "4.19.1"
+    "@rollup/rollup-android-arm-eabi" "4.34.1"
+    "@rollup/rollup-android-arm64" "4.34.1"
+    "@rollup/rollup-darwin-arm64" "4.34.1"
+    "@rollup/rollup-darwin-x64" "4.34.1"
+    "@rollup/rollup-freebsd-arm64" "4.34.1"
+    "@rollup/rollup-freebsd-x64" "4.34.1"
+    "@rollup/rollup-linux-arm-gnueabihf" "4.34.1"
+    "@rollup/rollup-linux-arm-musleabihf" "4.34.1"
+    "@rollup/rollup-linux-arm64-gnu" "4.34.1"
+    "@rollup/rollup-linux-arm64-musl" "4.34.1"
+    "@rollup/rollup-linux-loongarch64-gnu" "4.34.1"
+    "@rollup/rollup-linux-powerpc64le-gnu" "4.34.1"
+    "@rollup/rollup-linux-riscv64-gnu" "4.34.1"
+    "@rollup/rollup-linux-s390x-gnu" "4.34.1"
+    "@rollup/rollup-linux-x64-gnu" "4.34.1"
+    "@rollup/rollup-linux-x64-musl" "4.34.1"
+    "@rollup/rollup-win32-arm64-msvc" "4.34.1"
+    "@rollup/rollup-win32-ia32-msvc" "4.34.1"
+    "@rollup/rollup-win32-x64-msvc" "4.34.1"
     fsevents "~2.3.2"
 
 rw@1:
@@ -1531,14 +1534,14 @@ vite-plugin-full-reload@^1.1.0:
     picocolors "^1.0.0"
     picomatch "^2.3.1"
 
-vite@^5.0, vite@^5.0.0, "vite@^5.0.0 || ^6.0.0":
-  version "5.3.5"
-  resolved "https://registry.npmjs.org/vite/-/vite-5.3.5.tgz"
-  integrity sha512-MdjglKR6AQXQb9JGiS7Rc2wC6uMjcm7Go/NHNO63EwiJXfuk9PgqiP/n5IDJCziMkfw9n4Ubp7lttNwz+8ZVKA==
+"vite@^5.0.0 || ^6.0.0", vite@^5.4.14:
+  version "5.4.14"
+  resolved "https://registry.npmjs.org/vite/-/vite-5.4.14.tgz"
+  integrity sha512-EK5cY7Q1D8JNhSaPKVK4pwBFvaTmZxEnoKXLG/U9gmdDcihQGNzFlgIvaxezFR4glP1LsuiedwMBqCXH3wZccA==
   dependencies:
     esbuild "^0.21.3"
-    postcss "^8.4.39"
-    rollup "^4.13.0"
+    postcss "^8.4.43"
+    rollup "^4.20.0"
   optionalDependencies:
     fsevents "~2.3.3"
 
