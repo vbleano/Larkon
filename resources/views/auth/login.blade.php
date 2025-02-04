@@ -8,20 +8,15 @@
                     <div class="row justify-content-center h-100">
                         <div class="col-lg-6 py-lg-5">
                             <div class="d-flex flex-column h-100 justify-content-center">
-                                <<div class="auth-logo mb-4">
-                                    <a href="#" class="logo-dark">
-                                        <img src="/images/logo-dark.png" height="24" alt="logo dark">
-                                    </a>
-                                    <a href="#" class="logo-light">
-                                        <img src="/images/logo-light.png" height="24" alt="logo light">
-                                    </a>
+                                <div class="auth-logo mb-4">
+                                        <img src="images/SEAL.png" height="150" alt="logo dark">
                                 </div>
-
-                                    <h2 class="fw-bold fs-24">Sign In</h2>
-
+                                <h2 class="fw-bold fs-24">Sign In</h2>
+                                <p class="text-muted mt-1 mb-4">Login Through Google Sign in.</p>
+                                <div class="mb-5">
                                     <div class="d-grid gap-2">
-                                        <a href="{{route('redirect.google')}}" class="btn btn-soft-dark"><i
-                                                class="bx bxl-google fs-20 me-1"></i> Sign in with Google</a>
+                                        <a href="{{route('redirect.google')}}" class="btn btn-soft-red"><i
+                                        class="bx bxl-google fs-20 me-1"></i> Sign in with Google Account</a>   
                                     </div>
                                 </div>
                             </div>

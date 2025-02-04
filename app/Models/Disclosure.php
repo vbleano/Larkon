@@ -17,14 +17,16 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'Last Name',
-        'First Name',
-        'Middle Name',
-        'email',
-        'College Unit',
-        'Institute/Department',
-        'Affiliation',
-        'User Role'
+        'Disclosure Title',
+        'Short Description',
+        'Type of IP',
+        ['Funding Sources'],
+        'Year Submitted',
+        'Date Submitted',
+        'Month Submitted',
+        'Status',
+        'Plan to Commercialize',
+        'University facilities and equipments used'
     ];
 
     /**
@@ -44,16 +46,8 @@ class User extends Authenticatable
     protected function casts(): array
     {
         return [
-            'Last Name' => 'char',
-            'First Name' => 'char',
-            'Middle Name' => 'char',
-            'email' => 'varchar',
-            'College Unit' => 'char',
-            'google_id',
-            'Institute/Department' => 'char',
-            'Affiliation' => 'char',
-            'User Role' => 'enum',               
-            'email_verified_at' => 'datetime'
+            'email_verified_at' => 'datetime',
+            'Funding Sources' => 'array'
         ];
     }
 }
