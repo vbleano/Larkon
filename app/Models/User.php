@@ -29,7 +29,8 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $hidden = [
-        'remember_token'
+        'password',
+        'remember_token',
     ];
 
     /**
@@ -40,16 +41,8 @@ class User extends Authenticatable
     protected function casts(): array
     {
         return [
-            'Last Name' => 'char',
-            'First Name' => 'char',
-            'Middle Name' => 'char',
-            'email' => 'varchar',
-            'College Unit' => 'char',
-            'google_id',
-            'Institute/Department' => 'char',
-            'Affiliation' => 'char',
-            'User Role' => 'enum',
-            'email_verified_at' => 'datetime'
+            'email_verified_at' => 'datetime',
+            'password' => 'hashed',
         ];
     }
 }

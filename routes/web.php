@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoutingController;
 use App\Http\Controllers\GoogleController;
+use App\Http\Controllers\LogoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,8 +33,11 @@ Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallba
 
 require __DIR__ . '/auth.php';
 
-Route::get('/', function () {
-    return view('index'); // or your homepage view
-})->name('index');
+Route::group(['prefix' => '/', 'middleware' => 'auth'], function () {
+    Route::get('/', function () {
+    return view('dashboards/index'); // or your homepage view
+    })->name('index');
+});
 
+Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
 

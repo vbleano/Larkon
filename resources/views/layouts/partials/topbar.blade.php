@@ -188,10 +188,11 @@
 
                         <div class="dropdown-divider my-1"></div>
 
-                        <a class="dropdown-item text-danger" href="#">
-                            <i class="bx bx-log-out fs-18 align-middle me-1"></i><span
-                                class="align-middle">Logout</span>
-                        </a>
+                        <form action="{{ route('logout') }}" method="POST" class="d-inline">
+                            @csrf
+                            <button type="submit" class="dropdown-item text-danger border-0 bg-transparent">
+                                <i class="bx bx-log-out fs-18 align-middle me-1"></i>
+                                <span class="align-middle">Logout</span>
                     </div>
                 </div>
 

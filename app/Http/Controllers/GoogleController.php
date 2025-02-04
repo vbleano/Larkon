@@ -21,7 +21,7 @@ class GoogleController extends Controller
     }
     public function handleGoogleCallback()
     {
-       /* try {
+       /*try {
 
             $user = Socialite::driver('google')->stateless()->user(); // Add `stateless()` if sessions are not used
 
@@ -31,15 +31,10 @@ class GoogleController extends Controller
             $refreshToken = $user->refreshToken;
             $expiresIn = $user->expiresIn;
             $user = Socialite::driver('google')->userFromToken($token);
-            $user->getId();
-            $user->getNickname();
-            $user->getName();
-            $user->getEmail();
-            $user->getAvatar();
 
         if ($findUser) {
             Auth::login($findUser);
-            return redirect()->route( 'index');
+            return redirect()->route( 'dashboards/index');
         }
 
         $newUser = User::create([
@@ -50,7 +45,7 @@ class GoogleController extends Controller
         ]);
 
         Auth::login($newUser);
-        return redirect()->route('dashboard');
+        return redirect()->route('dashboards/index');
         } catch (\Exception $e) {
             return redirect()->route('login')->withErrors(['error' => 'Something went wrong!']);
         }
@@ -69,7 +64,7 @@ class GoogleController extends Controller
             'name' => $googleUser->name,
             'email' => $googleUser->email,
             'google_id' => $googleUser->id,
-            'password' => encrypt('123456')
+            'password' => encrypt('123456'),
         ]);
     }
 
@@ -80,8 +75,3 @@ class GoogleController extends Controller
     return redirect()->route('index');  // Change this to your index route
 }
 }
-
-
-
-
-

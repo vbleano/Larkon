@@ -11,16 +11,21 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('user', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->id();
+            $table->string('google_id')->nullable(); // Store Google ID
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
-            $table->string('google_id')->nullable(); // Store Google ID
             $table->string('avatar')->nullable(); // Profile picture
+            $table->enum('User Role',['System Administrator',
+            'Director','IP Manager','TTBDO Personnel','Inventor','UP Official'])->default('TTBDO Personnel');
+            $table->string('College Unit')->default('TTBDO');
+            $table->string('Institute / Department')->default('TTBDO');
+            $table->string('Affiliation')->default('FACULTY');
         });
 
         Schema::create('sessions', function (Blueprint $table) {
@@ -38,7 +43,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('user');
+        Schema::dropIfExists('users');
         Schema::dropIfExists('sessions');
     }
 };

@@ -42,6 +42,8 @@ return [
 
         'redirect' => env('GOOGLE_REDIRECT'),
 
+        'stateless' => false,
+
     ],
 
 ];

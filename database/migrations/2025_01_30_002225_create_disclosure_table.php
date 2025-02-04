@@ -17,7 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id')->nullable;
             $table->foreign ('user_id')
             ->references('id')
-            ->on('user');
+            ->on('users');
 
             $table->string('Disclosure Title');
             $table->mediumText('Short Description');
@@ -39,7 +39,7 @@ return new class extends Migration
 
             $table->timestamps();
             //Multivalued Files:
-            
+
         });
     }
 
