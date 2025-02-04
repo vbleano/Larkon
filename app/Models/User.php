@@ -17,14 +17,10 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'Last Name',
-        'First Name',
-        'Middle Name',
+        'name',
         'email',
-        'College Unit',
-        'Institute/Department',
-        'Affiliation',
-        'User Role'
+        'password',
+        'google_id',
     ];
 
     /**
@@ -52,7 +48,7 @@ class User extends Authenticatable
             'google_id',
             'Institute/Department' => 'char',
             'Affiliation' => 'char',
-            'User Role' => 'enum',               
+            'User Role' => 'enum',
             'email_verified_at' => 'datetime'
         ];
     }

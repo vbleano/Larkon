@@ -35,3 +35,5 @@ require __DIR__ . '/auth.php';
 Route::get('/', function () {
     return view('index'); // or your homepage view
 })->name('index');
+
+
