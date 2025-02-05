@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoutingController;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,10 +16,6 @@ use App\Http\Controllers\LogoutController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-
-
-
 
 
 /*Route::group(['prefix' => '/', 'middleware' => 'auth'], function () {
@@ -40,4 +37,7 @@ Route::group(['prefix' => '/', 'middleware' => 'auth'], function () {
 });
 
 Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
+Route::get('/profile', [UserController::class, 'profile'])->middleware('auth');
+
+
 

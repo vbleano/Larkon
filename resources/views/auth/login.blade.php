@@ -8,6 +8,15 @@
                     <div class="row justify-content-center h-100">
                         <div class="col-lg-6 py-lg-5">
                             <div class="d-flex flex-column h-100 justify-content-center">
+                                @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                                @endif
                                 <div class="auth-logo mb-4">
                                         <img src="images/SEAL.png" height="150" alt="logo dark">
                                 </div>
@@ -16,7 +25,7 @@
                                 <div class="mb-5">
                                     <div class="d-grid gap-2">
                                         <a href="{{route('redirect.google')}}" class="btn btn-soft-red"><i
-                                        class="bx bxl-google fs-20 me-1"></i> Sign in with Google Account</a>   
+                                        class="bx bxl-google fs-20 me-1"></i> Sign in with Google Account</a>
                                     </div>
                                 </div>
                             </div>

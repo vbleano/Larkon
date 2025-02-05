@@ -57,6 +57,12 @@ class GoogleController extends Controller
     // Check if the user already exists
     $user = User::where('email', $googleUser->getEmail())->first();
 
+    if (!str_ends_with($googleUser->getEmail(), '@up.edu.ph')) {
+        return redirect()->route('login')->withErrors([
+            'error' => 'Please use your UP email account (@up.edu.ph).',
+        ]);
+    }
+
     if (!$user) {
         // Create user if not exists
         $user = User::create([
