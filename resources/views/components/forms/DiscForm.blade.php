@@ -24,6 +24,8 @@
                                             <iconify-icon icon="iconamoon:profile-duotone" class="fs-26"></iconify-icon>
                                             IAC Profile
                                         </a><!-- end nav-link -->
+
+                                        
                                     </li><!-- end nav-item -->
                                     <li class="nav-item" role="presentation">
                                         <a href="#basictab3" data-bs-toggle="tab" data-toggle="tab" class="nav-link rounded-0 py-2" aria-selected="false" tabindex="-1" role="tab">
@@ -89,143 +91,21 @@
                                             </div> <!-- end col -->
                                             <div class="col-lg-12">
                                                 <div class="mb-3">
-                                                <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title mb-1 anchor" id="default">
-                        Dropzone File Upload<a class="anchor-link" href="#default">#</a>
-                    </h5>
-                    <p class="text-muted">
-                        DropzoneJS is an open source library that provides drag’n’drop file uploads with image previews.
-                    </p>
-                    <div class="mb-3">
-
-                        <div class="dropzone">
-                            <div class="fallback">
-                                <input name="file" type="file" multiple="multiple">
-                            </div>
-                            <div class="dz-message needsclick">
-                                <i class="h1 bx bx-cloud-upload"></i>
-                                <h3>Drop files here or click to upload.</h3>
-                                <span class="text-muted fs-13">
-                                    (This is just a demo dropzone. Selected files are <strong>not</strong> actually uploaded.)
-                                </span>
-                            </div>
-                        </div>
-
-                        <ul class="list-unstyled mb-0" id="dropzone-preview">
-                            <li class="mt-2" id="dropzone-preview-list">
-                                <!-- This is used as the file preview template -->
-                                <div class="border rounded">
-                                    <div class="d-flex align-items-center p-2">
-                                        <div class="flex-shrink-0 me-3">
-                                            <div class="avatar-sm bg-light rounded">
-                                                <img data-dz-thumbnail class="img-fluid rounded d-block" src="#" alt="Dropzone-Image" />
-                                            </div>
-                                        </div>
-                                        <div class="flex-grow-1">
-                                            <div class="pt-1">
-                                                <h5 class="fs-14 mb-1" data-dz-name>&nbsp;</h5>
-                                                <p class="fs-13 text-muted mb-0" data-dz-size></p>
-                                                <strong class="error text-danger" data-dz-errormessage></strong>
-                                            </div>
-                                        </div>
-                                        <div class="flex-shrink-0 ms-3">
-                                            <button data-dz-remove class="btn btn-sm btn-danger">Delete</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                        <!-- end dropzon-preview -->
-                    </div>
-                    <div class="highlight">
-                        <div class="highlight-toolbar">
-                            <ul class="nav nav-pills">
-                                <li class="nav-item">
-                                    <a href="#homePill" data-bs-toggle="tab" aria-expanded="false" class="nav-link active">
-                                        <span class="fs-12 text-uppercase">html</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#profilePill" data-bs-toggle="tab" aria-expanded="true" class="nav-link">
-                                        <span class="fs-12 text-uppercase">javascript</span>
-                                    </a>
-                                </li>
-                            </ul>
-                            <button class="btn btn-sm btn-outline-success btn-copy-clipboard" data-clipboard-action="copy">Copy</button>
-                        </div>
-                        <div class="tab-content">
-                            <div class="tab-pane show active" id="homePill">
-                                <div class="code" data-simplebar>
-                                    <pre class="language-html">
-                                                                      <code>
-                                                                           &lt;div class=&quot;dropzone&quot;&gt;
-                                                                                &lt;div class=&quot;fallback&quot;&gt;
-                                                                                     &lt;input name=&quot;file&quot; type=&quot;file&quot; multiple=&quot;multiple&quot;&gt;
-                                                                                &lt;/div&gt;
-                                                                                &lt;div class=&quot;dz-message needsclick&quot;&gt;
-                                                                                     &lt;i class=&quot;h1 bx bx-cloud-upload&quot;&gt;&lt;/i&gt;
-                                                                                     &lt;h3&gt;Drop files here or click to upload.&lt;/h3&gt;
-                                                                                     &lt;span class=&quot;text-muted fs-13&quot;&gt;
-                                                                                          (This is just a demo dropzone. Selected files are &lt;strong&gt;not&lt;/strong&gt; actually uploaded.)
-                                                                                     &lt;/span&gt;
-                                                                                &lt;/div&gt;
-                                                                           &lt;/div&gt;
-
-                                                                           &lt;ul class=&quot;list-unstyled mb-0&quot; id=&quot;dropzone-preview&quot;&gt;
-                                                                                &lt;li class=&quot;mt-2&quot; id=&quot;dropzone-preview-list&quot;&gt;
-                                                                                     &lt;!-- This is used as the file preview template --&gt;
-                                                                                     &lt;div class=&quot;border rounded&quot;&gt;
-                                                                                          &lt;div class=&quot;d-flex p-2&quot;&gt;
-                                                                                               &lt;div class=&quot;flex-shrink-0 me-3&quot;&gt;
-                                                                                                    &lt;div class=&quot;avatar-sm bg-light rounded&quot;&gt;
-                                                                                                    &lt;img data-dz-thumbnail class=&quot;img-fluid rounded d-block&quot; src=&quot;#&quot; alt=&quot;Dropzone-Image&quot; /&gt;
-                                                                                                    &lt;/div&gt;
-                                                                                               &lt;/div&gt;
-                                                                                               &lt;div class=&quot;flex-grow-1&quot;&gt;
-                                                                                                    &lt;div class=&quot;pt-1&quot;&gt;
-                                                                                                    &lt;h5 class=&quot;fs-14 mb-1&quot; data-dz-name&gt;&amp;nbsp;&lt;/h5&gt;
-                                                                                                    &lt;p class=&quot;fs-13 text-muted mb-0&quot; data-dz-size&gt;&lt;/p&gt;
-                                                                                                    &lt;strong class=&quot;error text-danger&quot; data-dz-errormessage&gt;&lt;/strong&gt;
-                                                                                                    &lt;/div&gt;
-                                                                                               &lt;/div&gt;
-                                                                                               &lt;div class=&quot;flex-shrink-0 ms-3&quot;&gt;
-                                                                                                    &lt;button data-dz-remove class=&quot;btn btn-sm btn-danger&quot;&gt;Delete&lt;/button&gt;
-                                                                                               &lt;/div&gt;
-                                                                                          &lt;/div&gt;
-                                                                                     &lt;/div&gt;
-                                                                                &lt;/li&gt;
-                                                                           &lt;/ul&gt;
-                                                                           &lt;!-- end dropzon-preview --&gt;
-                                                                      </code>
-                                                                 </pre>
-                                </div>
-                            </div>
-                            <div class="tab-pane" id="profilePill">
-                                <div class="code" data-simplebar>
-                                    <pre class="language-javascript">
-                                                                      <code>
-                                                                           // Dropzone
-                                                                           var dropzonePreviewNode = document.querySelector("#dropzone-preview-list");
-                                                                           dropzonePreviewNode.id = "";
-                                                                           if (dropzonePreviewNode) {
-                                                                                var previewTemplate = dropzonePreviewNode.parentNode.innerHTML;
-                                                                                dropzonePreviewNode.parentNode.removeChild(dropzonePreviewNode);
-                                                                                var dropzone = new Dropzone(".dropzone", {
-                                                                                     url: 'https://httpbin.org/post',
-                                                                                     method: "post",
-                                                                                     previewTemplate: previewTemplate,
-                                                                                     previewsContainer: "#dropzone-preview",
-                                                                                });
-                                                                           }
-                                                                      </code>
-                                                                 </pre>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> <!-- end card body -->
-            </div> <!-- end card -->
+                                                    <div class="mb-3">  
+                                                        <label class="form-check-label" for="customCheck3">Upload MOA/ Research Agreements/ Research Funding Agreements</label>
+                                                    </div>    
+                                                    <div class="dropzone">
+                                                        <div class="fallback">
+                                                            <input name="file" type="file" multiple="multiple">
+                                                        </div>
+                                                        <div class="dz-message needsclick">
+                                                            <i class="h1 bx bx-cloud-upload"></i>
+                                                            <h3>Drop files here or click to upload.</h3>
+                                                            <span class="text-muted fs-13">
+                                                                (This is just a demo dropzone. Selected files are <strong>not</strong> actually uploaded.)
+                                                            </span>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div> <!-- end col -->
                                         </div> <!-- end row -->
@@ -295,36 +175,139 @@
                                         </div> <!-- end row -->
                                     </div><!-- end tab-pane -->
 
-                                    <div class="tab-pane" id="basictab3" role="tabpanel">
-                                        <h4 class="fs-16 fw-semibold mb-1">Social Media Links</h4>
-                                        <p class="text-muted">Fill your social media links</p>
 
-                                        <div class="row">
-                                            <div class="col-lg-6">
-                                                <div class="mb-3">
-                                                    <label for="basicGitLink" class="form-label">GitHub</label>
-                                                    <input id="basicGitLink" type="text" class="form-control" placeholder="GitHub Link">
+        <!-- SPECIFIC IP FORMS -->
+
+                                    <div class="tab-pane" id="basictab3" role="tabpanel">
+                                        <h4 class="fs-16 fw-semibold mb-1">Specific IP Forms</h4>
+                                        <p class="text-muted">Please fill the forms under which IP type you are applying for</p>
+
+                                        <div class="accordion" id="accordionExample">
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingOne">
+                                                    <button class="accordion-button fw-medium" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                        Patent / Industrial Design / Utility Model
+                                                        
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                                    <div class="accordion-body">
+                                                        <div class="row">
+                                                            <div class="col-lg-6">
+                                                                <div class="mb-3">
+                                                                    <div>
+                                                                        <label for="choices-text-remove-button" class="form-label text-muted">Type/s of Invention</label>
+                                                                        <input class="form-control" id="choices-text-remove-button" data-choices data-choices-limit="10" data-choices-removeItem type="text" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-6">
+                                                                <div class="mb-3">
+                                                                    <label for="basicUser" class="form-label">Key / Novel features of the Invention</label>
+                                                                    <input id="basicUser" type="text" class="form-control" placeholder="">
+                                                                </div>
+                                                            </div> <!-- end col -->
+                                                            <div class="col-lg-12">
+                                                                <div class="mb-3">
+                                                                    <label for="example-textarea" class="form-label"> Background of the Invention</label>
+                                                                    <textarea class="form-control" id="example-textarea" rows="5"></textarea>
+                                                                </div>
+                                                            </div> <!-- end col -->
+                                                            <div class="col-lg-6">
+                                                                <div class="mb-3">
+                                                                    <label for="basicUser" class="form-label">Application or Use of Invention</label>
+                                                                    <input id="basicUser" type="text" class="form-control" placeholder="">
+                                                                </div>
+                                                            </div> <!-- end col -->
+                                                            <div class="col-lg-6">
+                                                                <div class="mb-3">
+                                                                    <label for="basicUser" class="form-label"> Stage of Development </label>
+                                                                    <input id="basicUser" type="text" class="form-control" placeholder="Technology Status (Prototyping, clinical trial phase 1, etc.)">
+                                                                </div>
+                                                            </div> <!-- end col -->
+                                                            <div class="col-lg-6">
+                                                                <div class="mb-3">
+                                                                    <label for="basicUser" class="form-label"> R&D Cost </label>
+                                                                    <input id="basicUser" type="text" class="form-control" placeholder="Please provide a range (e.g. 1000 - 2000)">
+                                                                </div>
+                                                            </div> <!-- end col -->
+                                                            <div class="col-lg-6">
+                                                                <div class="mb-3">
+                                                                    <div>
+                                                                        <label for="choices-text-remove-button" class="form-label text-muted">Potential Partners</label>
+                                                                        <input class="form-control" id="choices-text-remove-button" data-choices data-choices-limit="10" data-choices-removeItem type="text" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-6">
+                                                                <div class="mb-3">
+                                                                <label for="example-select" class="form-label">TRL</label>
+                                                                    <select class="form-select" id="example-select">
+                                                                        <option>1</option>
+                                                                        <option>2</option>
+                                                                        <option>3</option>
+                                                                        <option>4</option>
+                                                                        <option>5</option>
+                                                                        <option>6</option>
+                                                                        <option>7</option>
+                                                                        <option>8</option>
+                                                                        <option>9</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div> 
+                                                        <div class="row">
+                                                            <div class="col-lg-6">
+                                                                <div class="mb-3">
+                                                                    <label for="example-select" class="form-label">Past Oral Disclosure Date</label>
+                                                                    <input type="text" id="basic-datepicker" class="form-control" placeholder="Basic datepicker">
+                                                                </div>
+                                                            </div>    
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                            </div> <!-- end col -->
-                                            <div class="col-lg-6">
-                                                <div class="mb-3">
-                                                    <label for="basicGoogleLink" class="form-label">Google</label>
-                                                    <input id="basicGoogleLink" type="text" class="form-control" placeholder="Google Link">
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingTwo">
+                                                    <button class="accordion-button fw-medium collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                        Accordion Item #2
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                                    <div class="accordion-body">
+                                                        <strong>This is the second item's accordion body.</strong> It is hidden by default, until
+                                                        the collapse
+                                                        plugin adds the appropriate classes that we use to style each element. These classes control
+                                                        the overall
+                                                        appearance, as well as the showing and hiding via CSS transitions. You can modify any of
+                                                        this with
+                                                        custom CSS or overriding our default variables. It's also worth noting that just about any
+                                                        HTML can go
+                                                        within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                                    </div>
                                                 </div>
-                                            </div> <!-- end col -->
-                                            <div class="col-lg-6">
-                                                <div class="mb-3">
-                                                    <label for="basicInstagramLink" class="form-label">Instagram</label>
-                                                    <input id="basicInstagramLink" type="text" class="form-control" placeholder="Instagram Link">
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingThree">
+                                                    <button class="accordion-button fw-medium collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                        Accordion Item #3
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                                    <div class="accordion-body">
+                                                        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the
+                                                        collapse
+                                                        plugin adds the appropriate classes that we use to style each element. These classes control
+                                                        the overall
+                                                        appearance, as well as the showing and hiding via CSS transitions. You can modify any of
+                                                        this with
+                                                        custom CSS or overriding our default variables. It's also worth noting that just about any
+                                                        HTML can go
+                                                        within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                                    </div>
                                                 </div>
-                                            </div> <!-- end col -->
-                                            <div class="col-lg-6">
-                                                <div class="mb-3">
-                                                    <label for="basicSkypeLink" class="form-label">Skype</label>
-                                                    <input id="basicSkypeLink" type="text" class="form-control" placeholder="Skype Link">
-                                                </div>
-                                            </div> <!-- end col -->
-                                        </div><!-- end row -->
+                                            </div>
+                                        </div>        
                                     </div><!-- end tab-pane -->
 
                                     <div class="tab-pane" id="basictab4" role="tabpanel">

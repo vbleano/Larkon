@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 class DisclosureController extends Controller{
     public function discPage(){
         if (Auth::user()) {
-            return view('/components/forms/DiscForm');
+            return view('/components/forms/flatepicker');
         } else{
             return redirect('/login'); // Redirect to login page or homepage
         }
