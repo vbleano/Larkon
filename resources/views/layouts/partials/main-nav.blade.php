@@ -11,10 +11,6 @@
         </a>
     </div>
 
-    <!-- Menu Toggle Button (sm-hover)
-    <button type="button" class="button-sm-hover" aria-label="Show Full Sidebar">
-        <iconify-icon icon="solar:double-alt-arrow-right-bold-duotone" class="button-sm-hover-icon"></iconify-icon>
-    </button> -->
 
     <div class="scrollbar" data-simplebar>
         <ul class="navbar-nav" id="navbar-nav">
@@ -22,7 +18,7 @@
             <li class="menu-title">General</li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{route('index')}}">
                          <span class="nav-icon">
                               <iconify-icon icon="solar:widget-5-bold-duotone"></iconify-icon>
                          </span>
@@ -38,7 +34,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{ route('discForm')}}">
                          <span class="nav-icon">
                               <iconify-icon icon="solar:document-text-bold-duotone"></iconify-icon>
                          </span>

@@ -5,6 +5,7 @@ use App\Http\Controllers\RoutingController;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\DisclosureController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,14 +18,6 @@ use App\Http\Controllers\UserController;
 |
 */
 
-
-/*Route::group(['prefix' => '/', 'middleware' => 'auth'], function () {
-    Route::get('', [RoutingController::class, 'index'])->name('root');
-    Route::get('{first}/{second}/{third}', [RoutingController::class, 'thirdLevel'])->name('third');
-    Route::get('{first}/{second}', [RoutingController::class, 'secondLevel'])->name('second');
-    Route::get('{any}', [RoutingController::class, 'root'])->name('any');
-});*/
-
 Route::get('auth/google', [GoogleController::class, 'redirectToGoogle'])->name("redirect.google");
 Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);
 
@@ -34,6 +27,8 @@ Route::group(['prefix' => '/', 'middleware' => 'auth'], function () {
     Route::get('/', function () {
     return view('dashboards/index'); // or your homepage view
     })->name('index');
+
+    Route::get('/discForm', [DisclosureController::class, 'discPage'])->name('discForm');
 });
 
 Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
