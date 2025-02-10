@@ -102,7 +102,7 @@
                                                             <i class="h1 bx bx-cloud-upload"></i>
                                                             <h3>Drop files here or click to upload.</h3>
                                                             <span class="text-muted fs-13">
-                                                                (This is just a demo dropzone. Selected files are <strong>not</strong> actually uploaded.)
+                                                                Selected / Dropped files are <strong>not</strong> actually uploaded.
                                                             </span>
                                                         </div>
                                                     </div>
@@ -263,34 +263,140 @@
                                                                     <input type="text" id="basic-datepicker" class="form-control" placeholder="Basic datepicker">
                                                                 </div>
                                                             </div>    
+                                                            <div class="col-lg-6">
+                                                                <div class="mb-3">
+                                                                    <label for="example-select" class="form-label">Past Oral Disclosure Description</label>
+                                                                    <textarea class="form-control" id="example-textarea" rows="2"></textarea>
+                                                                </div>
+                                                            </div>    
+                                                            <div class="col-lg-6">
+                                                                <div class="mb-3">
+                                                                    <label for="example-select" class="form-label">Past Written Disclosure Date</label>
+                                                                    <input type="text" id="basic-datepicker" class="form-control" placeholder="Basic datepicker">
+                                                                </div>
+                                                            </div>    
+                                                            <div class="col-lg-6">
+                                                                <div class="mb-3">
+                                                                    <label for="example-select" class="form-label">Past Written Disclosure Description</label>
+                                                                    <textarea class="form-control" id="example-textarea" rows="2"></textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-12">
+                                                                <div class="mb-3">
+                                                                    <label for="example-select" class="form-label">Future Disclosure Plans</label>
+                                                                    <textarea class="form-control" id="example-textarea" rows="2"></textarea>
+                                                                </div>
+                                                            </div>
                                                         </div>
+                                                        <div class="col-lg-12">
+                                                            <div class="mb-3">
+                                                                <div class="mb-3">  
+                                                                    <label class="form-check-label" for="customCheck3">Manuscript / Technical Description / Terminal Report</label>
+                                                                </div>    
+                                                                <div class="dropzone">
+                                                                    <div class="fallback">
+                                                                        <input name="file" type="file" multiple="multiple">
+                                                                    </div>
+                                                                    <div class="dz-message needsclick">
+                                                                        <i class="h1 bx bx-cloud-upload"></i>
+                                                                        <h3>Drop files here or click to upload.</h3>
+                                                                        <span class="text-muted fs-13">
+                                                                            Selected / Dropped files are <strong>not</strong> actually uploaded.
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div> <!-- end col -->
+                                                        <div class="col-lg-12">
+                                                            <div class="mb-3">
+                                                                <div class="mb-3">  
+                                                                    <label class="form-check-label" for="customCheck3">Drawings, Flowcharts, Processes</label>
+                                                                </div>    
+                                                                <div class="dropzone">
+                                                                    <div class="fallback">
+                                                                        <input name="file" type="file" multiple="multiple">
+                                                                    </div>
+                                                                    <div class="dz-message needsclick">
+                                                                        <i class="h1 bx bx-cloud-upload"></i>
+                                                                        <h3>Drop files here or click to upload.</h3>
+                                                                        <span class="text-muted fs-13">
+                                                                            Selected / Dropped files are <strong>not</strong> actually uploaded.
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div> <!-- end col -->
+                                                        <div class="col-lg-12">
+                                                            <div class="mb-3">
+                                                                <div class="mb-3">  
+                                                                    <label class="form-check-label" for="customCheck3">Related Literature or Patents</label>
+                                                                </div>    
+                                                                <div class="dropzone">
+                                                                    <div class="fallback">
+                                                                        <input name="file" type="file" multiple="multiple">
+                                                                    </div>
+                                                                    <div class="dz-message needsclick">
+                                                                        <i class="h1 bx bx-cloud-upload"></i>
+                                                                        <h3>Drop files here or click to upload.</h3>
+                                                                        <span class="text-muted fs-13">
+                                                                            Selected / Dropped files are <strong>not</strong> actually uploaded.
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div> <!-- end col -->
+                                                        <div class="col-lg-12">
+                                                            <div class="mb-3">
+                                                                <div class="mb-3">  
+                                                                    <label class="form-check-label" for="customCheck3">Financial Report</label>
+                                                                </div>    
+                                                                <div class="dropzone">
+                                                                    <div class="fallback">
+                                                                        <input name="file" type="file" multiple="multiple">
+                                                                    </div>
+                                                                    <div class="dz-message needsclick">
+                                                                        <i class="h1 bx bx-cloud-upload"></i>
+                                                                        <h3>Drop files here or click to upload.</h3>
+                                                                        <span class="text-muted fs-13">
+                                                                            Selected / Dropped files are <strong>not</strong> actually uploaded.
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div> <!-- end col -->
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="accordion-item">
                                                 <h2 class="accordion-header" id="headingTwo">
                                                     <button class="accordion-button fw-medium collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                        Accordion Item #2
+                                                        Trademark
                                                     </button>
                                                 </h2>
                                                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                                                     <div class="accordion-body">
-                                                        <strong>This is the second item's accordion body.</strong> It is hidden by default, until
-                                                        the collapse
-                                                        plugin adds the appropriate classes that we use to style each element. These classes control
-                                                        the overall
-                                                        appearance, as well as the showing and hiding via CSS transitions. You can modify any of
-                                                        this with
-                                                        custom CSS or overriding our default variables. It's also worth noting that just about any
-                                                        HTML can go
-                                                        within the <code>.accordion-body</code>, though the transition does limit overflow.
-                                                    </div>
+                                                    <div class="col-lg-6">
+                                                                <div class="mb-3">
+                                                                <label for="example-select" class="form-label">TRL</label>
+                                                                    <select class="form-select" id="example-select">
+                                                                        <option>1</option>
+                                                                        <option>2</option>
+                                                                        <option>3</option>
+                                                                        <option>4</option>
+                                                                        <option>5</option>
+                                                                        <option>6</option>
+                                                                        <option>7</option>
+                                                                        <option>8</option>
+                                                                        <option>9</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
                                                 </div>
                                             </div>
                                             <div class="accordion-item">
                                                 <h2 class="accordion-header" id="headingThree">
                                                     <button class="accordion-button fw-medium collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                                        Accordion Item #3
+                                                        Copyright
                                                     </button>
                                                 </h2>
                                                 <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
