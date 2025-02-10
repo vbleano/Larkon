@@ -7,6 +7,7 @@ use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DisclosureController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,11 +29,13 @@ Route::group(['prefix' => '/', 'middleware' => 'auth'], function () {
     return view('dashboards/index'); // or your homepage view
     })->name('index');
 
-    Route::get('/discForm', [DisclosureController::class, 'discPage'])->name('discForm');
+    Route::get('/DiscForm', [DisclosureController::class, 'discPage'])->name('discForm');
+    Route::post('/DiscForm', [DisclosureController::class, 'iacPage'])->name('DiscForm.IAC');
 });
 
 Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
 Route::get('/profile', [UserController::class, 'profile'])->middleware('auth');
+
 
 
 

@@ -17,41 +17,9 @@ class GoogleController extends Controller
 
         return Socialite::driver('google')->redirect();
 
-
     }
     public function handleGoogleCallback()
     {
-       /*try {
-
-            $user = Socialite::driver('google')->stateless()->user(); // Add `stateless()` if sessions are not used
-
-            $findUser = User::where('google_id', $user->id)->first();
-
-            $token = $user->token;
-            $refreshToken = $user->refreshToken;
-            $expiresIn = $user->expiresIn;
-            $user = Socialite::driver('google')->userFromToken($token);
-
-        if ($findUser) {
-            Auth::login($findUser);
-            return redirect()->route( 'dashboards/index');
-        }
-
-        $newUser = User::create([
-            'name' => $user->name,
-            'email' => $user->email,
-            'google_id' => $user->id,
-            'password' => encrypt('123456')
-        ]);
-
-        Auth::login($newUser);
-        return redirect()->route('dashboards/index');
-        } catch (\Exception $e) {
-            return redirect()->route('login')->withErrors(['error' => 'Something went wrong!']);
-        }
-
-    }*/
-
     $googleUser = Socialite::driver('google')->stateless()->user();
 
     // Check if the user already exists

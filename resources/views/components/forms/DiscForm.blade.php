@@ -3,7 +3,6 @@
 @vite(['node_modules/choices.js/public/assets/styles/choices.min.css'])
 @endsection
 @section('content')
-
 <div class="container">
     <div class="row">
         <div class="col-12">
@@ -230,49 +229,20 @@
                                             </div> <!-- end col -->
                                         </div> <!-- end row -->
                                     </div><!-- end tab-pane -->
-
+{{-- IAC START --}}
+<form action="{{route('DiscForm.IAC')}}" method="POST">
+    @csrf
                                     <div class="tab-pane" id="basictab2" role="tabpanel">
                                         <h4 class="fs-16 fw-semibold mb-1">Profile Information</h4>
                                         <p class="text-muted">Setup your profile information</p>
-
                                         <div class="row">
                                             <div class="col-12">
-                                                <div class="avatar-lg mb-3">
-                                                    <div class="avatar-title bg-body rounded-circle border border-3 border-dashed-light position-relative">
-                                                        <label for="imageInput" class="position-absolute end-0 bottom-0">
-                                                            <div class="avatar-xs cursor-pointer">
-                                                                <span class="avatar-title bg-light text-dark rounded-circle"><i class="bx bx-camera"></i></span>
-                                                            </div>
-                                                        </label>
-                                                        <input class="hidden" type="file" id="imageInput" accept="image/*" onchange="previewImage(event)">
-
-                                                        <img id="preview" src="/images/users/dummy-avatar.jpg" alt="Preview Image" class="rounded-circle img-fluid">
-                                                    </div>
-                                                </div>
-
                                                 <div class="row">
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-12">
                                                         <div class="mb-3">
-                                                            <label class="form-label" for="basicFname">First Name</label>
-                                                            <input type="text" id="basicFname" class="form-control" placeholder="Chris">
-                                                        </div>
-                                                    </div><!-- end col -->
-                                                    <div class="col-md-6">
-                                                        <div class="mb-3">
-                                                            <label class="form-label" for="basicLname">Last Name</label>
-                                                            <input type="text" id="basicLname" class="form-control" placeholder="Keller">
-                                                        </div>
-                                                    </div><!-- end col -->
-                                                    <div class="col-md-6">
-                                                        <div class="mb-3">
-                                                            <label class="form-label" for="basicMnumber">Number</label>
-                                                            <input type="number" id="basicMnumber" class="form-control" placeholder="Mobile Number">
-                                                        </div>
-                                                    </div><!-- end col -->
-                                                    <div class="col-md-6">
-                                                        <div class="mb-3">
-                                                            <label class="form-label" for="basicCountry">Country</label>
-                                                            <select id="basicCountry" class="form-select">
+                                                            <label class="form-label fw-bold" for="basicCountry">Country of Citizenship</label>
+                                                            <select id="basicCountry" name="Country_of_Citizenship" class="form-select">
+                                                                <option value="Philippines">Philippines</option>
                                                                 <option value="United States">United States</option>
                                                                 <option value="Canada">Canada</option>
                                                                 <option value="Australia">Australia</option>
@@ -280,7 +250,6 @@
                                                                 <option value="Bangladesh">Bangladesh</option>
                                                                 <option value="China">China</option>
                                                                 <option value="Argentina">Argentina</option>
-                                                                <option value="Bharat">Bharat</option>
                                                                 <option value="Afghanistan">Afghanistan</option>
                                                                 <option value="France">France</option>
                                                                 <option value="Brazil">Brazil</option>
@@ -290,11 +259,138 @@
                                                             </select>
                                                         </div>
                                                     </div><!-- end col -->
+                                                    <div class="col-md-4">
+                                                        <div class="mb-3">
+                                                            <label class="form-label fw-bold" for="lastName">Last Name</label>
+                                                            <input type="text" id="lastName" name="Last_Name" class="form-control" placeholder="Doe">
+                                                        </div>
+                                                    </div><!-- end col -->
+                                                    <div class="col-md-4">
+                                                        <div class="mb-3">
+                                                            <label class="form-label fw-bold" for="firstName">First Name</label>
+                                                            <input type="text" id="firstName" name="First_Name" class="form-control" placeholder="John">
+                                                        </div>
+                                                    </div><!-- end col -->
+                                                    <div class="col-md-4">
+                                                        <div class="mb-3">
+                                                            <label class="form-label fw-bold" for="middleName">Middle Initial</label>
+                                                            <input type="text" id="middleName" name="Middle_Name" class="form-control" placeholder="Z">
+                                                        </div>
+                                                    </div><!-- end col -->
+                                                    <div class="col-md-12">
+                                                        <div class="mb-3">
+                                                            <label class="form-label fw-bold" for="homeAddress">Home Address</label>
+                                                            <input type="text" id="homeAddress" name="Home_Address" class="form-control" placeholder="Santa Mesa Manila">
+                                                        </div>
+                                                    </div><!-- end col -->
+                                                    <div class="col-md-12">
+                                                        <div class="mb-3">
+                                                            <label class="form-label fw-bold" for="workAddress">Work Address</label>
+                                                            <input type="text" id="workAddress" name="Work_Address" class="form-control" placeholder="Taft Avenue Ermita">
+                                                        </div>
+                                                    </div><!-- end col -->
+                                                    <div class="col-md-4">
+                                                        <div class="mb-3">
+                                                            <label class="form-label fw-bold" for="constituentUniversity">Constituent University</label>
+                                                            <input type="text" id="constituentUniversity" name="Constituent_University" class="form-control" placeholder="UP - Manila">
+                                                        </div>
+                                                    </div><!-- end col -->
+                                                    <div class="col-md-4">
+                                                        <div class="mb-3">
+                                                            <label class="form-label fw-bold" for="department">Department / Institute</label>
+                                                            <input type="text" id="department" name="Department/Institute" class="form-control" placeholder="TTBDO">
+                                                        </div>
+                                                    </div><!-- end col -->
+                                                    <div class="col-md-4">
+                                                        <div class="mb-3">
+                                                            <label class="form-label fw-bold" for="collegeUnit">College Unit</label>
+                                                            <input type="text" id="collegeUnit" name="College_Unit" class="form-control" placeholder="College of Nursing">
+                                                        </div>
+                                                    </div><!-- end col -->
+
+                                                    <div class="col-md-4">
+                                                        <div class="mb-3">
+                                                            <label class="form-label fw-bold" for="salutatory">Salutatory</label>
+                                                            <input type="text" id="salutatory" name="Salutatory" class="form-control" placeholder="Job Title">
+                                                        </div>
+                                                    </div><!-- end col -->
+                                                    <div class="col-md-4">
+                                                        <div class="mb-3">
+                                                            <label class="form-label fw-bold" for="mainAffiliation">Main Affiliation</label>
+                                                            <input type="text" id="mainAffiliation" name="Main_Affiliation" class="form-control" placeholder="Main Affiliation">
+                                                        </div>
+                                                    </div><!-- end col -->
+                                                    <div class="col-md-4">
+                                                        <div class="mb-3">
+                                                            <label class="form-label fw-bold" for="subAffiliation">Sub Affiliation</label>
+                                                            <input type="number" id="subAffiliation" name="Sub_Affiliation" class="form-control" placeholder="Sub Affiliation">
+                                                        </div>
+                                                    </div><!-- end col -->
+                                                    <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <label class="form-label fw-bold" for="nature">Nature of Contribution</label>
+                                                            <input type="text" id="nature" name="Nature_of_Contribution/Role" class="form-control" placeholder="Role in the Invention">
+                                                        </div>
+                                                    </div><!-- end col -->
+                                                    <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <label class="form-label fw-bold" for="percent">Percentage of Contribution</label>
+                                                            <input type="text" id="percent" name="Percentage_of_Contribution" class="form-control" placeholder="Rate 1 - 100">
+                                                        </div>
+                                                    </div><!-- end col -->
+                                                     <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <label class="form-label fw-bold" for="emailAddress">Email Address</label>
+                                                            <input type="email" id="emailAddress" name="Email_Address" class="form-control" placeholder="@up.edu.ph">
+                                                        </div>
+                                                    </div><!-- end col -->
+                                                    <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <label class="form-label fw-bold" for="phoneNumber">Phone Number</label>
+                                                            <input type="number" id="phoneNumber" name="Contact_Number" class="form-control" placeholder="09*********">
+                                                        </div>
+                                                    </div><!--end col -->
+                                                    <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <label class="form-label fw-bold" for="birthday">Date of Birth</label>
+                                                            <input type="date" id="birthday" name="Date_of_Birth" class="form-control" placeholder="">
+                                                        </div>
+                                                    </div><!-- end col -->
+                                                    <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <label class="form-label fw-bold" for="gender">Gender / Sex</label>
+                                                            <select id="gender" name="Gender/Sex" class="form-select">
+                                                                <option value="Male">Male</option>
+                                                                <option value="Female">Female</option>
+                                                                <option value="NonBinary">Non-Binary</option>
+                                                                <option value="Refuse">Refuse to Say</option>
+                                                            </select>
+                                                        </div>
+                                                    </div><!-- end col -->
+                                                    <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <label class="form-label fw-bold" for="civilStatus">Civil Status</label>
+                                                            <select id="civilStatus" name="Civil_Status" class="form-select">
+                                                                <option value="Single">Single</option>
+                                                                <option value="Married">Married</option>
+                                                                <option value="Divorced">Divorced</option>
+                                                                <option value="Widowed">Widowed</option>
+                                                                <option value="Separated">Separated</option>
+                                                            </select>
+                                                        </div>
+                                                    </div><!-- end col -->
+                                                    <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <label class="form-label fw-bold" for="nationality">Nationality</label>
+                                                            <input type="text" id="nationality" name="Nationality" class="form-control" placeholder="Filipino">
+                                                        </div>
+                                                    </div><!-- end col -->
                                                 </div><!-- end row -->
                                             </div> <!-- end col -->
                                         </div> <!-- end row -->
                                     </div><!-- end tab-pane -->
-
+</form>
+{{-- END of AIC --}}
                                     <div class="tab-pane" id="basictab3" role="tabpanel">
                                         <h4 class="fs-16 fw-semibold mb-1">Social Media Links</h4>
                                         <p class="text-muted">Fill your social media links</p>
