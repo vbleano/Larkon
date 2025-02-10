@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Disclosure extends Model
 {
@@ -50,5 +51,9 @@ class Disclosure extends Model
             'email_verified_at' => 'datetime',
             'Funding Sources' => 'array'
         ];
+    }
+
+    public function files(){
+        return $this->hasMany(Files::class, 'DiscID', 'fileId');
     }
 }
