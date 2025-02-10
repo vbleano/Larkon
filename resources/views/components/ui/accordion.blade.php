@@ -1,3 +1,4 @@
+
 @extends('layouts.vertical', ['title' => 'Accordion'])
 
 @section('content')
