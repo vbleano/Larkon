@@ -9,7 +9,8 @@
             <div class="card">
                 <div class="card-body">
                     <div class="mb-5">
-                        <form>
+                        <form action="{{route('CreateDisclosure')}}" method="POST">
+                            @csrf                        
                             <div id="horizontalwizard">
                                 <ul class="nav nav-pills nav-justified icon-wizard form-wizard-header bg-light p-1" role="tablist">
                                     <li class="nav-item" role="presentation">
@@ -40,6 +41,7 @@
                                     </li><!-- end nav-item -->
                                 </ul>
 
+                    <!------------------------- START DISCLOSURE FORM   ------------------------->   
                                 <div class="tab-content mb-0">
                                     <div class="tab-pane active show" id="basictab1" role="tabpanel">
                                         <h4 class="fs-16 fw-semibold mb-1">Disclosure Form</h4>
@@ -49,7 +51,7 @@
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
                                                     <label for="basicUser" class="form-label">Disclosure Title</label>
-                                                    <input id="basicUser" type="text" class="form-control" placeholder="Enter Disclosure Title">
+                                                    <input id="DisclosureTitle" type="text" name="DisclosureTitle" class="form-control" placeholder="Enter Disclosure Title">
                                                 </div>
                                             </div> <!-- end col -->
                                             <div class="col-lg-6">
@@ -69,7 +71,7 @@
                                             <div class="col-lg-12">
                                                 <div class="mb-3">
                                                     <label for="example-textarea" class="form-label">Disclosure Description</label>
-                                                    <textarea class="form-control" id="example-textarea" rows="5"></textarea>
+                                                    <textarea name="DisclosureDesc" class="form-control" id="example-textarea" rows="5"></textarea>
                                                 </div>
                                             </div> <!-- end col -->
                                             <div class="col-lg-6">
@@ -109,9 +111,40 @@
                                             </div> <!-- end col -->
                                         </div> <!-- end row -->
                                     </div><!-- end tab-pane -->
-{{-- IAC START --}}
-<form action="{{route('DiscForm.IAC')}}" method="POST">
-    @csrf
+
+
+
+
+                                    <div class="tab-pane" id="basictab4" role="tabpanel">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="text-center">
+                                                    <div class="avatar-md mx-auto mb-3">
+                                                        <div class="avatar-title bg-primary bg-opacity-10 text-primary rounded-circle"><iconify-icon icon="iconamoon:like-duotone" class="fs-36"></iconify-icon></div>
+                                                    </div>
+                                                    <h3 class="mt-0">Finished !</h3>
+
+                                                    <p class="w-75 mb-2 mx-auto">Filled Data Successfully.</p>
+
+                                                    <div class="mb-3">
+                                                        <div class="form-check d-inline-block">
+                                                            <input type="checkbox" class="form-check-input" id="customCheck1">
+                                                            <label class="form-check-label" for="customCheck1">I agree with the Terms and Conditions</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <div class="submit">
+                                                            <button type="submit" href="javascript:void(0);" class="btn btn-primary">
+                                                                SUBMIT APPLIACTION<i ></i>
+                                                            </button>
+                                                        </div>    
+                                                    </div>
+                                                </div>
+                                            </div> <!-- end col -->
+                                        </div> <!-- end row -->
+                                    </div><!-- end tab-pane -->
+                    <!------------------------- END DISCLOSURE FORM   ------------------------->        
+                    <!---------------------------- START IAC FORM   --------------------------->
                                     <div class="tab-pane" id="basictab2" role="tabpanel">
                                         <h4 class="fs-16 fw-semibold mb-1">Profile Information</h4>
                                         <p class="text-muted">Setup your profile information</p>
@@ -269,17 +302,18 @@
                                             </div> <!-- end col -->
                                         </div> <!-- end row -->
                                     </div><!-- end tab-pane -->
-
+                        
+                        <!---------------------------- END IAC FORM   ---------------------------->
+                        <!---------------------------- START IP FORM   --------------------------->
                                     <div class="tab-pane" id="basictab3" role="tabpanel">
                                         <h4 class="fs-16 fw-semibold mb-1">Specific IP Forms</h4>
                                         <p class="text-muted">Please fill the forms under which IP type you are applying for</p>
-
+                        <!---------------------------- START PATENT FORM   --------------------------->                                      
                                         <div class="accordion" id="accordionExample">
                                             <div class="accordion-item">
                                                 <h2 class="accordion-header" id="headingOne">
                                                     <button class="accordion-button fw-medium" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                                         Patent / Industrial Design / Utility Model
-
                                                     </button>
                                                 </h2>
                                                 <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
@@ -459,6 +493,7 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <!---------------------------- START TRADEMARK FORM   --------------------------->                                      
                                             <div class="accordion-item">
                                                 <h2 class="accordion-header" id="headingTwo">
                                                     <button class="accordion-button fw-medium collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -467,24 +502,26 @@
                                                 </h2>
                                                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                                                     <div class="accordion-body">
-                                                    <div class="col-lg-6">
+                                                        <div class="col-lg-6">
                                                                 <div class="mb-3">
                                                                 <label for="example-select" class="form-label">TRL</label>
-                                                                    <select class="form-select" id="example-select">
-                                                                        <option>1</option>
-                                                                        <option>2</option>
-                                                                        <option>3</option>
-                                                                        <option>4</option>
-                                                                        <option>5</option>
-                                                                        <option>6</option>
-                                                                        <option>7</option>
-                                                                        <option>8</option>
-                                                                        <option>9</option>
-                                                                    </select>
-                                                                </div>
+                                                                <select class="form-select" id="example-select">
+                                                                    <option>1</option>
+                                                                    <option>2</option>
+                                                                    <option>3</option>
+                                                                    <option>4</option>
+                                                                    <option>5</option>
+                                                                    <option>6</option>
+                                                                    <option>7</option>
+                                                                    <option>8</option>
+                                                                    <option>9</option>
+                                                                </select>
                                                             </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
+                                            <!---------------------------- START COPYRIGHT FORM   --------------------------->                                      
                                             <div class="accordion-item">
                                                 <h2 class="accordion-header" id="headingThree">
                                                     <button class="accordion-button fw-medium collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -493,43 +530,13 @@
                                                 </h2>
                                                 <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                                                     <div class="accordion-body">
-                                                        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the
-                                                        collapse
-                                                        plugin adds the appropriate classes that we use to style each element. These classes control
-                                                        the overall
-                                                        appearance, as well as the showing and hiding via CSS transitions. You can modify any of
-                                                        this with
-                                                        custom CSS or overriding our default variables. It's also worth noting that just about any
-                                                        HTML can go
-                                                        within the <code>.accordion-body</code>, though the transition does limit overflow.
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                    </div><!-- end tab-pane -->
-
-                                    <div class="tab-pane" id="basictab4" role="tabpanel">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="text-center">
-                                                    <div class="avatar-md mx-auto mb-3">
-                                                        <div class="avatar-title bg-primary bg-opacity-10 text-primary rounded-circle"><iconify-icon icon="iconamoon:like-duotone" class="fs-36"></iconify-icon></div>
-                                                    </div>
-                                                    <h3 class="mt-0">Finished !</h3>
-
-                                                    <p class="w-75 mb-2 mx-auto">Filled Data Successfully.</p>
-
-                                                    <div class="mb-3">
-                                                        <div class="form-check d-inline-block">
-                                                            <input type="checkbox" class="form-check-input" id="customCheck1">
-                                                            <label class="form-check-label" for="customCheck1">I agree with the Terms and Conditions</label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div> <!-- end col -->
-                                        </div> <!-- end row -->
-                                    </div><!-- end tab-pane -->
-
+                                            </div>                                            
+                                        </div>        
+                                    </div>
+                                <!---------------------------- END IP FORM   --------------------------->                                      
+                            
                                     <div class="d-flex flex-wrap align-items-center wizard justify-content-between gap-3 mt-3">
                                         <div class="first">
                                             <a href="javascript:void(0);" class="btn btn-soft-primary">

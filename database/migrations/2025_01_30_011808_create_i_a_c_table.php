@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('IAC', function (Blueprint $table) {
-            $table->id('IACId');
-            $table->unsignedBigInteger('DiscID')->nullable;
+            $table->increments('IACId');
+            $table->unsignedInteger('DiscID')->nullable;
             $table->foreign ('DiscID')
             ->references('DiscID')
             ->on('Disclosure');

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('trademarks', function (Blueprint $table) {
             $table->increments('TrademarkID');
-            $table->unsignedBigInteger('DiscID')->nullable;
+            $table->unsignedInteger('DiscID')->nullable;
             $table->foreign ('DiscID')
             ->references('DiscID')
             ->on('Disclosure');

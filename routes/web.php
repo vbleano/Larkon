@@ -30,7 +30,8 @@ Route::group(['prefix' => '/', 'middleware' => 'auth'], function () {
     })->name('index');
 
     Route::get('/DiscForm', [DisclosureController::class, 'discPage'])->name('discForm');
-    Route::post('/DiscForm', [DisclosureController::class, 'iacPage'])->name('DiscForm.IAC');
+    Route::post('/CreateDisclosure', [DisclosureController::class, 'CreateDisclosure'])->name('CreateDisclosure');
+    // Route::post('/DiscForm', [DisclosureController::class, 'iacPage'])->name('DiscForm.IAC');
 });
 
 Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');

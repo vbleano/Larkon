@@ -13,7 +13,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('Disclosure', function (Blueprint $table) {
-            $table->id('discId');
+            $table->increments('discId');
             $table->unsignedBigInteger('user_id')->nullable;
             $table->foreign ('user_id')
             ->references('id')

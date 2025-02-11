@@ -7,6 +7,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Models\Disclosure;
 use App\Models\IAC;
 
 class DisclosureController extends Controller{
@@ -18,7 +19,17 @@ class DisclosureController extends Controller{
         }
     }
 
-    public function CreateDisclosure(){
+    public function CreateDisclosure(Request $request){
+
+
+
+            $request->validate([
+                'DisclosureTitle' => 'required|string',
+            ]);
+            
+            Disclosure::create();
+
+            // return redirect()->back()->with('success', 'Profile saved successfully!');
     }
 
     public function iacPage(Request $request){
