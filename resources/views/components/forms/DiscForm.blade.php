@@ -77,15 +77,23 @@
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
                                                     <div>
+                                                        <label for="choices-text-remove-button" class="form-label text-muted">Funding Sources</label>
+                                                        <input name="Funding_Sources" class="form-control" id="choices-text-remove-button" data-choices data-choices-limit="10" data-choices-removeItem type="text" />
+                                                    </div>
+                                                </div>
+                                            </div> <!-- end col -->
+                                            <div class="col-lg-6">
+                                                <div class="mb-3">
+                                                    <div>
                                                         <label for="choices-text-remove-button" class="form-label text-muted">University Facilities and Equipments Used</label>
-                                                        <input class="form-control" id="choices-text-remove-button" data-choices data-choices-limit="10" data-choices-removeItem type="text" />
+                                                        <input name="University_Facilities" class="form-control" id="choices-text-remove-button" data-choices data-choices-limit="10" data-choices-removeItem type="text" />
                                                     </div>
                                                 </div>
                                             </div> <!-- end col -->
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
                                                     <div class="form-check form-check-inline">
-                                                        <input type="checkbox" class="form-check-input" id="customCheck3">
+                                                        <input name="Plan_To_Commercialize" type="checkbox" class="form-check-input" id="customCheck3">
                                                         <label class="form-check-label" for="customCheck3">Check this if you plan to Commercialize</label>
                                                     </div>
                                                 </div>

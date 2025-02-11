@@ -16,7 +16,7 @@ return new class extends Migration
             $table->unsignedInteger('DiscID')->nullable;
             $table->foreign ('DiscID')
             ->references('DiscID')
-            ->on('Disclosure');
+            ->on('disclosures');
 
             $table->date('Date of creation of copyrightable material');
             $table->string('place of creation');

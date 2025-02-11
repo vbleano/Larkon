@@ -16,7 +16,7 @@ return new class extends Migration
             $table->unsignedInteger('DiscID')->nullable;
             $table->foreign ('DiscID')
             ->references('DiscID')
-            ->on('Disclosure');
+            ->on('disclosures');
 
             $table->enum('Type of Invention',['Material/Compound','Process/Method',
             'Software/System','Device','Herbal Medicine/Drugs','Industrial Design']);

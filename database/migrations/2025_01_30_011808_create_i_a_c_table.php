@@ -16,7 +16,7 @@ return new class extends Migration
             $table->unsignedInteger('DiscID')->nullable;
             $table->foreign ('DiscID')
             ->references('DiscID')
-            ->on('Disclosure');
+            ->on('disclosures');
 
             $table->string('Country_of_Citizenship');
             $table->string('Last_Name');

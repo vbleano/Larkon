@@ -16,7 +16,7 @@ return new class extends Migration
             $table->unsignedInteger('DiscID')->nullable;
             $table->foreign ('DiscID')
             ->references('DiscID')
-            ->on('Disclosure');
+            ->on('disclosures');
             $table->string('file_path');
             $table->timestamps();
         });

@@ -22,7 +22,7 @@ class Disclosure extends Model
         'Disclosure Title',
         'Short Description',
         'Type of IP',
-        ['Funding Sources'],
+        'Funding Sources',
         'Year Submitted',
         'Date Submitted',
         'Month Submitted',
@@ -31,11 +31,11 @@ class Disclosure extends Model
         'University facilities and equipments used'
     ];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
+    // /**
+    //  * The attributes that should be hidden for serialization.
+    //  *
+    //  * @var array<int, string>
+    //  */
     protected $hidden = [
         'remember_token'
     ];
@@ -49,7 +49,7 @@ class Disclosure extends Model
     {
         return [
             'email_verified_at' => 'datetime',
-            'Funding Sources' => 'array'
+            // 'Funding Sources' => 'array'
         ];
     }
 

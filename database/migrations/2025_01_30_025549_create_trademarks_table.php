@@ -16,7 +16,7 @@ return new class extends Migration
             $table->unsignedInteger('DiscID')->nullable;
             $table->foreign ('DiscID')
             ->references('DiscID')
-            ->on('Disclosure');
+            ->on('disclosures');
 
             $table->enum('Type of Mark',['Word Mark','Figurative Mark','Figurative with Word Mark',
             '3D Mark','Stamped or Marked container of good']);
