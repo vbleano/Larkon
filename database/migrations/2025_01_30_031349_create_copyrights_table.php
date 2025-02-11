@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('copyrights', function (Blueprint $table) {
             $table->increments('Copyright ID');
-            $table->unsignedBigInteger('DiscID')->nullable;
+            $table->unsignedInteger('DiscID')->nullable;
             $table->foreign ('DiscID')
             ->references('DiscID')
-            ->on('Disclosure');
+            ->on('disclosures');
 
             $table->date('Date of creation of copyrightable material');
             $table->string('place of creation');

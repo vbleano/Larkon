@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('files', function (Blueprint $table) {
             $table->id('fileId');
-            $table->unsignedBigInteger('DiscID')->nullable;
+            $table->unsignedInteger('DiscID')->nullable;
             $table->foreign ('DiscID')
             ->references('DiscID')
-            ->on('Disclosure');
+            ->on('disclosures');
             $table->string('file_path');
             $table->timestamps();
         });

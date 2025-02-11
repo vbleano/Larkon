@@ -12,11 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('IAC', function (Blueprint $table) {
-            $table->id('IACId');
-            $table->unsignedBigInteger('DiscID')->nullable;
+            $table->increments('IACId');
+            $table->unsignedInteger('DiscID')->nullable;
             $table->foreign ('DiscID')
             ->references('DiscID')
-            ->on('Disclosure');
+            ->on('disclosures');
 
             $table->string('Country_of_Citizenship');
             $table->string('Last_Name');

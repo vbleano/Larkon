@@ -12,20 +12,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('Disclosure', function (Blueprint $table) {
-            $table->id('discId');
-            $table->unsignedBigInteger('user_id')->nullable;
+        Schema::create('disclosures', function (Blueprint $table) {
+            $table->increments('discId')->primary;
+            $table->unsignedInteger('user_id')->nullable;
             $table->foreign ('user_id')
             ->references('id')
             ->on('users');
 
-            $table->string('Disclosure Title');
-            $table->mediumText('Short Description');
-            $table->enum('Type of IP',['Patent','Industrial Design', 'Utility Model','Copyright','Trademark']);
-            $table->json('Funding Sources');  // Multivalued
-            $table->integer('Year Submitted');
-            $table->integer('Date Submitted');
-            $table->string('Month Submitted');
+            $table->string('Disclosure_Title');
+            $table->mediumText('Short_Description');
+            $table->enum('Type_of_IP',['Patent','Industrial Design', 'Utility Model','Copyright','Trademark']);
+            $table->string('Funding_Sources');  // Multivalued
+            $table->integer('Year_Submitted');
+            $table->integer('Date_Submitted');
+            $table->string('Month_Submitted');
             $table->enum('Status',['Disclosure Submitted','Case Assigned',
             'Technology Assessment','Prior Art Search','For Additional Disclosure',
             'For IP Committee Approval','Disapproved by IP Committee','Completion of Requirements',
@@ -34,8 +34,8 @@ return new class extends Migration
             'Registered','Issucance of Certificate','For Payment of Annuity','For Payment of DAU',
             'For Renewal','Rejected','Withdrawn or Abandoned','Expired','For PCT Application',
             'For National Phase Entry Application']);
-            $table->boolean('Plan to Commercialize');
-            $table->string('University facilities and equipments used');
+            $table->boolean('Plan_To_Commercialize');
+            $table->string('University_Facilities');
 
             $table->timestamps();
             //Multivalued Files:

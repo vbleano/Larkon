@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('trademarks', function (Blueprint $table) {
             $table->increments('TrademarkID');
-            $table->unsignedBigInteger('DiscID')->nullable;
+            $table->unsignedInteger('DiscID')->nullable;
             $table->foreign ('DiscID')
             ->references('DiscID')
-            ->on('Disclosure');
+            ->on('disclosures');
 
             $table->enum('Type of Mark',['Word Mark','Figurative Mark','Figurative with Word Mark',
             '3D Mark','Stamped or Marked container of good']);
