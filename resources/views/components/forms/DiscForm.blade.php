@@ -183,108 +183,108 @@
                                                     <div class="col-md-4">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="lastName">Last Name</label>
-                                                            <input type="text" id="lastName" name="Last_Name" class="form-control" placeholder="Doe">
+                                                            <input required type="text" id="lastName" name="Last_Name" class="form-control" placeholder="Doe">
                                                         </div>
                                                     </div><!-- end col -->
                                                     <div class="col-md-4">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="firstName">First Name</label>
-                                                            <input type="text" id="firstName" name="First_Name" class="form-control" placeholder="John">
+                                                            <input required type="text" id="firstName" name="First_Name" class="form-control" placeholder="John">
                                                         </div>
                                                     </div><!-- end col -->
                                                     <div class="col-md-4">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="middleName">Middle Initial</label>
-                                                            <input type="text" id="middleName" name="Middle_Name" class="form-control" placeholder="Z">
+                                                            <input required type="text" id="middleName" name="Middle_Name" class="form-control" placeholder="Z">
                                                         </div>
                                                     </div><!-- end col -->
                                                     <div class="col-md-12">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="homeAddress">Home Address</label>
-                                                            <input type="text" id="homeAddress" name="Home_Address" class="form-control" placeholder="Santa Mesa Manila">
+                                                            <input required type="text" id="homeAddress" name="Home_Address" class="form-control" placeholder="Santa Mesa Manila">
                                                         </div>
                                                     </div><!-- end col -->
                                                     <div class="col-md-12">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="workAddress">Work Address</label>
-                                                            <input type="text" id="workAddress" name="Work_Address" class="form-control" placeholder="Taft Avenue Ermita">
+                                                            <input required type="text" id="workAddress" name="Work_Address" class="form-control" placeholder="Taft Avenue Ermita">
                                                         </div>
                                                     </div><!-- end col -->
                                                     <div class="col-md-4">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="constituentUniversity">Constituent University</label>
-                                                            <input type="text" id="constituentUniversity" name="Constituent_University" class="form-control" placeholder="UP - Manila">
+                                                            <input required type="text" id="constituentUniversity" name="Constituent_University" class="form-control" placeholder="UP - Manila">
                                                         </div>
                                                     </div><!-- end col -->
                                                     <div class="col-md-4">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="department">Department / Institute</label>
-                                                            <input type="text" id="department" name="Department_Institute" class="form-control" placeholder="TTBDO">
+                                                            <input required type="text" id="department" name="Department_Institute" class="form-control" placeholder="TTBDO">
                                                         </div>
                                                     </div><!-- end col -->
                                                     <div class="col-md-4">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="collegeUnit">College Unit</label>
-                                                            <input type="text" id="collegeUnit" name="College_Unit" class="form-control" placeholder="College of Nursing">
+                                                            <input required type="text" id="collegeUnit" name="College_Unit" class="form-control" placeholder="College of Nursing">
                                                         </div>
                                                     </div><!-- end col -->
 
                                                     <div class="col-md-4">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="salutatory">Salutatory</label>
-                                                            <input type="text" id="salutatory" name="Salutatory" class="form-control" placeholder="Job Title">
+                                                            <input required type="text" id="salutatory" name="Salutatory" class="form-control" placeholder="Job Title">
                                                         </div>
                                                     </div><!-- end col -->
                                                     <div class="col-md-4">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="mainAffiliation">Main Affiliation</label>
-                                                            <input type="text" id="mainAffiliation" name="Main_Affiliation" class="form-control" placeholder="Main Affiliation">
+                                                            <input required type="text" id="mainAffiliation" name="Main_Affiliation" class="form-control" placeholder="Main Affiliation">
                                                         </div>
                                                     </div><!-- end col -->
                                                     <div class="col-md-4">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="subAffiliation">Sub Affiliation</label>
-                                                            <input type="number" id="subAffiliation" name="Sub_Affiliation" class="form-control" placeholder="Sub Affiliation">
+                                                            <input required type="number" id="subAffiliation" name="Sub_Affiliation" class="form-control" placeholder="Sub Affiliation">
                                                         </div>
                                                     </div><!-- end col -->
                                                     <div class="col-md-6">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="nature">Nature of Contribution</label>
-                                                            <input type="text" id="nature" name="Nature_of_Contribution_Role" class="form-control" placeholder="Role in the Invention">
+                                                            <input required type="text" id="nature" name="Nature_of_Contribution_Role" class="form-control" placeholder="Role in the Invention">
                                                         </div>
                                                     </div><!-- end col -->
                                                     <div class="col-md-6">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="percent">Percentage of Contribution</label>
-                                                            <input type="text" id="percent" name="Percentage_of_Contribution" class="form-control" placeholder="Rate 1 - 100">
+                                                            <input required type="text" id="percent" name="Percentage_of_Contribution" class="form-control" placeholder="Rate 1 - 100">
                                                         </div>
                                                     </div><!-- end col -->
                                                      <div class="col-md-6">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="emailAddress">Email Address</label>
-                                                            <input type="email" id="emailAddress" name="Email_Address" class="form-control" placeholder="@up.edu.ph">
+                                                            <input required type="email" id="emailAddress" name="Email_Address" class="form-control" placeholder="@up.edu.ph">
                                                         </div>
                                                     </div><!-- end col -->
                                                     <div class="col-md-6">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="phoneNumber">Phone Number</label>
-                                                            <input type="number" id="phoneNumber" name="Contact_Number" class="form-control" placeholder="09*********">
+                                                            <input required type="number" id="phoneNumber" name="Contact_Number" class="form-control" placeholder="09*********">
                                                         </div>
                                                     </div><!--end col -->
                                                     <div class="col-md-6">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="birthday">Date of Birth</label>
-                                                            <input type="date" id="birthday" name="Date_of_Birth" class="form-control" placeholder="">
+                                                            <input required type="date" id="birthday" name="Date_of_Birth" class="form-control" placeholder="">
                                                         </div>
                                                     </div><!-- end col -->
                                                     <div class="col-md-6">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="gender">Gender / Sex</label>
                                                             <select id="gender" name="Gender_Sex" class="form-select">
-                                                                <option value="0">Male</option>
-                                                                <option value="1">Female</option>
-                                                                <option value="2">Non-Binary</option>
-                                                                <option value="3">Refuse to Say</option>
+                                                                <option value="1">Male</option>
+                                                                <option value="2">Female</option>
+                                                                <option value="3">Non-Binary</option>
+                                                                <option value="4">Refuse to Say</option>
                                                             </select>
                                                         </div>
                                                     </div><!-- end col -->
@@ -292,18 +292,18 @@
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="civilStatus">Civil Status</label>
                                                             <select id="civilStatus" name="Civil_Status" class="form-select">
-                                                                <option value="0">Single</option>
-                                                                <option value="1">Married</option>
-                                                                <option value="2">Divorced</option>
-                                                                <option value="3">Widowed</option>
-                                                                <option value="4">Separated</option>
+                                                                <option value="1">Single</option>
+                                                                <option value="2">Married</option>
+                                                                <option value="3">Divorced</option>
+                                                                <option value="4">Widowed</option>
+                                                                <option value="5">Separated</option>
                                                             </select>
                                                         </div>
                                                     </div><!-- end col -->
                                                     <div class="col-md-6">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="nationality">Nationality</label>
-                                                            <input type="text" id="nationality" name="Nationality" class="form-control" placeholder="Filipino">
+                                                            <input required type="text" id="nationality" name="Nationality" class="form-control" placeholder="Filipino">
                                                         </div>
                                                     </div><!-- end col -->
                                                 </div><!-- end row -->
@@ -333,51 +333,57 @@
                                                                         <label for="choices-text-remove-button" class="form-label text-muted">Type/s of Invention</label>
                                                                         {{-- <input class="form-control" id="choices-text-remove-button" name="Type of Invention" data-choices data-choices-limit="10" data-choices-removeItem type="text" /> --}}
                                                                         <select id="choices-text-remove-button" name="Type_of_Invention" class="form-select">
-                                                                            <option value="0">Material/Compound</option>
-                                                                            <option value="1">Process/Method</option>
-                                                                            <option value="2">Software/System</option>
-                                                                            <option value="3">Device</option>
-                                                                            <option value="4">Herbal Medicine/Drugs</option>
-                                                                            <option value="5">Industrial Design</option>
+                                                                            <option value="1">Material/Compound</option>
+                                                                            <option value="2">Process/Method</option>
+                                                                            <option value="3">Software/System</option>
+                                                                            <option value="4">Device</option>
+                                                                            <option value="5">Herbal Medicine/Drugs</option>
+                                                                            <option value="6">Industrial Design</option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
+                                                                    <label for="basicUser" class="form-label">Purpose of Invention</label>
+                                                                    <input required name="Purpose_of_Invention" id="basicUser" type="text" class="form-control" placeholder="">
+                                                                </div>
+                                                            </div> <!-- end col -->
+                                                            <div class="col-lg-6">
+                                                                <div class="mb-3">
                                                                     <label for="basicUser" class="form-label">Key / Novel features of the Invention</label>
-                                                                    <input name="Key_Novel_Features" id="basicUser" type="text" class="form-control" placeholder="">
+                                                                    <input required name="Key_Novel_Features" id="basicUser" type="text" class="form-control" placeholder="">
                                                                 </div>
                                                             </div> <!-- end col -->
                                                             <div class="col-lg-12">
                                                                 <div class="mb-3">
                                                                     <label for="example-textarea" class="form-label"> Background of the Invention</label>
-                                                                    <textarea name="Background_of_Invention" class="form-control" id="example-textarea" rows="5"></textarea>
+                                                                    <textarea required name="Background_of_Invention" class="form-control" id="example-textarea" rows="5"></textarea>
                                                                 </div>
                                                             </div> <!-- end col -->
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
                                                                     <label for="basicUser" class="form-label">Application or Use of Invention</label>
-                                                                    <input name="Application_use_of_Invention" id="basicUser" type="text" class="form-control" placeholder="">
+                                                                    <input required name="Application_use_of_Invention" id="basicUser" type="text" class="form-control" placeholder="">
                                                                 </div>
                                                             </div> <!-- end col -->
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
                                                                     <label for="basicUser" class="form-label"> Stage of Development </label>
-                                                                    <input name="Stage_of_Development" id="basicUser" type="text" class="form-control" placeholder="Technology Status (Prototyping, clinical trial phase 1, etc.)">
+                                                                    <input required name="Stage_of_Development" id="basicUser" type="text" class="form-control" placeholder="Technology Status (Prototyping, clinical trial phase 1, etc.)">
                                                                 </div>
                                                             </div> <!-- end col -->
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
                                                                     <label for="basicUser" class="form-label"> R&D Cost </label>
-                                                                    <input name="R&D_Cost" id="basicUser" type="text" class="form-control" placeholder="Please provide a range (e.g. 1000 - 2000)">
+                                                                    <input required name="R_and_D_Cost" id="basicUser" type="text" class="form-control" placeholder="Please provide a range (e.g. 1000 - 2000)">
                                                                 </div>
                                                             </div> <!-- end col -->
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
                                                                     <div>
                                                                         <label for="choices-text-remove-button" class="form-label text-muted">Potential Partners</label>
-                                                                        <input name="Potential_Partners" class="form-control" id="choices-text-remove-button" data-choices data-choices-limit="10" data-choices-removeItem type="text" />
+                                                                        <input required name="Potential_Partners" class="form-control" id="choices-text-remove-button" data-choices data-choices-limit="10" data-choices-removeItem type="text" />
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -385,15 +391,15 @@
                                                                 <div class="mb-3">
                                                                 <label for="example-select" class="form-label">TRL</label>
                                                                     <select name="TRL" class="form-select" id="example-select">
-                                                                        <option value="0">1</option>
-                                                                        <option value="1">2</option>
-                                                                        <option value="2">3</option>
-                                                                        <option value="3">4</option>
-                                                                        <option value="4">5</option>
-                                                                        <option value="5">6</option>
-                                                                        <option value="6">7</option>
-                                                                        <option value="7">8</option>
-                                                                        <option value="8">9</option>
+                                                                        <option value="1">1</option>
+                                                                        <option value="2">2</option>
+                                                                        <option value="3">3</option>
+                                                                        <option value="4">4</option>
+                                                                        <option value="5">5</option>
+                                                                        <option value="6">6</option>
+                                                                        <option value="7">7</option>
+                                                                        <option value="8">8</option>
+                                                                        <option value="9">9</option>
                                                                     </select>
                                                                 </div>
                                                             </div>
@@ -402,7 +408,7 @@
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
                                                                     <label for="example-select" class="form-label">Past Oral Disclosure Date</label>
-                                                                    <input name="Past_Oral_Disclosure_Date" type="text" id="basic-datepicker" class="form-control" placeholder="Basic datepicker">
+                                                                    <input name="Past_Oral_Disclosure_Date" type="date" id="basic-datepicker" class="form-control" placeholder="Basic datepicker">
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-6">
@@ -414,7 +420,7 @@
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
                                                                     <label for="example-select" class="form-label">Past Written Disclosure Date</label>
-                                                                    <input name="Past_Written_Disclosure_Date" type="text" id="basic-datepicker" class="form-control" placeholder="Basic datepicker">
+                                                                    <input name="Past_Written_Disclosure_Date" type="date" id="basic-datepicker" class="form-control" placeholder="Basic datepicker">
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-6">
@@ -426,7 +432,7 @@
                                                             <div class="col-lg-12">
                                                                 <div class="mb-3">
                                                                     <label for="example-select" class="form-label">Future Disclosure Plans</label>
-                                                                    <textarea name="Future_Disclosure_Plans'" class="form-control" id="example-textarea" rows="2"></textarea>
+                                                                    <textarea name="Future_Disclosure_Plans" class="form-control" id="example-textarea" rows="2"></textarea>
                                                                 </div>
                                                             </div>
                                                         </div>
