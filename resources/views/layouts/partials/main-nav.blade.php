@@ -54,7 +54,7 @@
                 <div class="collapse" id="sidebarInvoice">
                     <ul class="nav sub-navbar-nav">
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('ViewAllDisclosures')}}">All Disclosures</a>
+                            <a class="sub-nav-link" href="{{ route('ViewAllDisclosures')}}">Case Monitoring</a>
                         </li>
                         <li class="sub-nav-item">
                             <a class="sub-nav-link" href="#">Patents</a>
