@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('IAC', function (Blueprint $table) {
+        Schema::create('i_a_c_s', function (Blueprint $table) {
             $table->increments('IACId');
             $table->unsignedInteger('DiscID')->nullable;
             $table->foreign ('DiscID')
@@ -29,14 +29,14 @@ return new class extends Migration
             $table->string('Main_Affiliation');
             $table->string('Sub_Affiliation');
             $table->string('Constituent_University');
-            $table->string('College/Unit');
-            $table->string('Department/Institute');
-            $table->integer('Contact_Number');
-            $table->string('Nature_of_Contribution/Role');
+            $table->string('College_Unit');
+            $table->string('Department_Institute');
+            $table->string('Contact_Number');
+            $table->string('Nature_of_Contribution_Role');
             $table->integer('Percentage_of_Contribution');
             $table->dateTime('Date_of_Birth');
             $table->enum('Civil_Status', ['Single','Married','Divorced','Separated','Widowed']);
-            $table->enum('Gender/Sex',['Male','Female','Non_binary','Prefer_not_to_say']);
+            $table->enum('Gender_Sex',['Male','Female','Non_binary','Prefer_not_to_say']);
             $table->string('Nationality');
             $table->timestamps();
         });

@@ -10,7 +10,7 @@
                 <div class="card-body">
                     <div class="mb-5">
                         <form action="{{route('CreateDisclosure')}}" method="POST">
-                            @csrf                        
+                            @csrf
                             <div id="horizontalwizard">
                                 <ul class="nav nav-pills nav-justified icon-wizard form-wizard-header bg-light p-1" role="tablist">
                                     <li class="nav-item" role="presentation">
@@ -41,7 +41,7 @@
                                     </li><!-- end nav-item -->
                                 </ul>
 
-                    <!------------------------- START DISCLOSURE FORM   ------------------------->   
+                    <!------------------------- START DISCLOSURE FORM   ------------------------->
                                 <div class="tab-content mb-0">
                                     <div class="tab-pane active show" id="basictab1" role="tabpanel">
                                         <h4 class="fs-16 fw-semibold mb-1">Disclosure Form</h4>
@@ -143,15 +143,15 @@
                                                     <div class="mb-3">
                                                         <div class="submit">
                                                             <button type="submit" href="javascript:void(0);" class="btn btn-primary">
-                                                                SUBMIT APPLIACTION<i ></i>
+                                                                SUBMIT APPLICATION<i ></i>
                                                             </button>
-                                                        </div>    
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div> <!-- end col -->
                                         </div> <!-- end row -->
                                     </div><!-- end tab-pane -->
-                    <!------------------------- END DISCLOSURE FORM   ------------------------->        
+                    <!------------------------- END DISCLOSURE FORM   ------------------------->
                     <!---------------------------- START IAC FORM   --------------------------->
                                     <div class="tab-pane" id="basictab2" role="tabpanel">
                                         <h4 class="fs-16 fw-semibold mb-1">Profile Information</h4>
@@ -219,7 +219,7 @@
                                                     <div class="col-md-4">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="department">Department / Institute</label>
-                                                            <input type="text" id="department" name="Department/Institute" class="form-control" placeholder="TTBDO">
+                                                            <input type="text" id="department" name="Department_Institute" class="form-control" placeholder="TTBDO">
                                                         </div>
                                                     </div><!-- end col -->
                                                     <div class="col-md-4">
@@ -250,7 +250,7 @@
                                                     <div class="col-md-6">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="nature">Nature of Contribution</label>
-                                                            <input type="text" id="nature" name="Nature_of_Contribution/Role" class="form-control" placeholder="Role in the Invention">
+                                                            <input type="text" id="nature" name="Nature_of_Contribution_Role" class="form-control" placeholder="Role in the Invention">
                                                         </div>
                                                     </div><!-- end col -->
                                                     <div class="col-md-6">
@@ -280,11 +280,11 @@
                                                     <div class="col-md-6">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="gender">Gender / Sex</label>
-                                                            <select id="gender" name="Gender/Sex" class="form-select">
-                                                                <option value="Male">Male</option>
-                                                                <option value="Female">Female</option>
-                                                                <option value="NonBinary">Non-Binary</option>
-                                                                <option value="Refuse">Refuse to Say</option>
+                                                            <select id="gender" name="Gender_Sex" class="form-select">
+                                                                <option value="0">Male</option>
+                                                                <option value="1">Female</option>
+                                                                <option value="2">Non-Binary</option>
+                                                                <option value="3">Refuse to Say</option>
                                                             </select>
                                                         </div>
                                                     </div><!-- end col -->
@@ -292,11 +292,11 @@
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="civilStatus">Civil Status</label>
                                                             <select id="civilStatus" name="Civil_Status" class="form-select">
-                                                                <option value="Single">Single</option>
-                                                                <option value="Married">Married</option>
-                                                                <option value="Divorced">Divorced</option>
-                                                                <option value="Widowed">Widowed</option>
-                                                                <option value="Separated">Separated</option>
+                                                                <option value="0">Single</option>
+                                                                <option value="1">Married</option>
+                                                                <option value="2">Divorced</option>
+                                                                <option value="3">Widowed</option>
+                                                                <option value="4">Separated</option>
                                                             </select>
                                                         </div>
                                                     </div><!-- end col -->
@@ -310,13 +310,13 @@
                                             </div> <!-- end col -->
                                         </div> <!-- end row -->
                                     </div><!-- end tab-pane -->
-                        
+
                         <!---------------------------- END IAC FORM   ---------------------------->
                         <!---------------------------- START IP FORM   --------------------------->
                                     <div class="tab-pane" id="basictab3" role="tabpanel">
                                         <h4 class="fs-16 fw-semibold mb-1">Specific IP Forms</h4>
                                         <p class="text-muted">Please fill the forms under which IP type you are applying for</p>
-                        <!---------------------------- START PATENT FORM   --------------------------->                                      
+                        <!---------------------------- START PATENT FORM   --------------------------->
                                         <div class="accordion" id="accordionExample">
                                             <div class="accordion-item">
                                                 <h2 class="accordion-header" id="headingOne">
@@ -331,61 +331,69 @@
                                                                 <div class="mb-3">
                                                                     <div>
                                                                         <label for="choices-text-remove-button" class="form-label text-muted">Type/s of Invention</label>
-                                                                        <input class="form-control" id="choices-text-remove-button" data-choices data-choices-limit="10" data-choices-removeItem type="text" />
+                                                                        {{-- <input class="form-control" id="choices-text-remove-button" name="Type of Invention" data-choices data-choices-limit="10" data-choices-removeItem type="text" /> --}}
+                                                                        <select id="choices-text-remove-button" name="Type_of_Invention" class="form-select">
+                                                                            <option value="0">Material/Compound</option>
+                                                                            <option value="1">Process/Method</option>
+                                                                            <option value="2">Software/System</option>
+                                                                            <option value="3">Device</option>
+                                                                            <option value="4">Herbal Medicine/Drugs</option>
+                                                                            <option value="5">Industrial Design</option>
+                                                                        </select>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
                                                                     <label for="basicUser" class="form-label">Key / Novel features of the Invention</label>
-                                                                    <input id="basicUser" type="text" class="form-control" placeholder="">
+                                                                    <input name="Key_Novel_Features" id="basicUser" type="text" class="form-control" placeholder="">
                                                                 </div>
                                                             </div> <!-- end col -->
                                                             <div class="col-lg-12">
                                                                 <div class="mb-3">
                                                                     <label for="example-textarea" class="form-label"> Background of the Invention</label>
-                                                                    <textarea class="form-control" id="example-textarea" rows="5"></textarea>
+                                                                    <textarea name="Background_of_Invention" class="form-control" id="example-textarea" rows="5"></textarea>
                                                                 </div>
                                                             </div> <!-- end col -->
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
                                                                     <label for="basicUser" class="form-label">Application or Use of Invention</label>
-                                                                    <input id="basicUser" type="text" class="form-control" placeholder="">
+                                                                    <input name="Application_use_of_Invention" id="basicUser" type="text" class="form-control" placeholder="">
                                                                 </div>
                                                             </div> <!-- end col -->
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
                                                                     <label for="basicUser" class="form-label"> Stage of Development </label>
-                                                                    <input id="basicUser" type="text" class="form-control" placeholder="Technology Status (Prototyping, clinical trial phase 1, etc.)">
+                                                                    <input name="Stage_of_Development" id="basicUser" type="text" class="form-control" placeholder="Technology Status (Prototyping, clinical trial phase 1, etc.)">
                                                                 </div>
                                                             </div> <!-- end col -->
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
                                                                     <label for="basicUser" class="form-label"> R&D Cost </label>
-                                                                    <input id="basicUser" type="text" class="form-control" placeholder="Please provide a range (e.g. 1000 - 2000)">
+                                                                    <input name="R&D_Cost" id="basicUser" type="text" class="form-control" placeholder="Please provide a range (e.g. 1000 - 2000)">
                                                                 </div>
                                                             </div> <!-- end col -->
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
                                                                     <div>
                                                                         <label for="choices-text-remove-button" class="form-label text-muted">Potential Partners</label>
-                                                                        <input class="form-control" id="choices-text-remove-button" data-choices data-choices-limit="10" data-choices-removeItem type="text" />
+                                                                        <input name="Potential_Partners" class="form-control" id="choices-text-remove-button" data-choices data-choices-limit="10" data-choices-removeItem type="text" />
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
                                                                 <label for="example-select" class="form-label">TRL</label>
-                                                                    <select class="form-select" id="example-select">
-                                                                        <option>1</option>
-                                                                        <option>2</option>
-                                                                        <option>3</option>
-                                                                        <option>4</option>
-                                                                        <option>5</option>
-                                                                        <option>6</option>
-                                                                        <option>7</option>
-                                                                        <option>8</option>
-                                                                        <option>9</option>
+                                                                    <select name="TRL" class="form-select" id="example-select">
+                                                                        <option value="0">1</option>
+                                                                        <option value="1">2</option>
+                                                                        <option value="2">3</option>
+                                                                        <option value="3">4</option>
+                                                                        <option value="4">5</option>
+                                                                        <option value="5">6</option>
+                                                                        <option value="6">7</option>
+                                                                        <option value="7">8</option>
+                                                                        <option value="8">9</option>
                                                                     </select>
                                                                 </div>
                                                             </div>
@@ -394,31 +402,31 @@
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
                                                                     <label for="example-select" class="form-label">Past Oral Disclosure Date</label>
-                                                                    <input type="text" id="basic-datepicker" class="form-control" placeholder="Basic datepicker">
+                                                                    <input name="Past_Oral_Disclosure_Date" type="text" id="basic-datepicker" class="form-control" placeholder="Basic datepicker">
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
                                                                     <label for="example-select" class="form-label">Past Oral Disclosure Description</label>
-                                                                    <textarea class="form-control" id="example-textarea" rows="2"></textarea>
+                                                                    <textarea name="Past_Oral_Disclosure" class="form-control" id="example-textarea" rows="2"></textarea>
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
                                                                     <label for="example-select" class="form-label">Past Written Disclosure Date</label>
-                                                                    <input type="text" id="basic-datepicker" class="form-control" placeholder="Basic datepicker">
+                                                                    <input name="Past_Written_Disclosure_Date" type="text" id="basic-datepicker" class="form-control" placeholder="Basic datepicker">
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
                                                                     <label for="example-select" class="form-label">Past Written Disclosure Description</label>
-                                                                    <textarea class="form-control" id="example-textarea" rows="2"></textarea>
+                                                                    <textarea name="Past_Written_Disclosure" class="form-control" id="example-textarea" rows="2"></textarea>
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-12">
                                                                 <div class="mb-3">
                                                                     <label for="example-select" class="form-label">Future Disclosure Plans</label>
-                                                                    <textarea class="form-control" id="example-textarea" rows="2"></textarea>
+                                                                    <textarea name="Future_Disclosure_Plans'" class="form-control" id="example-textarea" rows="2"></textarea>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -501,7 +509,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!---------------------------- START TRADEMARK FORM   --------------------------->                                      
+                                            <!---------------------------- START TRADEMARK FORM   --------------------------->
                                             <div class="accordion-item">
                                                 <h2 class="accordion-header" id="headingTwo">
                                                     <button class="accordion-button fw-medium collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -529,7 +537,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!---------------------------- START COPYRIGHT FORM   --------------------------->                                      
+                                            <!---------------------------- START COPYRIGHT FORM   --------------------------->
                                             <div class="accordion-item">
                                                 <h2 class="accordion-header" id="headingThree">
                                                     <button class="accordion-button fw-medium collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -540,11 +548,11 @@
                                                     <div class="accordion-body">
                                                     </div>
                                                 </div>
-                                            </div>                                            
-                                        </div>        
+                                            </div>
+                                        </div>
                                     </div>
-                                <!---------------------------- END IP FORM   --------------------------->                                      
-                            
+                                <!---------------------------- END IP FORM   --------------------------->
+
                                     <div class="d-flex flex-wrap align-items-center wizard justify-content-between gap-3 mt-3">
                                         <div class="first">
                                             <a href="javascript:void(0);" class="btn btn-soft-primary">
