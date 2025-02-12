@@ -45,16 +45,16 @@
                                 <td>
                                      {{$disclosure->discId}}
                                 </td>
-                                <td>Apr 23 , 2024</td>
+                                <td>{{$disclosure->Month_Submitted}} {{$disclosure->Date_Submitted}} {{$disclosure->Year_Submitted}}</td>
                                 <td>
                                     <a href="#!" class="link-primary fw-medium">Gail C. Anderson</a>
                                 </td>
-                                <td> Normal</td>
-                                <td> $1,230.00</td>
-                                <td> <span class="badge bg-light text-dark  px-2 py-1 fs-13">Unpaid</span></td>
+                                <td> {{$disclosure->Disclosure_Title}}</td>
+                                <td> KLO</td>
+                                <td> <span class="badge bg-light text-dark  px-2 py-1 fs-13">{{$disclosure->Status}}</span></td>
                                 <td> 4</td>
                                 <td> -</td>
-                                <td> <span class="badge border border-secondary text-secondary  px-2 py-1 fs-13">Draft</span></td>
+                                <td> <span class="badge border border-secondary text-secondary  px-2 py-1 fs-13">Looking for Partners</span></td>
                                 <td>
                                     <div class="d-flex gap-2">
                                         <a href="#!" class="btn btn-light btn-sm"><iconify-icon icon="solar:eye-broken" class="align-middle fs-18"></iconify-icon></a>

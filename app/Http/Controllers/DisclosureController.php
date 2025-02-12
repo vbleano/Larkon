@@ -88,4 +88,40 @@ class DisclosureController extends Controller{
             return redirect('/login'); // Redirect to login page or homepage
         }
     }
+
+    public function viewDisclosure($id){
+        if (Auth::user()) {
+            $disclosure = Disclosure::find($id);
+            return view('/general/disclosureList')->with('disclosures',$disclosures);
+        } else{
+            return redirect('/login'); // Redirect to login page or homepage
+        }
+    }
+
+    public function updateDisclosure(Request $request, $id){
+        if (Auth::user()) {
+            $disclosure = Disclosure::find($id);
+
+
+            return view('/general/disclosureList')->with('disclosures',$disclosures);
+        } else{
+            return redirect('/login'); // Redirect to login page or homepage
+        }
+    }
+
+
+    public function DestroyDisclosure($id){
+        if (Auth::user()) {
+            echo("here");
+            // $disclosure = Disclosure::find($id);
+            // $disclosure->delete();
+            // <--------- DELETE IAC LINKS HERE -------------->
+            // <--------- DELETE IP LINKS HERE -------------->
+            // <--------- DELETE Partners LINKS HERE -------------->
+            // <--------- DELETE Agreements LINKS HERE -------------->
+            // return redirect('/ViewAllDisclosures');
+        } else{
+            return redirect('/login'); // Redirect to login page or homepage
+        }
+    }
 }
