@@ -51,6 +51,11 @@ class DisclosureController extends Controller{
     }
 
     public function viewAllDisclosures(){
-
+        if (Auth::user()) {
+            $disclosures = Disclosure::all();
+            return view('/general/disclosureList')->with('disclosures',$disclosures);
+        } else {
+            return redirect('/login'); // Redirect to login page or homepage
+        }
     }
 }

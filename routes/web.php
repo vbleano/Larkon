@@ -31,7 +31,7 @@ Route::group(['prefix' => '/', 'middleware' => 'auth'], function () {
 
     Route::get('/DiscForm', [DisclosureController::class, 'discPage'])->name('discForm');
     Route::post('/CreateDisclosure', [DisclosureController::class, 'CreateDisclosure'])->name('CreateDisclosure');
-    // Route::post('/DiscForm', [DisclosureController::class, 'iacPage'])->name('DiscForm.IAC');
+    Route::get('/ViewAllDisclosures',[DisclosureController::class, 'viewAllDisclosures'])->name('ViewAllDisclosures');
 });
 
 Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
