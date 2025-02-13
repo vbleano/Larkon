@@ -127,16 +127,15 @@ class DisclosureController extends Controller{
 
     public function DestroyDisclosure($id){
         if (Auth::user()) {
-            echo("here");
-            // $disclosure = Disclosure::find($id);
-            // $disclosure->delete();
+            $disclosure = Disclosure::where('discId','=',$id)->get();
+            $disclosure->each->delete();
             // <--------- DELETE IAC LINKS HERE -------------->
             // <--------- DELETE IP LINKS HERE -------------->
             // <--------- DELETE Partners LINKS HERE -------------->
             // <--------- DELETE Agreements LINKS HERE -------------->
-            // return redirect('/ViewAllDisclosures');
+            return redirect('/ViewAllDisclosures');
         } else{
-            return redirect('/login'); // Redirect to login page or homepage
+            return redirect::route('/login'); // Redirect to login page or homepage
         }
     }
 }
