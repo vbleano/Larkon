@@ -25,6 +25,7 @@ class DisclosureController extends Controller{
             $disclosure = new Disclosure();
             $disclosure->user_id = Auth::user()->id;
             $disclosure->Disclosure_Title = request('DisclosureTitle');
+            $disclosure->Type_of_IP = request('Type_of_IP');
             $disclosure->Short_Description = request('DisclosureDesc');
             $disclosure->Funding_Sources = request('Funding_Sources');
             $disclosure->Year_Submitted = date('Y');
@@ -62,24 +63,32 @@ class DisclosureController extends Controller{
             $IAC->Nationality = request('Nationality');
             $IAC->save();
 
-            $patent = new Patents();
-            $patent->PatentID = $disclosure->uniqueIds;
-            $patent->DiscID = $disclosure ->id;
-            $patent->Type_of_Invention = request('Type_of_Invention');
-            $patent->Purpose_of_Invention = request('Purpose_of_Invention');
-            $patent->Background_of_Invention = request('Background_of_Invention');
-            $patent->Potential_Partners = request('Potential_Partners');
-            $patent->Key_Novel_Features = request('Key_Novel_Features');
-            $patent->Application_use_of_Invention = request('Application_use_of_Invention');
-            $patent->Stage_of_Development = request('Stage_of_Development');
-            $patent->R_and_D_Cost = request('R_and_D_Cost');
-            $patent->Past_Oral_Disclosure = request('Past_Oral_Disclosure');
-            $patent->Past_Oral_Disclosure_Date = date('Y-m-d', strtotime(request('Past_Oral_Disclosure_Date')));
-            $patent->Past_Written_Disclosure = request('Past_Written_Disclosure');
-            $patent->Past_Written_Disclosure_Date = date('Y-m-d', strtotime(request('Past_Written_Disclosure_Date')));
-            $patent->Future_Disclosure_Plans = request('Future_Disclosure_Plans');
-            $patent->TRL = request('TRL');
-            $patent->save();
+            if($disclosure->Type_of_IP == 1 || $disclosure->Type_of_IP == 2 || $disclosure->Type_of_IP == 3){
+                $patent = new Patents();
+                $patent->PatentID = $disclosure->uniqueIds;
+                $patent->DiscID = $disclosure ->id;
+                $patent->Type_of_Invention = request('Type_of_Invention');
+                $patent->Purpose_of_Invention = request('Purpose_of_Invention');
+                $patent->Background_of_Invention = request('Background_of_Invention');
+                $patent->Potential_Partners = request('Potential_Partners');
+                $patent->Key_Novel_Features = request('Key_Novel_Features');
+                $patent->Application_use_of_Invention = request('Application_use_of_Invention');
+                $patent->Stage_of_Development = request('Stage_of_Development');
+                $patent->R_and_D_Cost = request('R_and_D_Cost');
+                $patent->Past_Oral_Disclosure = request('Past_Oral_Disclosure');
+                $patent->Past_Oral_Disclosure_Date = date('Y-m-d', strtotime(request('Past_Oral_Disclosure_Date')));
+                $patent->Past_Written_Disclosure = request('Past_Written_Disclosure');
+                $patent->Past_Written_Disclosure_Date = date('Y-m-d', strtotime(request('Past_Written_Disclosure_Date')));
+                $patent->Future_Disclosure_Plans = request('Future_Disclosure_Plans');
+                $patent->TRL = request('TRL');
+                $patent->save();
+            } elseif($disclosure->Type_of_IP == 4){
+
+            } elseif($disclosure->Type_of_IP == 5){
+                
+            }else{
+                return Redirect::back();
+            }
 
             return redirect('/');
         } else{
