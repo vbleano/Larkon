@@ -58,12 +58,12 @@
                                                 <div class="mb-3">
                                                     <label for="basicUser" class="form-label">Type of IP</label>
                                                     <div class="w-80 mb-3">
-                                                        <select class="form-control" id="choices-multiple-remove-button" data-choices data-choices-removeItem name="choices-multiple-remove-button" multiple>
-                                                            <option value="Choice 1" selected>Patent</option>
-                                                            <option value="Choice 2">Utility Model</option>
-                                                            <option value="Choice 3">Industrial Design</option>
-                                                            <option value="Choice 4">Trademark</option>
-                                                            <option value="Choice 5">Copyright</option>
+                                                        <select name="Type_of_IP" class="form-control" id="choices-multiple-remove-button" data-choices data-choices-removeItem name="choices-multiple-remove-button" multiple>
+                                                            <option value="1" selected>Patent</option>
+                                                            <option value="2">Utility Model</option>
+                                                            <option value="3">Industrial Design</option>
+                                                            <option value="4">Trademark</option>
+                                                            <option value="5">Copyright</option>
                                                         </select>
                                                     </div>
                                                 </div>
