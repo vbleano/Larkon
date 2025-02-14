@@ -32,7 +32,7 @@ Route::group(['prefix' => '/', 'middleware' => 'auth'], function () {
     Route::get('/DiscForm', [DisclosureController::class, 'discPage'])->name('discForm');
     Route::post('/CreateDisclosure', [DisclosureController::class, 'CreateDisclosure'])->name('CreateDisclosure');
     Route::get('/ViewAllDisclosures',[DisclosureController::class, 'viewAllDisclosures'])->name('ViewAllDisclosures');
-    // Route::delete('/DeleteDisclosure/{id}/delete', [DisclosureController::class, 'DestroyDisclosure'])->name('DestroyDisclosure');
+    Route::get('/disclosure/{id}/destroy', [DisclosureController::class, 'DestroyDisclosure'])->name('DestroyDisclosure');
 });
 
 Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
