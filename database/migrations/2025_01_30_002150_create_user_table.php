@@ -21,10 +21,10 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
             $table->string('avatar')->nullable(); // Profile picture
-            $table->enum('User Role',['System Administrator',
+            $table->enum('User_Role',['System Administrator',
             'Director','IP Manager','TTBDO Personnel','Inventor','UP Official'])->default('TTBDO Personnel');
-            $table->string('College Unit')->default('TTBDO');
-            $table->string('Institute / Department')->default('TTBDO');
+            $table->string('College_Unit')->default('TTBDO');
+            $table->string('Institute_Department')->default('TTBDO');
             $table->string('Affiliation')->default('FACULTY');
         });
 

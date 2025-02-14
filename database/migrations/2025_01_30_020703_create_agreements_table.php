@@ -18,16 +18,16 @@ return new class extends Migration
             ->references('PartnerID')
             ->on('partners');
 
-            $table->date('Contract Effectivity Date');
-            $table->date('Contract Expiry Date');
-            $table->string('Agreement Title');
-            $table->enum('Agreement Type',['MOA','Licensing Agreement','MOU',
+            $table->date('Contract_Effectivity Date');
+            $table->date('Contract_Expiry Date');
+            $table->string('Agreement_Title');
+            $table->enum('Agreement_Type',['MOA','Licensing Agreement','MOU',
             'MTA','RCA','Supplemental Licensing Agreement','Manufacturing Agreement',
             'Franchise License']);
-            $table->enum('Agreement Status',['Draft','Inforced','Expired','Cancelled']);
-            $table->enum('License Fee Status',['Paid','Unpaid','Waived']);
-            $table->date('Contract Notary Date');
-            $table->date('Royalty Deadline');
+            $table->enum('Agreement_Status',['Draft','Inforced','Expired','Cancelled']);
+            $table->enum('License_Fee_Status',['Paid','Unpaid','Waived']);
+            $table->date('Contract_Notary_Date');
+            $table->date('Royalty_Deadline');
 
             $table->timestamps();
         });

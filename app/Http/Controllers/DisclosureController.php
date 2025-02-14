@@ -10,7 +10,9 @@ use Illuminate\Http\Request;
 use App\Models\Disclosure;
 use App\Models\IAC;
 use App\Models\Patents;
-
+use App\Models\Copyright;
+use App\Models\Trademark;
+use Illuminate\Support\Facades\DB;
 class DisclosureController extends Controller{
     public function discPage(){
         if (Auth::user()) {
@@ -25,6 +27,7 @@ class DisclosureController extends Controller{
             $disclosure = new Disclosure();
             $disclosure->user_id = Auth::user()->id;
             $disclosure->Disclosure_Title = request('DisclosureTitle');
+            $disclosure->Type_of_IP = request('Type_of_IP');
             $disclosure->Short_Description = request('DisclosureDesc');
             $disclosure->Funding_Sources = request('Funding_Sources');
             $disclosure->Year_Submitted = date('Y');
@@ -81,11 +84,35 @@ class DisclosureController extends Controller{
             $patent->TRL = request('TRL');
             $patent->save();
 
+            $TradeMark = new Trademark();
+            $TradeMark->TrademarkID = $disclosure->uniqueIds;
+            $TradeMark->DiscID = $disclosure->id;
+            $TradeMark->Type_of_Mark = request('Type_of_Mark');
+            $TradeMark->Description_of_the_Mark = request('Description_of_the_Mark');
+            $TradeMark->Disclaimer = request('Disclaimer');
+            $TradeMark->Translation_Transliteration = request('Translation_Transliteration');
+            $TradeMark->Collective_Mark = request('Collective_Mark');
+            $TradeMark->Word_to_be_Trademarked = request('Word_to_be_Trademarked');
+            $TradeMark->Mark_has_any_color = request('Mark_has_any_color');
+            $TradeMark->Colors_of_the_Mark = request('Colors_of_the_Mark');
+            $TradeMark->List_of_specific_goods_services = request('List_of_specific_goods_services');
+            $TradeMark->Purpose_of_the_Mark = request('Purpose_of_the_Mark');
+            $TradeMark->Future_Potential_Applications = request('Future_Potential_Applications');
+            $TradeMark->NICE_Classification = request('NICE_Classification');
+            $TradeMark->save();
+
+            $Copyright = new Copyright();
+            $Copyright->CopyrightID = $disclosure->uniqueIds;
+            $Copyright->DiscID = $disclosure->id;
+            $Copyright->Date_of_Creation_of_Copyrightable_Material = request('Date_of_Creation_of_Copyrightable_Material');
+            $Copyright->Place_of_Creation = request('Place_of_Creation');
+            $Copyright->save();
+
+
             return redirect('/');
         } else{
             return redirect('/login'); // Redirect to login page or homepage
         }
-
             // $request->validate([
             //     'DisclosureTitle' => 'required|string',
             // ]);
@@ -106,37 +133,37 @@ class DisclosureController extends Controller{
 
     public function viewDisclosure($id){
         if (Auth::user()) {
-            $disclosure = Disclosure::find($id);
+            $disclosures = Disclosure::find($id);
             return view('/general/disclosureList')->with('disclosures',$disclosures);
         } else{
             return redirect('/login'); // Redirect to login page or homepage
         }
     }
 
-    public function updateDisclosure(Request $request, $id){
-        if (Auth::user()) {
-            $disclosure = Disclosure::find($id);
+    // public function updateDisclosure(Request $request, $id){
+    //     if (Auth::user()) {
+    //         $disclosures = Disclosure::find($id);
 
 
-            return view('/general/disclosureList')->with('disclosures',$disclosures);
-        } else{
-            return redirect('/login'); // Redirect to login page or homepage
-        }
-    }
+    //         return view('/general/disclosureList')->with('disclosures',$disclosures);
+    //     } else{
+    //         return redirect('/login'); // Redirect to login page or homepage
+    //     }
+    // }
 
 
-    public function DestroyDisclosure($id){
-        if (Auth::user()) {
-            echo("here");
-            // $disclosure = Disclosure::find($id);
-            // $disclosure->delete();
-            // <--------- DELETE IAC LINKS HERE -------------->
-            // <--------- DELETE IP LINKS HERE -------------->
-            // <--------- DELETE Partners LINKS HERE -------------->
-            // <--------- DELETE Agreements LINKS HERE -------------->
-            // return redirect('/ViewAllDisclosures');
-        } else{
-            return redirect('/login'); // Redirect to login page or homepage
-        }
-    }
+    // public function DestroyDisclosure($id){
+    //     if (Auth::user()) {
+    //         echo("here");
+    //         // $disclosure = Disclosure::find($id);
+    //         // $disclosure->delete();
+    //         // <--------- DELETE IAC LINKS HERE -------------->
+    //         // <--------- DELETE IP LINKS HERE -------------->
+    //         // <--------- DELETE Partners LINKS HERE -------------->
+    //         // <--------- DELETE Agreements LINKS HERE -------------->
+    //         // return redirect('/ViewAllDisclosures');
+    //     } else{
+    //         return redirect('/login'); // Redirect to login page or homepage
+    //     }
+    // }
 }

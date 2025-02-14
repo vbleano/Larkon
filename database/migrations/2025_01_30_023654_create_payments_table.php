@@ -19,12 +19,12 @@ return new class extends Migration
             ->on('partners');
 
             $table->integer('Amount');
-            $table->date('Payment Date');
-            $table->date('Payment Due Date');
-            $table->integer('Official Receipt Number');
-            $table->date('Date Receipt of OR');
-            $table->date('OR Date');
-            $table->string('Sales Period');
+            $table->date('Payment_Date');
+            $table->date('Payment_Due_Date');
+            $table->integer('Official_Receipt_Number');
+            $table->date('Date_Receipt_of_OR');
+            $table->date('OR_Date');
+            $table->string('Sales_Period');
             $table->mediumText('Description');
             $table->timestamps();
         });

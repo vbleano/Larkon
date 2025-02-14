@@ -18,8 +18,8 @@ return new class extends Migration
             ->references('DiscID')
             ->on('disclosures');
 
-            $table->date('Date of creation of copyrightable material');
-            $table->string('place of creation');
+            $table->date('Date_of_Creation_of_Copyrightable_Material');
+            $table->string('Place_of_Creation');
             $table->timestamps();
         });
     }
