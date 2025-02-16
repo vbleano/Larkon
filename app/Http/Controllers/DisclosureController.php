@@ -10,7 +10,9 @@ use Illuminate\Http\Request;
 use App\Models\Disclosure;
 use App\Models\IAC;
 use App\Models\Patents;
-
+use App\Models\Copyright;
+use App\Models\Trademark;
+use Illuminate\Support\Facades\DB;
 class DisclosureController extends Controller{
     public function discPage(){
         if (Auth::user()) {
@@ -66,7 +68,7 @@ class DisclosureController extends Controller{
             if($disclosure->Type_of_IP == 1 || $disclosure->Type_of_IP == 2 || $disclosure->Type_of_IP == 3){
                 $patent = new Patents();
                 $patent->PatentID = $disclosure->uniqueIds;
-                $patent->DiscID = $disclosure ->discId;
+                $patent->DiscID = $disclosure ->id;
                 $patent->Type_of_Invention = request('Type_of_Invention');
                 $patent->Purpose_of_Invention = request('Purpose_of_Invention');
                 $patent->Background_of_Invention = request('Background_of_Invention');
@@ -85,7 +87,7 @@ class DisclosureController extends Controller{
             } elseif($disclosure->Type_of_IP == 4){
 
             } elseif($disclosure->Type_of_IP == 5){
-
+                
             }else{
                 return Redirect::back();
             }
@@ -94,7 +96,6 @@ class DisclosureController extends Controller{
         } else{
             return redirect('/login'); // Redirect to login page or homepage
         }
-
             // $request->validate([
             //     'DisclosureTitle' => 'required|string',
             // ]);
@@ -115,37 +116,36 @@ class DisclosureController extends Controller{
 
     public function viewDisclosure($id){
         if (Auth::user()) {
-            $disclosure = Disclosure::find($id);
+            $disclosures = Disclosure::find($id);
             return view('/general/disclosureList')->with('disclosures',$disclosures);
         } else{
             return redirect('/login'); // Redirect to login page or homepage
         }
     }
 
-    public function updateDisclosure(Request $request, $id){
-        if (Auth::user()) {
-            $disclosure = Disclosure::find($id);
+    // public function updateDisclosure(Request $request, $id){
+    //     if (Auth::user()) {
+    //         $disclosures = Disclosure::find($id);
 
 
-            return view('/general/disclosureList')->with('disclosures',$disclosures);
-        } else{
-            return redirect('/login'); // Redirect to login page or homepage
-        }
-    }
+    //         return view('/general/disclosureList')->with('disclosures',$disclosures);
+    //     } else{
+    //         return redirect('/login'); // Redirect to login page or homepage
+    //     }
+    // }
 
 
     public function DestroyDisclosure($id){
         if (Auth::user()) {
             $disclosure = Disclosure::where('discId','=',$id)->get();
             $disclosure->each->delete();
-            #cascade delete...
             // <--------- DELETE IAC LINKS HERE -------------->
             // <--------- DELETE IP LINKS HERE -------------->
             // <--------- DELETE Partners LINKS HERE -------------->
             // <--------- DELETE Agreements LINKS HERE -------------->
-            return redirect('/ViewAllDisclosures');
+            // return redirect('/ViewAllDisclosures');
         } else{
-            return redirect::route('/login'); // Redirect to login page or homepage
+            return redirect('/login'); // Redirect to login page or homepage
         }
     }
 }

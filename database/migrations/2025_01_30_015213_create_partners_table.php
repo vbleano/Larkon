@@ -19,12 +19,12 @@ return new class extends Migration
             ->on('disclosures');
 
 
-            $table->string('Company Name');
-            $table->string('Contact Person');
-            $table->integer('Contact Number');
-            $table->string('Contact Email');
-            $table->string('Brand Name');
-        
+            $table->string('Company_Name');
+            $table->string('Contact_Person');
+            $table->integer('Contact_Number');
+            $table->string('Contact_Email');
+            $table->string('Brand_Name');
+
         });
     }
 

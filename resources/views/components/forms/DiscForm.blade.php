@@ -58,7 +58,7 @@
                                                 <div class="mb-3">
                                                     <label for="basicUser" class="form-label">Type of IP</label>
                                                     <div class="w-80 mb-3">
-                                                        <select id="Type_of_IP" name="Type_of_IP" class="form-control" id="choices-multiple-remove-button" data-choices data-choices-removeItem name="choices-multiple-remove-button" multiple>
+                                                        <select name="Type_of_IP" class="form-control" id="choices-multiple-remove-button" data-choices data-choices-removeItem name="choices-multiple-remove-button" multiple>
                                                             <option value="1" selected>Patent</option>
                                                             <option value="2">Utility Model</option>
                                                             <option value="3">Industrial Design</option>
@@ -163,6 +163,7 @@
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="basicCountry">Country of Citizenship</label>
                                                             <select id="basicCountry" name="Country_of_Citizenship" class="form-select">
+                                                                <option value="" disabled selected>Select a Country of Citizenship</option>
                                                                 <option value="Philippines">Philippines</option>
                                                                 <option value="United States">United States</option>
                                                                 <option value="Canada">Canada</option>
@@ -183,104 +184,105 @@
                                                     <div class="col-md-4">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="lastName">Last Name</label>
-                                                            <input required type="text" id="lastName" name="Last_Name" class="form-control" placeholder="Doe">
+                                                            <input type="text" id="lastName" name="Last_Name" class="form-control" placeholder="Doe">
                                                         </div>
                                                     </div><!-- end col -->
                                                     <div class="col-md-4">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="firstName">First Name</label>
-                                                            <input required type="text" id="firstName" name="First_Name" class="form-control" placeholder="John">
+                                                            <input type="text" id="firstName" name="First_Name" class="form-control" placeholder="John">
                                                         </div>
                                                     </div><!-- end col -->
                                                     <div class="col-md-4">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="middleName">Middle Initial</label>
-                                                            <input required type="text" id="middleName" name="Middle_Name" class="form-control" placeholder="Z">
+                                                            <input type="text" id="middleName" name="Middle_Name" class="form-control" placeholder="Z">
                                                         </div>
                                                     </div><!-- end col -->
                                                     <div class="col-md-12">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="homeAddress">Home Address</label>
-                                                            <input required type="text" id="homeAddress" name="Home_Address" class="form-control" placeholder="Santa Mesa Manila">
+                                                            <input type="text" id="homeAddress" name="Home_Address" class="form-control" placeholder="Santa Mesa Manila">
                                                         </div>
                                                     </div><!-- end col -->
                                                     <div class="col-md-12">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="workAddress">Work Address</label>
-                                                            <input required type="text" id="workAddress" name="Work_Address" class="form-control" placeholder="Taft Avenue Ermita">
+                                                            <input type="text" id="workAddress" name="Work_Address" class="form-control" placeholder="Taft Avenue Ermita">
                                                         </div>
                                                     </div><!-- end col -->
                                                     <div class="col-md-4">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="constituentUniversity">Constituent University</label>
-                                                            <input required type="text" id="constituentUniversity" name="Constituent_University" class="form-control" placeholder="UP - Manila">
+                                                            <input type="text" id="constituentUniversity" name="Constituent_University" class="form-control" placeholder="UP - Manila">
                                                         </div>
                                                     </div><!-- end col -->
                                                     <div class="col-md-4">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="department">Department / Institute</label>
-                                                            <input required type="text" id="department" name="Department_Institute" class="form-control" placeholder="TTBDO">
+                                                            <input type="text" id="department" name="Department_Institute" class="form-control" placeholder="TTBDO">
                                                         </div>
                                                     </div><!-- end col -->
                                                     <div class="col-md-4">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="collegeUnit">College Unit</label>
-                                                            <input required type="text" id="collegeUnit" name="College_Unit" class="form-control" placeholder="College of Nursing">
+                                                            <input type="text" id="collegeUnit" name="College_Unit" class="form-control" placeholder="College of Nursing">
                                                         </div>
                                                     </div><!-- end col -->
 
                                                     <div class="col-md-4">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="salutatory">Salutatory</label>
-                                                            <input required type="text" id="salutatory" name="Salutatory" class="form-control" placeholder="Job Title">
+                                                            <input type="text" id="salutatory" name="Salutatory" class="form-control" placeholder="Job Title">
                                                         </div>
                                                     </div><!-- end col -->
                                                     <div class="col-md-4">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="mainAffiliation">Main Affiliation</label>
-                                                            <input required type="text" id="mainAffiliation" name="Main_Affiliation" class="form-control" placeholder="Main Affiliation">
+                                                            <input type="text" id="mainAffiliation" name="Main_Affiliation" class="form-control" placeholder="Main Affiliation">
                                                         </div>
                                                     </div><!-- end col -->
                                                     <div class="col-md-4">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="subAffiliation">Sub Affiliation</label>
-                                                            <input required type="number" id="subAffiliation" name="Sub_Affiliation" class="form-control" placeholder="Sub Affiliation">
+                                                            <input type="number" id="subAffiliation" name="Sub_Affiliation" class="form-control" placeholder="Sub Affiliation">
                                                         </div>
                                                     </div><!-- end col -->
                                                     <div class="col-md-6">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="nature">Nature of Contribution</label>
-                                                            <input required type="text" id="nature" name="Nature_of_Contribution_Role" class="form-control" placeholder="Role in the Invention">
+                                                            <input type="text" id="nature" name="Nature_of_Contribution_Role" class="form-control" placeholder="Role in the Invention">
                                                         </div>
                                                     </div><!-- end col -->
                                                     <div class="col-md-6">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="percent">Percentage of Contribution</label>
-                                                            <input required type="text" id="percent" name="Percentage_of_Contribution" class="form-control" placeholder="Rate 1 - 100">
+                                                            <input type="text" id="percent" name="Percentage_of_Contribution" class="form-control" placeholder="Rate 1 - 100">
                                                         </div>
                                                     </div><!-- end col -->
                                                      <div class="col-md-6">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="emailAddress">Email Address</label>
-                                                            <input required type="email" id="emailAddress" name="Email_Address" class="form-control" placeholder="@up.edu.ph">
+                                                            <input type="email" id="emailAddress" name="Email_Address" class="form-control" placeholder="@up.edu.ph">
                                                         </div>
                                                     </div><!-- end col -->
                                                     <div class="col-md-6">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="phoneNumber">Phone Number</label>
-                                                            <input required type="number" id="phoneNumber" name="Contact_Number" class="form-control" placeholder="09*********">
+                                                            <input type="number" id="phoneNumber" name="Contact_Number" class="form-control" placeholder="09*********">
                                                         </div>
                                                     </div><!--end col -->
                                                     <div class="col-md-6">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="birthday">Date of Birth</label>
-                                                            <input required type="date" id="birthday" name="Date_of_Birth" class="form-control" placeholder="">
+                                                            <input type="date" id="birthday" name="Date_of_Birth" class="form-control" placeholder="">
                                                         </div>
                                                     </div><!-- end col -->
                                                     <div class="col-md-6">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="gender">Gender / Sex</label>
-                                                            <select id="gender" name="Gender_Sex" class="form-select">
+                                                            <select id="gender" name="Gender_Sex" class="form-select" >
+                                                                <option value="" disabled selected>Select a Gender / Sex</option>
                                                                 <option value="1">Male</option>
                                                                 <option value="2">Female</option>
                                                                 <option value="3">Non-Binary</option>
@@ -292,6 +294,7 @@
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="civilStatus">Civil Status</label>
                                                             <select id="civilStatus" name="Civil_Status" class="form-select">
+                                                                <option value="" disabled selected>Select a Civil Status</option>
                                                                 <option value="1">Single</option>
                                                                 <option value="2">Married</option>
                                                                 <option value="3">Divorced</option>
@@ -303,7 +306,7 @@
                                                     <div class="col-md-6">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="nationality">Nationality</label>
-                                                            <input required type="text" id="nationality" name="Nationality" class="form-control" placeholder="Filipino">
+                                                            <input type="text" id="nationality" name="Nationality" class="form-control" placeholder="Filipino">
                                                         </div>
                                                     </div><!-- end col -->
                                                 </div><!-- end row -->
@@ -333,6 +336,7 @@
                                                                         <label for="choices-text-remove-button" class="form-label text-muted">Type/s of Invention</label>
                                                                         {{-- <input class="form-control" id="choices-text-remove-button" name="Type of Invention" data-choices data-choices-limit="10" data-choices-removeItem type="text" /> --}}
                                                                         <select id="choices-text-remove-button" name="Type_of_Invention" class="form-select">
+                                                                            <option value="" disabled selected>Select a Type of Invention</option>
                                                                             <option value="1">Material/Compound</option>
                                                                             <option value="2">Process/Method</option>
                                                                             <option value="3">Software/System</option>
@@ -346,51 +350,52 @@
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
                                                                     <label for="basicUser" class="form-label">Purpose of Invention</label>
-                                                                    <input required name="Purpose_of_Invention" id="basicUser" type="text" class="form-control" placeholder="">
+                                                                    <input name="Purpose_of_Invention" id="basicUser" type="text" class="form-control" placeholder="">
                                                                 </div>
                                                             </div> <!-- end col -->
-                                                            <div class="col-lg-6">
+                                                            <div class="col-lg-12">
                                                                 <div class="mb-3">
                                                                     <label for="basicUser" class="form-label">Key / Novel features of the Invention</label>
-                                                                    <input required name="Key_Novel_Features" id="basicUser" type="text" class="form-control" placeholder="">
+                                                                    <input name="Key_Novel_Features" id="basicUser" type="text" class="form-control" placeholder="">
                                                                 </div>
                                                             </div> <!-- end col -->
                                                             <div class="col-lg-12">
                                                                 <div class="mb-3">
                                                                     <label for="example-textarea" class="form-label"> Background of the Invention</label>
-                                                                    <textarea required name="Background_of_Invention" class="form-control" id="example-textarea" rows="5"></textarea>
+                                                                    <textarea name="Background_of_Invention" class="form-control" id="example-textarea" rows="5"></textarea>
                                                                 </div>
                                                             </div> <!-- end col -->
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
                                                                     <label for="basicUser" class="form-label">Application or Use of Invention</label>
-                                                                    <input required name="Application_use_of_Invention" id="basicUser" type="text" class="form-control" placeholder="">
+                                                                    <input name="Application_use_of_Invention" id="basicUser" type="text" class="form-control" placeholder="">
                                                                 </div>
                                                             </div> <!-- end col -->
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
                                                                     <label for="basicUser" class="form-label"> Stage of Development </label>
-                                                                    <input required name="Stage_of_Development" id="basicUser" type="text" class="form-control" placeholder="Technology Status (Prototyping, clinical trial phase 1, etc.)">
+                                                                    <input name="Stage_of_Development" id="basicUser" type="text" class="form-control" placeholder="Technology Status (Prototyping, clinical trial phase 1, etc.)">
                                                                 </div>
                                                             </div> <!-- end col -->
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
                                                                     <label for="basicUser" class="form-label"> R&D Cost </label>
-                                                                    <input required name="R_and_D_Cost" id="basicUser" type="text" class="form-control" placeholder="Please provide a range (e.g. 1000 - 2000)">
+                                                                    <input name="R_and_D_Cost" id="basicUser" type="text" class="form-control" placeholder="Please provide a range (e.g. 1000 - 2000)">
                                                                 </div>
                                                             </div> <!-- end col -->
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
                                                                     <div>
                                                                         <label for="choices-text-remove-button" class="form-label text-muted">Potential Partners</label>
-                                                                        <input required name="Potential_Partners" class="form-control" id="choices-text-remove-button" data-choices data-choices-limit="10" data-choices-removeItem type="text" />
+                                                                        <input name="Potential_Partners" class="form-control" id="choices-text-remove-button" data-choices data-choices-limit="10" data-choices-removeItem type="text" />
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
-                                                                <label for="example-select" class="form-label">TRL</label>
+                                                                <label for="example-select" class="form-label">Technology Readiness Level (TRL)</label>
                                                                     <select name="TRL" class="form-select" id="example-select">
+                                                                        <option value="" disabled selected>Select a TRL </option>
                                                                         <option value="1">1</option>
                                                                         <option value="2">2</option>
                                                                         <option value="3">3</option>
@@ -523,23 +528,187 @@
                                                     </button>
                                                 </h2>
                                                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                                    <div class="accordion-body">
-                                                        <div class="col-lg-6">
-                                                                <div class="mb-3">
-                                                                <label for="example-select" class="form-label">TRL</label>
-                                                                <select class="form-select" id="example-select">
-                                                                    <option>1</option>
-                                                                    <option>2</option>
-                                                                    <option>3</option>
-                                                                    <option>4</option>
-                                                                    <option>5</option>
-                                                                    <option>6</option>
-                                                                    <option>7</option>
-                                                                    <option>8</option>
-                                                                    <option>9</option>
+                                                    <div class="accordion-body row ">
+                                                        <div class="col-md-6">
+                                                            <div class="mb-3">
+                                                                <label class="form-label fw-bold" for="homeAddress">Type of Mark</label>
+                                                                <select class="form-select" id="example-select" name="Type_of_Mark">
+                                                                    <option value="" disabled selected>Select Type of Mark</option>
+                                                                    <option value="1">Word Mark</option>
+                                                                    <option value="2">Figurative Mark</option>
+                                                                    <option value="3">Figurative with Word Mark</option>
+                                                                    <option value="4">3D Mark</option>
+                                                                    <option value="5">Stamped or Marked container of good</option>
                                                                 </select>
                                                             </div>
-                                                        </div>
+                                                        </div><!-- end col -->
+                                                        <div class="col-md-6">
+                                                            <div class="mb-3">
+                                                                <label class="form-label fw-bold" for="Description">Decription of the Mark</label>
+                                                                <input type="text" id="Description" name="Description_of_the_Mark" class="form-control" placeholder="required">
+                                                            </div>
+                                                        </div><!-- end col -->
+                                                        <div class="col-md-12">
+                                                            <div class="mb-3">
+                                                                <label class="form-label fw-bold" for="Disclaimer">Disclaimer (Explanation)</label>
+                                                                <input type="text" id="Disclaimer" name="Disclaimer" class="form-control" placeholder="">
+                                                            </div>
+                                                        </div><!-- end col -->
+                                                        <div class="col-md-12">
+                                                            <div class="mb-3">
+                                                                <label class="form-label fw-bold" for="translate">Translation or Transliteration</label>
+                                                                <input type="text" id="translate" name="Translation_Transliteration" class="form-control" placeholder="required">
+                                                            </div>
+                                                        </div><!-- end col -->
+                                                        <div class="col-md-6">
+                                                            <div class="mb-3">
+                                                                <label class="form-label fw-bold">Collective Mark</label>
+                                                                <div class="form-check">
+                                                                    <input type="radio" id="Collective_Mark_Yes" name="Collective_Mark" class="form-check-input" value="1">
+                                                                    <label class="form-check-label" for="Collective_Mark_Yes">Yes</label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input type="radio" id="Collective_Mark_No" name="Collective_Mark" class="form-check-input" value="0">
+                                                                    <label class="form-check-label" for="Collective_Mark_No">No</label>
+                                                                </div>
+                                                            </div>
+                                                        </div><!-- end col -->
+                                                        <div class="col-md-6">
+                                                            <div class="mb-3">
+                                                                <label class="form-label fw-bold" for="WordToBe">Word to be Trademarked</label>
+                                                                <input required type="text" id="WordToBe" name="Word_to_be_Trademarked" class="form-control" placeholder="required">
+                                                            </div>
+                                                        </div><!-- end col -->
+                                                        <div class="col-md-6">
+                                                            <div class="mb-3">
+                                                                <label class="form-label fw-bold">Does your Trademark have any Color?</label>
+                                                                <div class="form-check">
+                                                                    <input type="radio" id="Mark_has_any_color_Yes" name="Mark_has_any_color" class="form-check-input" value="1" >
+                                                                    <label class="form-check-label" for="Mark_has_any_color_Yes">Yes</label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input type="radio" id="Mark_has_any_color_No" name="Mark_has_any_color" class="form-check-input" value="0" >
+                                                                    <label class="form-check-label" for="Mark_has_any_color_No">No</label>
+                                                                </div>
+                                                            </div>
+                                                        </div><!-- end col -->
+
+                                                        <div class="col-md-6">
+                                                            <div class="mb-3">
+                                                                <label class="form-label fw-bold" for="Colors">Color/s of the Mark</label>
+                                                                <input type="text" id="Colors" name="Colors_of_the_Mark" class="form-control" placeholder="">
+                                                            </div>
+                                                        </div><!-- end col -->
+                                                        <div class="col-md-12">
+                                                            <div class="mb-3">
+                                                                <label class="form-label fw-bold" for="Purpose">Purpose of the Mark</label>
+                                                                <input type="text" id="Purpose" name="Purpose_of_the_Mark" class="form-control" placeholder="required">
+                                                            </div>
+                                                        </div><!-- end col -->
+                                                        <div class="col-md-12">
+                                                            <div class="mb-3">
+                                                                <label class="form-label fw-bold" for="Goods_Services">List of specific Goods/Services</label>
+                                                                <input type="text" id="Goods_Services" name="List_of_specific_goods_services" class="form-control" placeholder="required">
+                                                            </div>
+                                                        </div><!-- end col -->
+
+                                                        <div class="col-md-12">
+                                                            <div class="mb-3">
+                                                                <label class="form-label fw-bold" for="Future">Future/Potential Application</label>
+                                                                <input type="text" id="Future" name="Future_Potential_Applications" class="form-control" placeholder="">
+                                                            </div>
+                                                        </div><!-- end col -->
+                                                        <div class="col-md-6">
+                                                            <div class="mb-3">
+                                                                <label class="form-label fw-bold" for="NICE_Classifications">NICE Classifications</label>
+                                                                <select id="NICE_Classifications" name="NICE_Classification" class="form-control form-select" >
+                                                                    <option value="1">Class 1</option>
+                                                                    <option value="2">Class 2</option>
+                                                                    <option value="3">Class 3</option>
+                                                                    <option value="4">Class 4</option>
+                                                                    <option value="5">Class 5</option>
+                                                                    <option value="6">Class 6</option>
+                                                                    <option value="7">Class 7</option>
+                                                                    <option value="8">Class 8</option>
+                                                                    <option value="9">Class 9</option>
+                                                                    <option value="10">Class 10</option>
+                                                                    <option value="11">Class 11</option>
+                                                                    <option value="12">Class 12</option>
+                                                                    <option value="13">Class 13</option>
+                                                                    <option value="14">Class 14</option>
+                                                                    <option value="15">Class 15</option>
+                                                                    <option value="16">Class 16</option>
+                                                                    <option value="17">Class 17</option>
+                                                                    <option value="18">Class 18</option>
+                                                                    <option value="19">Class 19</option>
+                                                                    <option value="20">Class 20</option>
+                                                                    <option value="21">Class 21</option>
+                                                                    <option value="22">Class 22</option>
+                                                                    <option value="23">Class 23</option>
+                                                                    <option value="24">Class 24</option>
+                                                                    <option value="25">Class 25</option>
+                                                                    <option value="26">Class 26</option>
+                                                                    <option value="27">Class 27</option>
+                                                                    <option value="28">Class 28</option>
+                                                                    <option value="29">Class 29</option>
+                                                                    <option value="30">Class 30</option>
+                                                                    <option value="31">Class 31</option>
+                                                                    <option value="32">Class 32</option>
+                                                                    <option value="33">Class 33</option>
+                                                                    <option value="34">Class 34</option>
+                                                                    <option value="35">Class 35</option>
+                                                                    <option value="36">Class 36</option>
+                                                                    <option value="37">Class 37</option>
+                                                                    <option value="38">Class 38</option>
+                                                                    <option value="39">Class 39</option>
+                                                                    <option value="40">Class 40</option>
+                                                                    <option value="41">Class 41</option>
+                                                                    <option value="42">Class 42</option>
+                                                                    <option value="43">Class 43</option>
+                                                                    <option value="44">Class 44</option>
+                                                                    <option value="45">Class 45</option>
+                                                                </select>
+                                                            </div>
+                                                        </div><!-- end col -->
+
+                                                        <div class="col-lg-12">
+                                                            <div class="mb-3">
+                                                                <div class="mb-3">
+                                                                    <label class="form-check-label fw-bold" for="customCheck3">Copy of the Mark</label>
+                                                                </div>
+                                                                <div class="dropzone">
+                                                                    <div class="fallback">
+                                                                        <input name="file" type="file" multiple="multiple">
+                                                                    </div>
+                                                                    <div class="dz-message needsclick">
+                                                                        <i class="h1 bx bx-cloud-upload"></i>
+                                                                        <h3>Drop files here or click to upload.</h3>
+                                                                        <span class="text-muted fs-13">
+                                                                            Selected / Dropped files are <strong>not</strong> actually uploaded.
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div> <!-- end col -->
+                                                        <div class="col-lg-12">
+                                                            <div class="mb-3">
+                                                                <div class="mb-3">
+                                                                    <label class="form-check-label fw-bold" for="customCheck3">Proof of Actual Use</label>
+                                                                </div>
+                                                                <div class="dropzone">
+                                                                    <div class="fallback">
+                                                                        <input name="file" type="file" multiple="multiple">
+                                                                    </div>
+                                                                    <div class="dz-message needsclick">
+                                                                        <i class="h1 bx bx-cloud-upload"></i>
+                                                                        <h3>Drop files here or click to upload.</h3>
+                                                                        <span class="text-muted fs-13">
+                                                                            Selected / Dropped files are <strong>not</strong> actually uploaded.
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div> <!-- end col -->
                                                     </div>
                                                 </div>
                                             </div>
@@ -551,7 +720,76 @@
                                                     </button>
                                                 </h2>
                                                 <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                                    <div class="accordion-body">
+                                                    <div class="accordion-body row">
+                                                        <div class="col-lg-6">
+                                                            <div class="mb-3">
+                                                                <label for="example-select" class="form-label">Date of Creation of the Copyrightable Material</label>
+                                                                <input name="Date_of_Creation_of_Copyrightable_Material" type="date" id="basic-datepicker" class="form-control" placeholder="Basic datepicker">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <div class="mb-3">
+                                                                <label for="example-select" class="form-label">Place of Creation</label>
+                                                                <input name="Place_of_Creation" type="text" id="basic-datepicker" class="form-control" placeholder="UP - Manila">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-12">
+                                                            <div class="mb-3">
+                                                                <div class="mb-3">
+                                                                    <label class="form-check-label fw-bold" for="customCheck3">Publication</label>
+                                                                </div>
+                                                                <div class="dropzone">
+                                                                    <div class="fallback">
+                                                                        <input name="file" type="file" multiple="multiple">
+                                                                    </div>
+                                                                    <div class="dz-message needsclick">
+                                                                        <i class="h1 bx bx-cloud-upload"></i>
+                                                                        <h3>Drop files here or click to upload.</h3>
+                                                                        <span class="text-muted fs-13">
+                                                                            Selected / Dropped files are <strong>not</strong> actually uploaded.
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div> <!-- end col -->
+                                                        <div class="col-lg-12">
+                                                            <div class="mb-3">
+                                                                <div class="mb-3">
+                                                                    <label class="form-check-label fw-bold" for="customCheck3">Copy of the Copyrightable Material</label>
+                                                                </div>
+                                                                <div class="dropzone">
+                                                                    <div class="fallback">
+                                                                        <input name="file" type="file" multiple="multiple">
+                                                                    </div>
+                                                                    <div class="dz-message needsclick">
+                                                                        <i class="h1 bx bx-cloud-upload"></i>
+                                                                        <h3>Drop files here or click to upload.</h3>
+                                                                        <span class="text-muted fs-13">
+                                                                            Selected / Dropped files are <strong>not</strong> actually uploaded.
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div> <!-- end col -->
+                                                        <div class="col-lg-12">
+                                                            <div class="mb-3">
+                                                                <div class="mb-3">
+                                                                    <label class="form-check-label fw-bold" for="customCheck3">ID's of Authors</label>
+                                                                </div>
+                                                                <div class="dropzone">
+                                                                    <div class="fallback">
+                                                                        <input name="file" type="file" multiple="multiple">
+                                                                    </div>
+                                                                    <div class="dz-message needsclick">
+                                                                        <i class="h1 bx bx-cloud-upload"></i>
+                                                                        <h3>Drop files here or click to upload.</h3>
+                                                                        <span class="text-muted fs-13">
+                                                                            Selected / Dropped files are <strong>not</strong> actually uploaded.
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div> <!-- end col -->
                                                     </div>
                                                 </div>
                                             </div>
