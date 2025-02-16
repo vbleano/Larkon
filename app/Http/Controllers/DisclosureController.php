@@ -40,7 +40,7 @@ class DisclosureController extends Controller{
 
             $IAC = new IAC();
             $IAC->IACid = $disclosure->uniqueIds;
-            $IAC->DiscID = $disclosure->id;
+            $IAC->DiscID = $disclosure->discId;
             $IAC->Country_of_Citizenship = request('Country_of_Citizenship');
             $IAC->Last_Name = request('Last_Name');
             $IAC->First_Name = request('First_Name');
@@ -66,7 +66,7 @@ class DisclosureController extends Controller{
             if($disclosure->Type_of_IP == 1 || $disclosure->Type_of_IP == 2 || $disclosure->Type_of_IP == 3){
                 $patent = new Patents();
                 $patent->PatentID = $disclosure->uniqueIds;
-                $patent->DiscID = $disclosure ->id;
+                $patent->DiscID = $disclosure ->discId;
                 $patent->Type_of_Invention = request('Type_of_Invention');
                 $patent->Purpose_of_Invention = request('Purpose_of_Invention');
                 $patent->Background_of_Invention = request('Background_of_Invention');
@@ -85,7 +85,7 @@ class DisclosureController extends Controller{
             } elseif($disclosure->Type_of_IP == 4){
 
             } elseif($disclosure->Type_of_IP == 5){
-                
+
             }else{
                 return Redirect::back();
             }
@@ -138,6 +138,7 @@ class DisclosureController extends Controller{
         if (Auth::user()) {
             $disclosure = Disclosure::where('discId','=',$id)->get();
             $disclosure->each->delete();
+            #cascade delete...
             // <--------- DELETE IAC LINKS HERE -------------->
             // <--------- DELETE IP LINKS HERE -------------->
             // <--------- DELETE Partners LINKS HERE -------------->
