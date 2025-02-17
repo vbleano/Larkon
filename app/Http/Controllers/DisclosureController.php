@@ -27,32 +27,30 @@ class DisclosureController extends Controller{
 
     public function validateDisc(Request $request){
         if(Auth::user()){
-            
+            dd(request('Plan_To_Commercialize'));
            $request->validate([
-            
                 'DisclosureTitle' => 'required|string|max:255',
-                'Type_of_IP' => 'required|in:1,2,3,4,5',
                 'DisclosureDesc' => 'required|string',
                 'Funding_Sources' => 'required|string',
                 'University_Facilities' => 'required|string',
-                'Plan_To_Commercialize' => 'nullable'
+                'Plan_To_Commercialize' => 'nullable|boolean'
            ]);
+           dd('here');
            
            $disclosure = Disclosure::create([
                 'user_id' => Auth::user()->id,
                 'Disclosure_Title' => $request->input('DisclosureTitle'),
-                'Type_of_IP' => $request->input('Type_of_IP'),
-                'Short_Description' => $request->input('DisclosureDesc'),
-                'Funding_Sources' => $request->input('Funding_Sources'),
+                'Type_of_IP' => $requst->input('Type_if_IP'),
+                'Short_Description' => $requst->input('DisclosureDesc'),
+                'Funding_Sources' => $requst->input('Funding_Sources'),
                 'Year_Submitted' => date('Y'),
                 'Month_Submitted' => date('M'),
                 'Date_Submitted' => date('d'),
                 'Status' => '1',
                 'Plan_To_Commercialize' => $request->Plan_to_Commercialize == true ? 1:0,
-                'University_Facilities' => $request->input('University_Facilities'),
+                'University_Facilities' => $requst->input('University_Facilities'),
 
            ]);
-           
         }else{
             return redirect('/login'); // Redirect to login page or homepage
         }
@@ -90,9 +88,7 @@ class DisclosureController extends Controller{
             }
 
             return redirect('/');
-        } else{
-            return redirect('/login'); // Redirect to login page or homepage
-        }
+
             // $request->validate([
             //     'DisclosureTitle' => 'required|string',
             // ]);
@@ -134,8 +130,9 @@ class DisclosureController extends Controller{
 
     public function DestroyDisclosure($id){
         if (Auth::user()) {
-            $disclosure = Disclosure::where('discId','=',$id)->get();
-            $disclosure->each->delete();
+            echo("here");
+            // $disclosure = Disclosure::find($id);
+            // $disclosure->delete();
             // <--------- DELETE IAC LINKS HERE -------------->
             // <--------- DELETE IP LINKS HERE -------------->
             // <--------- DELETE Partners LINKS HERE -------------->
