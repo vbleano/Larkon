@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('copyrights', function (Blueprint $table) {
             $table->increments('Copyright ID');
-            $table->unsignedInteger('DiscID')->nullable;
-            $table->foreign ('DiscID')
-            ->references('DiscID')
+            $table->unsignedInteger('discID')->nullable;
+            $table->foreign ('discID')
+            ->references('discID')
             ->on('disclosures');
 
             $table->date('Date_of_Creation_of_Copyrightable_Material');

@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Disclosure extends Model
 {
     use HasFactory, Notifiable;
-    protected $primaryKey = 'discId';
+    protected $primaryKey = 'discID';
     /**
      * The attributes that are mass assignable.
      *

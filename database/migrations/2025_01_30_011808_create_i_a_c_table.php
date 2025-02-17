@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('i_a_c_s', function (Blueprint $table) {
             $table->increments('IACId');
-            $table->unsignedInteger('DiscID')->nullable;
-            $table->foreign ('DiscID')
-            ->references('DiscID')
+            $table->unsignedInteger('discID')->nullable;
+            $table->foreign ('discID')
+            ->references('discID')
             ->on('disclosures');
 
             $table->string('Country_of_Citizenship');
