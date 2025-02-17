@@ -51,7 +51,7 @@
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
                                                     <label for="basicUser" class="form-label">Disclosure Title</label>
-                                                    <input id="DisclosureTitle" type="text" name="DisclosureTitle" class="form-control" placeholder="Enter Disclosure Title">
+                                                    <input id="DisclosureTitle" type="text" name="Disclosure_Title" class="form-control" placeholder="Enter Disclosure Title">
                                                 </div>
                                             </div> <!-- end col -->
                                             <div class="col-lg-6">
