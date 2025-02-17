@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('patents', function (Blueprint $table) {
             $table->increments('PatentID');
-            $table->unsignedInteger('DiscID')->nullable;
-            $table->foreign ('DiscID')
-            ->references('DiscID')
+            $table->unsignedInteger('discID')->nullable;
+            $table->foreign ('discID')
+            ->references('discID')
             ->on('disclosures');
 
             $table->enum('Type_of_Invention',['Material/Compound','Process/Method',

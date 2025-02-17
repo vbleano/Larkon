@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('partners', function (Blueprint $table) {
             $table->increments('PartnerID');
-            $table->unsignedInteger('DiscID')->nullable;
-            $table->foreign ('DiscID')
-            ->references('DiscID')
+            $table->unsignedInteger('discID')->nullable;
+            $table->foreign ('discID')
+            ->references('discID')
             ->on('disclosures');
 
 
