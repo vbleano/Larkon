@@ -19,16 +19,17 @@ class Disclosure extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'Disclosure Title',
-        'Short Description',
-        'Type of IP',
-        'Funding Sources',
-        'Year Submitted',
-        'Date Submitted',
-        'Month Submitted',
+        'user_id',
+        'Disclosure_Title',
+        'Short_Description',
+        'Type_of_IP',
+        'Funding_Sources',
+        'Year_Submitted',
+        'Date_Submitted',
+        'Month_Submitted',
         'Status',
-        'Plan to Commercialize',
-        'University facilities and equipments used'
+        'Plan_To_Commercialize',
+        'University_Facilities'
     ];
 
     // /**

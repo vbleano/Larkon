@@ -13,6 +13,9 @@ use App\Models\Patents;
 use App\Models\Copyright;
 use App\Models\Trademark;
 use Illuminate\Support\Facades\DB;
+use App\Enum\Type_of_IP;
+use App\Http\Controllers\Rule;
+
 class DisclosureController extends Controller{
     public function discPage(){
         if (Auth::user()) {
@@ -31,7 +34,7 @@ class DisclosureController extends Controller{
             'University_Facilities' => 'required|string',
             'Plan_To_Commercialize' => 'nullable|boolean'
         ]);
-        Disclosure::create(attributes: [
+        Disclosure::create([
             'DisclosureTitle' => $request -> Disclosure_Title,
             'DisclosureDesc' => $request -> Short_Description,
             'Funding_Sources' => $request -> Funding_Sources,
