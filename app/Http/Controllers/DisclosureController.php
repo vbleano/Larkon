@@ -58,59 +58,6 @@ class DisclosureController extends Controller{
         }
     }
 
-    public function CreateDisclosure(Request $request){
-        if (Auth::user()) {
-            
-            
-            // $disclosure = new Disclosure();
-            // $disclosure->user_id = Auth::user()->id;
-            // $disclosure->Disclosure_Title = request('DisclosureTitle');
-            // $disclosure->Type_of_IP = request('Type_of_IP');
-            // $disclosure->Short_Description = request('DisclosureDesc');
-            // $disclosure->Funding_Sources = request('Funding_Sources');
-            // $disclosure->Year_Submitted = date('Y');
-            // $disclosure->Month_Submitted = date('M');
-            // $disclosure->Date_Submitted = date('d');
-            // $disclosure->Status = 1;
-            // if($disclosure->Plan_To_Commercialize == null){
-            //     $disclosure->Plan_To_Commercialize = 0;
-            // } else { $disclosure->Plan_To_Commercialize = 1; }
-            // $disclosure->University_Facilities = request('University_Facilities');
-            // $disclosure->save();
-
-            if($disclosure->Type_of_IP == 1 || $disclosure->Type_of_IP == 2 || $disclosure->Type_of_IP == 3){
-                
-                
-            } elseif($disclosure->Type_of_IP == 4){
-
-            } elseif($disclosure->Type_of_IP == 5){
-                
-            }else{
-                return Redirect::back();
-            }
-
-            return redirect('/');
-        } else{
-            return redirect('/login'); // Redirect to login page or homepage
-        }
-            // $request->validate([
-            //     'DisclosureTitle' => 'required|string',
-            // ]);
-
-
-
-            // return redirect()->back()->with('success', 'Profile saved successfully!');
-    }
-
-    public function viewAllDisclosures(){
-        if (Auth::user()) {
-            $disclosures = Disclosure::all();
-            return view('/general/disclosureList')->with('disclosures',$disclosures);
-        } else{
-            return redirect('/login'); // Redirect to login page or homepage
-        }
-    }
-
     public function viewDisclosure($id){
         if (Auth::user()) {
             $disclosures = Disclosure::find($id);
