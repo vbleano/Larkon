@@ -103,67 +103,67 @@ class DisclosureController extends Controller{
         }
     }
 
-    public function CreateDisclosure(Request $request){
-        $validatedDisclosure = $request->validate([
-            //Disclosure
-            'DisclosureTitle' => 'required|string|max:255',
-            'DisclosureDesc' => 'required|string',
-            'Funding_Sources' => 'required|string',
-            'University_Facilities' => 'required|string',
-            'Plan_To_Commercialize' => 'nullable|boolean'
-        ]);
-        Disclosure::create([
-            'DisclosureTitle' => $request -> Disclosure_Title,
-            'DisclosureDesc' => $request -> Short_Description,
-            'Funding_Sources' => $request -> Funding_Sources,
-            'Plan_To_Commercialize' => $request->Plan_to_Commercialize == true ? 1:0,
-            'University_Facilities' => $request -> University_Facilities,
-        ]);
-        $validatedIAC = $request->validate([
-            //IAC
-            'Country_of_Citizenship' => 'required|string|max:255',
-            'Last_Name' => 'required|string|max:255',
-            'First_Name' => 'required|string|max:255',
-            'Middle_Name' => 'nullable|string|max:255',
-            'Email_Address' => 'required|email|max:255',
-            'Date_of_Birth' => 'required|date',
-            'Home_Address' => 'required|string|max:255',
-            'Work_Address' => 'required|string|max:255',
-            'Salutatory' => 'required|string|max:50',
-            'Main_Affiliation' => 'required|string|max:255',
-            'Sub_Affiliation' => 'nullable|string|max:255',
-            'Constituent_University' => 'required|string|max:255',
-            'College_Unit' => 'required|string|max:255',
-            'Department_Institute' => 'required|string|max:255', // Fixed typo
-            'Contact_Number' => 'required|integer|max:11', // Fixed validation
-            'Nature_of_Contribution' => 'required|string|max:255',
-            'Percentage_of_Contribution' => 'required|integer|min:0|max:100', // Fixed range
-            'Civil_Status' => 'required|in:Single,Married,Divorced,Separated,Widowed', // Fixed enum issue
-            'Gender_Sex' => 'required|in:Male,Female,Non_binary,Prefer_not_to_say', // Fixed name & validation
-            'Nationality' => 'required|string|max:255',
-        ]);
-            IAC::create([
-                'Country_of_Citizenship' => $request->Country_of_Citizenship,
-                'Last_Name' => $request->Last_Name,
-                'First_Name' => $request->First_Name,
-                'Middle_Name' => $request->Middle_Name,
-                'Email_Address' => $request->Email_Address,
-                'Date_of_Birth' => $request->Date_of_Birth,
-                'Home_Address' => $request->Home_Address,
-                'Work_Address' => $request->Work_Address,
-                'Salutatory' => $request->Salutatory,
-                'Main_Affiliation' => $request->Main_Affiliation,
-                'Sub_Affiliation' => $request->Sub_Affiliation,
-                'Constituent_University' => $request->Constituent_University,
-                'College_Unit' => $request->College_Unit,
-                'Department_Institute' => $request->Department_Institute,
-                'Contact_Number' => $request->Contact_Number,
-                'Nature_of_Contribution' => $request->Nature_of_Contribution,
-                'Percentage_of_Contribution' => $request->Percentage_of_Contribution,
-                'Civil_Status' => $request->Civil_Status,
-                'Gender_Sex' => $request->Gender_Sex,
-                'Nationality' => $request->Nationality,
-            ]);
+    // public function CreateDisclosure(Request $request){
+    //     $validatedDisclosure = $request->validate([
+    //         //Disclosure
+    //         'DisclosureTitle' => 'required|string|max:255',
+    //         'DisclosureDesc' => 'required|string',
+    //         'Funding_Sources' => 'required|string',
+    //         'University_Facilities' => 'required|string',
+    //         'Plan_To_Commercialize' => 'nullable|boolean'
+    //     ]);
+    //     Disclosure::create([
+    //         'DisclosureTitle' => $request -> Disclosure_Title,
+    //         'DisclosureDesc' => $request -> Short_Description,
+    //         'Funding_Sources' => $request -> Funding_Sources,
+    //         'Plan_To_Commercialize' => $request->Plan_to_Commercialize == true ? 1:0,
+    //         'University_Facilities' => $request -> University_Facilities,
+    //     ]);
+    //     $validatedIAC = $request->validate([
+    //         //IAC
+    //         'Country_of_Citizenship' => 'required|string|max:255',
+    //         'Last_Name' => 'required|string|max:255',
+    //         'First_Name' => 'required|string|max:255',
+    //         'Middle_Name' => 'nullable|string|max:255',
+    //         'Email_Address' => 'required|email|max:255',
+    //         'Date_of_Birth' => 'required|date',
+    //         'Home_Address' => 'required|string|max:255',
+    //         'Work_Address' => 'required|string|max:255',
+    //         'Salutatory' => 'required|string|max:50',
+    //         'Main_Affiliation' => 'required|string|max:255',
+    //         'Sub_Affiliation' => 'nullable|string|max:255',
+    //         'Constituent_University' => 'required|string|max:255',
+    //         'College_Unit' => 'required|string|max:255',
+    //         'Department_Institute' => 'required|string|max:255', // Fixed typo
+    //         'Contact_Number' => 'required|integer|max:11', // Fixed validation
+    //         'Nature_of_Contribution' => 'required|string|max:255',
+    //         'Percentage_of_Contribution' => 'required|integer|min:0|max:100', // Fixed range
+    //         'Civil_Status' => 'required|in:Single,Married,Divorced,Separated,Widowed', // Fixed enum issue
+    //         'Gender_Sex' => 'required|in:Male,Female,Non_binary,Prefer_not_to_say', // Fixed name & validation
+    //         'Nationality' => 'required|string|max:255',
+    //     ]);
+    //         IAC::create([
+    //             'Country_of_Citizenship' => $request->Country_of_Citizenship,
+    //             'Last_Name' => $request->Last_Name,
+    //             'First_Name' => $request->First_Name,
+    //             'Middle_Name' => $request->Middle_Name,
+    //             'Email_Address' => $request->Email_Address,
+    //             'Date_of_Birth' => $request->Date_of_Birth,
+    //             'Home_Address' => $request->Home_Address,
+    //             'Work_Address' => $request->Work_Address,
+    //             'Salutatory' => $request->Salutatory,
+    //             'Main_Affiliation' => $request->Main_Affiliation,
+    //             'Sub_Affiliation' => $request->Sub_Affiliation,
+    //             'Constituent_University' => $request->Constituent_University,
+    //             'College_Unit' => $request->College_Unit,
+    //             'Department_Institute' => $request->Department_Institute,
+    //             'Contact_Number' => $request->Contact_Number,
+    //             'Nature_of_Contribution' => $request->Nature_of_Contribution,
+    //             'Percentage_of_Contribution' => $request->Percentage_of_Contribution,
+    //             'Civil_Status' => $request->Civil_Status,
+    //             'Gender_Sex' => $request->Gender_Sex,
+    //             'Nationality' => $request->Nationality,
+    //         ]);
         // $validatedPatent = $request->validate([
         // //Patent/UM/ID
         //     'Type_of_Invention' => 'required|in:Material/Compound,Process/Method,Software/System,Device,Herbal Medicine/Drugs,Industrial Design',
@@ -240,8 +240,8 @@ class DisclosureController extends Controller{
         //     'Place_of_Creation' => $request->Place_of_Creation,
         // ]);
 
-            return redirect()->back();
-    }
+    //         return redirect()->back();
+    // }
 
     public function viewAllDisclosures(){
         if (Auth::user()) {
