@@ -251,7 +251,7 @@
                                                     <div class="col-md-6">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="nature">Nature of Contribution</label>
-                                                            <input type="text" id="nature" name="Nature_of_Contribution_Role" class="form-control" placeholder="Role in the Invention">
+                                                            <input type="text" id="nature" name="Nature_of_Contribution" class="form-control" placeholder="Role in the Invention">
                                                         </div>
                                                     </div><!-- end col -->
                                                     <div class="col-md-6">
@@ -283,10 +283,10 @@
                                                             <label class="form-label fw-bold" for="gender">Gender / Sex</label>
                                                             <select id="gender" name="Gender_Sex" class="form-select" >
                                                                 <option value="" disabled selected>Select a Gender / Sex</option>
-                                                                <option value="1">Male</option>
-                                                                <option value="2">Female</option>
-                                                                <option value="3">Non-Binary</option>
-                                                                <option value="4">Refuse to Say</option>
+                                                                <option value="Male">Male</option>
+                                                                <option value="Female">Female</option>
+                                                                <option value="Non_binary">Non-Binary</option>
+                                                                <option value="Prefer_not_to_say">Refuse to Say</option>
                                                             </select>
                                                         </div>
                                                     </div><!-- end col -->
@@ -295,11 +295,11 @@
                                                             <label class="form-label fw-bold" for="civilStatus">Civil Status</label>
                                                             <select id="civilStatus" name="Civil_Status" class="form-select">
                                                                 <option value="" disabled selected>Select a Civil Status</option>
-                                                                <option value="1">Single</option>
-                                                                <option value="2">Married</option>
-                                                                <option value="3">Divorced</option>
-                                                                <option value="4">Widowed</option>
-                                                                <option value="5">Separated</option>
+                                                                <option value="Single">Single</option>
+                                                                <option value="Married">Married</option>
+                                                                <option value="Divorced">Divorced</option>
+                                                                <option value="Separated">Separated</option>
+                                                                <option value="Widowed">Widowed</option>
                                                             </select>
                                                         </div>
                                                     </div><!-- end col -->

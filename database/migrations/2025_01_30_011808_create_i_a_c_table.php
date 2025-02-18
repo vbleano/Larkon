@@ -31,8 +31,8 @@ return new class extends Migration
             $table->string('Constituent_University');
             $table->string('College_Unit');
             $table->string('Department_Institute');
-            $table->string('Contact_Number');
-            $table->string('Nature_of_Contribution_Role');
+            $table->integer('Contact_Number');
+            $table->string('Nature_of_Contribution');
             $table->integer('Percentage_of_Contribution');
             $table->dateTime('Date_of_Birth');
             $table->enum('Civil_Status', ['Single','Married','Divorced','Separated','Widowed']);
