@@ -93,7 +93,7 @@
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
                                                     <div class="form-check form-check-inline">
-                                                        <input name="Plan_To_Commercialize" type="checkbox" class="form-check-input" id="customCheck3">
+                                                        <input name="Plan_To_Commercialize" type="checkbox" class="form-check-input" id="customCheck3" value=true>
                                                         <label class="form-check-label" for="customCheck3">Check this if you plan to Commercialize</label>
                                                     </div>
                                                 </div>

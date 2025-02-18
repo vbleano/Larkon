@@ -11,13 +11,14 @@ use Illuminate\Notifications\Notifiable;
 class IAC extends Model
 {
     use HasFactory, Notifiable;
-
+    protected $primaryKey = 'IACid';
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
     protected $fillable = [
+            'discID',
             'Country_of_Citizenship' ,
             'Last_Name',
             'First_Name',

@@ -29,14 +29,19 @@ Route::group(['prefix' => '/', 'middleware' => 'auth'], function () {
     return view('dashboards/index'); // or your homepage view
     })->name('index');
 
+    // <--------- GET --------->
     Route::get('/DiscForm', [DisclosureController::class, 'discPage'])->name('discForm');
-    Route::post('/CreateDisclosure', [DisclosureController::class, 'validateDisc'])->name('CreateDisclosure');
     Route::get('/ViewAllDisclosures',[DisclosureController::class, 'viewAllDisclosures'])->name('ViewAllDisclosures');
     Route::get('/disclosure/{id}/destroy', [DisclosureController::class, 'DestroyDisclosure'])->name('DestroyDisclosure');
+    Route::get('/profile', [UserController::class, 'profile'])->middleware('auth');
+    Route::get('/alerts', [DisclosureController::class, 'test'])->name('test');
+
+    // <--------- POSTS --------->
+    Route::post('/CreateDisclosure', [DisclosureController::class, 'validateDisc'])->name('CreateDisclosure');
+    Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
+
 });
 
-Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
-Route::get('/profile', [UserController::class, 'profile'])->middleware('auth');
 
 
 
