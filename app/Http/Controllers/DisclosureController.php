@@ -140,7 +140,7 @@ class DisclosureController extends Controller{
 
     public function test(){
         if (Auth::user()) {
-            return view('/components/ui/avatar');
+            return view('/components/ui/modal');
         }else{
             return redirect('/login'); // Redirect to login page or homepage
         }
@@ -154,7 +154,7 @@ class DisclosureController extends Controller{
             // <--------- DELETE IP LINKS HERE -------------->
             // <--------- DELETE Partners LINKS HERE -------------->
             // <--------- DELETE Agreements LINKS HERE -------------->
-            // return redirect('/ViewAllDisclosures');
+            return redirect()->back();
         } else{
             return redirect('/login'); // Redirect to login page or homepage
         }

@@ -34,7 +34,7 @@ Route::group(['prefix' => '/', 'middleware' => 'auth'], function () {
     Route::get('/ViewAllDisclosures',[DisclosureController::class, 'viewAllDisclosures'])->name('ViewAllDisclosures');
     Route::get('/disclosure/{id}/destroy', [DisclosureController::class, 'DestroyDisclosure'])->name('DestroyDisclosure');
     Route::get('/profile', [UserController::class, 'profile'])->middleware('auth');
-    Route::get('/alerts', [DisclosureController::class, 'test'])->name('test');
+    Route::get('/test', [DisclosureController::class, 'test'])->name('test');
 
     // <--------- POSTS --------->
     Route::post('/CreateDisclosure', [DisclosureController::class, 'validateDisc'])->name('CreateDisclosure');
