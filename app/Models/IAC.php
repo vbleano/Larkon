@@ -61,4 +61,7 @@ class IAC extends Model
             'Funding Sources' => 'array'
         ];
     }
+    public function IAC(){
+        return $this->hasOne(Disclosure::class, 'DiscID', 'IACid');
+    }
 }

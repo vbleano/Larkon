@@ -58,4 +58,7 @@ class Disclosure extends Model
     public function files(){
         return $this->hasMany(Files::class, 'DiscID', 'fileId');
     }
+    public function IAC(){
+        return $this->hasMany(IAC::class, 'DiscID', 'IACid');
+    }
 }
