@@ -73,7 +73,6 @@ class DisclosureController extends Controller{
             'Gender_Sex' => 'required|in:Male,Female,Non_binary,Prefer_not_to_say', // Fixed name & validation
             'Nationality' => 'required|string|max:255',
         ]);
-            dd($request->Nature_of_Contribution);
 
         IAC::create([
             'discID' => $disclosure->discID,

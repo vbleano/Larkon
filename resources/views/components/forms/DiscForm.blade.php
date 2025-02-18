@@ -220,7 +220,7 @@
                                                     <div class="col-md-4">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="department">Department / Institute</label>
-                                                            <input type="text" id="department" name="Department_Institute" class="form-control" placeholder="TTBDO">
+                                                            <input type="text" id="Department_Institute" name="Department_Institute" class="form-control" placeholder="TTBDO">
                                                         </div>
                                                     </div><!-- end col -->
                                                     <div class="col-md-4">
@@ -251,7 +251,7 @@
                                                     <div class="col-md-6">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="nature">Nature of Contribution</label>
-                                                            <input type="text" id="nature" name="Nature_of_Contribution" class="form-control" placeholder="Role in the Invention">
+                                                            <input type="text" id="Nature_of_Contribution" name="Nature_of_Contribution" class="form-control" placeholder="Role in the Invention">
                                                         </div>
                                                     </div><!-- end col -->
                                                     <div class="col-md-6">
