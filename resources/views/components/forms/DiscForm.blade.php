@@ -558,7 +558,7 @@
                                     {{$error}}
                                 </li>
                             @endforeach
-                            </div>    
+                            </div>
                         @endif
                     </div>
                 </div> <!-- end card body -->

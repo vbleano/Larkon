@@ -12,9 +12,9 @@ use App\Models\IAC;
 use App\Models\Patents;
 use App\Models\Copyright;
 use App\Models\Trademark;
-use Illuminate\Support\Facades\DB;
 use App\Enum\Type_of_IP;
-use App\Http\Controllers\Rule;
+use Illuminate\Support\Facades\DB;
+
 
 class DisclosureController extends Controller{
     public function discPage(){
@@ -65,12 +65,12 @@ class DisclosureController extends Controller{
             'Sub_Affiliation' => 'nullable|string|max:255',
             'Constituent_University' => 'required|string|max:255',
             'College_Unit' => 'required|string|max:255',
-            'Department_Institute' => 'required|string|max:255',
-            'Contact_Number' => 'required|max:13',
-            'Nature_of_Contribution_Role' => 'required|string|max:255',
-            'Percentage_of_Contribution' => 'required|integer|min:0|max:100',
-            'Civil_Status' => 'required|in:1,2,3,4,5',
-            'Gender_Sex' => 'required|in:1,2,3,4',
+            'Department_Institute' => 'required|string|max:255', // Fixed typo
+            'Contact_Number' => 'required|integer|max:11', // Fixed validation
+            'Nature_of_Contribution' => 'required|string|max:255',
+            'Percentage_of_Contribution' => 'required|integer|min:0|max:100', // Fixed range
+            'Civil_Status' => 'required|in:single,married,divorced,widowed', // Fixed enum issue
+            'Gender_Sex' => 'required|in:Male,Female,Non-binary,Prefer not to say', // Fixed name & validation
             'Nationality' => 'required|string|max:255',
         ]);
         
@@ -124,7 +124,7 @@ class DisclosureController extends Controller{
             return redirect('/login'); // Redirect to login page or homepage
         }
     }
-    
+
 
     // public function updateDisclosure(Request $request, $id){
     //     if (Auth::user()) {

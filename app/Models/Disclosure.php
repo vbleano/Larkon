@@ -20,6 +20,7 @@ class Disclosure extends Model
      */
     protected $fillable = [
         'user_id',
+        'discID',
         'Disclosure_Title',
         'Short_Description',
         'Type_of_IP',

@@ -18,7 +18,6 @@ class IAC extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-            'discID',
             'Country_of_Citizenship' ,
             'Last_Name',
             'First_Name',
@@ -33,7 +32,7 @@ class IAC extends Model
             'College_Unit',
             'Deparment/Institutions',
             'Contact_Number',
-            'Nature_of_Contribution',
+            'Nature_of_Contribution_Role',
             'Percentage_of_Contribution',
             'Date_of_Birth',
             'Civil_Status',
