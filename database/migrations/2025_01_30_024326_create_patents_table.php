@@ -18,8 +18,8 @@ return new class extends Migration
             ->references('discID')
             ->on('disclosures');
 
-            $table->enum('Type_of_Invention',['Material/Compound','Process/Method',
-            'Software/System','Device','Herbal Medicine/Drugs','Industrial Design']);
+            $table->enum('Type_of_Invention',['Material_Compound','Process_Method',
+            'Software_System','Device','Herbal_Medicine_Drugs','Industrial_Design']);
             $table->mediumText('Purpose_of_Invention');
             $table->mediumText('Background_of_Invention');
             $table->mediumText('Potential_Partners');

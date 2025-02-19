@@ -61,4 +61,7 @@ class Disclosure extends Model
     public function IAC(){
         return $this->hasMany(IAC::class, 'DiscID', 'IACid');
     }
+    public function patents(){
+        return $this->hasMany(Patents::class, 'DiscID', 'PatentID');
+    }
 }
