@@ -252,10 +252,23 @@ class DisclosureController extends Controller{
         }
     }
 
-    public function viewDisclosure($id){
+    public function viewSpecificDisclosurePage($id){
         if (Auth::user()) {
-            $disclosures = Disclosure::find($id);
-            return view('/general/disclosureList')->with('disclosures',$disclosures);
+            $disclosure = Disclosure::find($id);
+            $IAC = IAC::where('discID','=',$id)->first();
+            
+            return view('/general/disclosureDetails')->with(['disclosure'=>$disclosure,'IAC'=>$IAC]);
+        } else{
+            return redirect('/login'); // Redirect to login page or homepage
+        }
+    }
+
+    public function viewIAC($id){
+        if (Auth::user()) {
+            $IAC = IAC::find($id);
+            $disclosure = Disclosure::where('discID','=',$id)->first();
+            
+            return view('/general/IACDetails')->with(['disclosure'=>$disclosure,'IAC'=>$IAC]);
         } else{
             return redirect('/login'); // Redirect to login page or homepage
         }
@@ -275,7 +288,7 @@ class DisclosureController extends Controller{
 
     public function test(){
         if (Auth::user()) {
-            return view('/components/ui/modal');
+            return view('/users/pages-profile');
         }else{
             return redirect('/login'); // Redirect to login page or homepage
         }
@@ -283,8 +296,11 @@ class DisclosureController extends Controller{
 
     public function DestroyDisclosure($id){
         if (Auth::user()) {
+            dd($id);
             $disclosure = Disclosure::find($id);
+            dd($disclosure->discID);
             $disclosure->delete();
+            
             // <--------- DELETE IAC LINKS HERE -------------->
             // <--------- DELETE IP LINKS HERE -------------->
             // <--------- DELETE Partners LINKS HERE -------------->

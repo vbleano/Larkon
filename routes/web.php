@@ -33,6 +33,8 @@ Route::group(['prefix' => '/', 'middleware' => 'auth'], function () {
     Route::get('/DiscForm', [DisclosureController::class, 'discPage'])->name('discForm');
     Route::get('/ViewAllDisclosures',[DisclosureController::class, 'viewAllDisclosures'])->name('ViewAllDisclosures');
     Route::get('/disclosure/{id}/destroy', [DisclosureController::class, 'DestroyDisclosure'])->name('DestroyDisclosure');
+    Route::get('/disclosure/{id}/details', [DisclosureController::class, 'viewSpecificDisclosurePage'])->name('viewSpecificDisclosurePage');
+    Route::get('/IAC/{id}/details', [DisclosureController::class, 'viewIAC'])->name('viewIAC');
     Route::get('/profile', [UserController::class, 'profile'])->middleware('auth');
     Route::get('/test', [DisclosureController::class, 'test'])->name('test');
 
