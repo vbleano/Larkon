@@ -72,31 +72,70 @@ class DisclosureController extends Controller{
             'Civil_Status' => 'required|in:Single,Married,Divorced,Separated,Widowed', // Fixed enum issue
             'Gender_Sex' => 'required|in:Male,Female,Non_binary,Prefer_not_to_say', // Fixed name & validation
             'Nationality' => 'required|string|max:255',
-        ]);
+            ]);
 
-        IAC::create([
-            'discID' => $disclosure->discID,
-            'Country_of_Citizenship' => $request->Country_of_Citizenship,
-            'Last_Name' => $request->Last_Name,
-            'First_Name' => $request->First_Name,
-            'Middle_Name' => $request->Middle_Name,
-            'Email_Address' => $request->Email_Address,
-            'Date_of_Birth' => $request->Date_of_Birth,
-            'Home_Address' => $request->Home_Address,
-            'Work_Address' => $request->Work_Address,
-            'Salutatory' => $request->Salutatory,
-            'Main_Affiliation' => $request->Main_Affiliation,
-            'Sub_Affiliation' => $request->Sub_Affiliation,
-            'Constituent_University' => $request->Constituent_University,
-            'College_Unit' => $request->College_Unit,
-            'Department_Institute' => $request->Department_Institute,
-            'Contact_Number' => $request->Contact_Number,
-            'Nature_of_Contribution' => $request->Nature_of_Contribution,
-            'Percentage_of_Contribution' => $request->Percentage_of_Contribution,
-            'Civil_Status' => $request->Civil_Status,
-            'Gender_Sex' => $request->Gender_Sex,
-            'Nationality' => $request->Nationality,
-        ]);
+            IAC::create([
+                'discID' => $disclosure->discID,
+                'Country_of_Citizenship' => $request->Country_of_Citizenship,
+                'Last_Name' => $request->Last_Name,
+                'First_Name' => $request->First_Name,
+                'Middle_Name' => $request->Middle_Name,
+                'Email_Address' => $request->Email_Address,
+                'Date_of_Birth' => $request->Date_of_Birth,
+                'Home_Address' => $request->Home_Address,
+                'Work_Address' => $request->Work_Address,
+                'Salutatory' => $request->Salutatory,
+                'Main_Affiliation' => $request->Main_Affiliation,
+                'Sub_Affiliation' => $request->Sub_Affiliation,
+                'Constituent_University' => $request->Constituent_University,
+                'College_Unit' => $request->College_Unit,
+                'Department_Institute' => $request->Department_Institute,
+                'Contact_Number' => $request->Contact_Number,
+                'Nature_of_Contribution' => $request->Nature_of_Contribution,
+                'Percentage_of_Contribution' => $request->Percentage_of_Contribution,
+                'Civil_Status' => $request->Civil_Status,
+                'Gender_Sex' => $request->Gender_Sex,
+                'Nationality' => $request->Nationality,
+            ]);
+
+            if($request->has('Patent_Application') == true){
+                $validatedPatent = $request->validate([
+                    'Type_of_Invention' => 'required|in:Material_Compound,Process_Method,Software_System,Device,Herbal_Medicine_Drugs,Industrial_Design',
+                    'Purpose_of_Invention' => 'required|string',
+                    'Background_of_Invention' => 'required|string',
+                    'Potential_Partners' => 'nullable|string',
+                    'Key_Novel_Features' => 'required|string|max:255',
+                    'Application_use_of_Invention' => 'required|string|max:255',
+                    'Stage_of_Development' => 'required|string|max:255',
+                    'R_and_D_Cost' => 'required|string|max:255',
+                    'Past_Oral_Disclosure' => 'nullable|string',
+                    'Past_Oral_Disclosure_Date' => 'nullable|date',
+                    'Past_Written_Disclosure' => 'nullable|string',
+                    'Past_Written_Disclosure_Date' => 'nullable|date',
+                    'Future_Disclosure_Plans' => 'required|string',
+                    'TRL' => 'required|in:TRL1,TRL2,TRL3,TRL4,TRL5,TRL6,TRL7,TRL8,TRL9',
+                ]);
+                Patents::create([
+                    'discID' => $disclosure->discID,
+                    'Type_of_Invention' => $request->Type_of_Invention,
+                    'Purpose_of_Invention'=> $request->Purpose_of_Invention,
+                    'Background_of_Invention'=> $request->Background_of_Invention,
+                    'Potential_Partners' => $request->Potential_Partners,
+                    'Key_Novel_Features' => $request-> Key_Novel_Features,
+                    'Application_use_of_Invention' => $request->Application_use_of_Invention,
+                    'Stage_of_Development' => $request->Stage_of_Development,
+                    'R_and_D_Cost' => $request->R_and_D_Cost,
+                    'Past_Oral_Disclosure' => $request->Past_Oral_Disclosure,
+                    'Past_Oral_Disclosure_Date' => $request->Past_Oral_Disclosure_Date,
+                    'Past_Written_Disclosure' => $request->Past_Written_Disclosure,
+                    'Past_Written_Disclosure_Date' => $request->Past_Written_Disclosure_Date,
+                    'Future_Disclosure_Plans' => $request->Future_Disclosure_Plans,
+                    'TRL' => $request->TRL,
+            ]);
+            }else{
+                return redirect()->back(); // Redirect to login page or homepage
+            }
+
             return redirect()->back();
         } else{
             return redirect('/login'); // Redirect to login page or homepage
@@ -288,7 +327,7 @@ class DisclosureController extends Controller{
 
     public function test(){
         if (Auth::user()) {
-            return view('/users/pages-profile');
+            return view('/components/ui/modal');
         }else{
             return redirect('/login'); // Redirect to login page or homepage
         }

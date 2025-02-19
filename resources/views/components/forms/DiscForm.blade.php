@@ -279,9 +279,30 @@
                                                     <div class="col-md-6">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="percent">Percentage of Contribution</label>
-                                                            <input type="text" id="percent" name="Percentage_of_Contribution" class="form-control" placeholder="Rate 1 - 100">
+                                                            <div class="d-flex align-items-center">
+                                                                <!-- Text Input -->
+                                                                <input type="number" id="percent" name="Percentage_of_Contribution"
+                                                                       class="form-control me-3" placeholder="Rate 1 - 100"
+                                                                       min="1" max="100" value="50" style="width: 80px;"
+                                                                       oninput="syncSlider(this.value)">
+
+                                                                <!-- Slider Input -->
+                                                                <input type="range" id="percent_slider" min="1" max="100" value="50"
+                                                                       class="form-range flex-grow-1" oninput="syncInput(this.value)">
+                                                            </div>
                                                         </div>
-                                                    </div><!-- end col -->
+                                                    </div>
+
+                                                    <script>
+                                                    function syncInput(value) {
+                                                        document.getElementById('percent').value = value;
+                                                    }
+
+                                                    function syncSlider(value) {
+                                                        document.getElementById('percent_slider').value = value;
+                                                    }
+                                                    </script>
+
                                                      <div class="col-md-6">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="emailAddress">Email Address</label>
@@ -345,13 +366,19 @@
                                         <div class="accordion" id="accordionExample">
                                             <div class="accordion-item">
                                                 <h2 class="accordion-header" id="headingOne">
-                                                    <button class="accordion-button fw-medium" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                    <button class="accordion-button fw-medium collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                                                         Patent / Industrial Design / Utility Model
                                                     </button>
                                                 </h2>
-                                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                                     <div class="accordion-body">
                                                         <div class="row">
+                                                            <div class="mb-3">
+                                                                <div class="form-check d-inline-block">
+                                                                    <input name="Patent_Application" type="checkbox" class="form-check-input" id="customCheck1">
+                                                                    <label class="form-check-label text-danger fw-bold" for="customCheck1">CHECK THIS IF YOU ARE APPLYING FOR PATENT PROTECTION</label>
+                                                                </div>
+                                                            </div>
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
                                                                     <div>
@@ -359,12 +386,12 @@
                                                                         {{-- <input class="form-control" id="choices-text-remove-button" name="Type of Invention" data-choices data-choices-limit="10" data-choices-removeItem type="text" /> --}}
                                                                         <select id="choices-text-remove-button" name="Type_of_Invention" class="form-select">
                                                                             <option value="" disabled selected>Select a Type of Invention</option>
-                                                                            <option value="1">Material/Compound</option>
-                                                                            <option value="2">Process/Method</option>
-                                                                            <option value="3">Software/System</option>
-                                                                            <option value="4">Device</option>
-                                                                            <option value="5">Herbal Medicine/Drugs</option>
-                                                                            <option value="6">Industrial Design</option>
+                                                                            <option value="Material_PCompound">Material/Compound</option>
+                                                                            <option value="Process_Method">Process/Method</option>
+                                                                            <option value="Software_System">Software/System</option>
+                                                                            <option value="Device">Device</option>
+                                                                            <option value="Herbal_Medicine_Drugs">Herbal Medicine/Drugs</option>
+                                                                            <option value="Industrial_Design">Industrial Design</option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
@@ -418,15 +445,15 @@
                                                                 <label for="example-select" class="form-label">Technology Readiness Level (TRL)</label>
                                                                     <select name="TRL" class="form-select" id="example-select">
                                                                         <option value="" disabled selected>Select a TRL </option>
-                                                                        <option value="1">1</option>
-                                                                        <option value="2">2</option>
-                                                                        <option value="3">3</option>
-                                                                        <option value="4">4</option>
-                                                                        <option value="5">5</option>
-                                                                        <option value="6">6</option>
-                                                                        <option value="7">7</option>
-                                                                        <option value="8">8</option>
-                                                                        <option value="9">9</option>
+                                                                        <option value="TRL1">TRL1</option>
+                                                                        <option value="TRL2">TRL2</option>
+                                                                        <option value="TRL3">TRL3</option>
+                                                                        <option value="TRL4">TRL4</option>
+                                                                        <option value="TRL5">TRL5</option>
+                                                                        <option value="TRL6">TRL6</option>
+                                                                        <option value="TRL7">TRL7</option>
+                                                                        <option value="TRL8">TRL8</option>
+                                                                        <option value="TRL9">TRL9</option>
                                                                     </select>
                                                                 </div>
                                                             </div>
@@ -543,6 +570,68 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <!-- START of Trademark accordion -->
+                                        <div class="accordion" id="accordionExample">
+                                            <!-- Trademark Accordion Item -->
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingTwo">
+                                                    <button class="accordion-button fw-medium collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                        Trademark
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                                    <div class="accordion-body">
+                                                        <div class="row">
+                                                            <div class="mb-3">
+                                                                <div class="form-check d-inline-block">
+                                                                    <input name="Patent_Application" type="checkbox" class="form-check-input" id="customCheck1">
+                                                                    <label class="form-check-label text-danger fw-bold" for="customCheck1">
+                                                                        CHECK THIS IF YOU ARE APPLYING FOR TRADEMARK PROTECTION
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-6">
+                                                                <div class="mb-3">
+                                                                    <label for="example-select" class="form-label">Past Written Disclosure Date</label>
+                                                                    <input name="Past_Written_Disclosure_Date" type="date" id="basic-datepicker" class="form-control" placeholder="Basic datepicker">
+                                                                </div>
+                                                            </div>
+                                                        </div><!--end row -->
+                                                    </div><!--end accordion body -->
+                                                </div><!--end accordion collapse -->
+                                            </div><!--end accordion item -->
+                                        </div>
+
+                                            <!-- Copyright Accordion Item -->
+                                        <div class="accordion" id="accordionExample">
+                                            <div class="accordion-item ">
+                                                <h2 class="accordion-header" id="headingThree">
+                                                    <button class="accordion-button fw-medium collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                        Copyright
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                                    <div class="accordion-body">
+                                                        <div class="row">
+                                                            <div class="mb-3">
+                                                                <div class="form-check d-inline-block">
+                                                                    <input name="Copyright_Application" type="checkbox" class="form-check-input" id="customCheck2">
+                                                                    <label class="form-check-label text-danger fw-bold" for="customCheck2">
+                                                                        CHECK THIS IF YOU ARE APPLYING FOR COPYRIGHT PROTECTION
+                                                                    </label>
+                                                                </div>
+                                                            </div><!--end col -->
+                                                            <div class="col-lg-6">
+                                                                <div class="mb-3">
+                                                                    <label for="example-select" class="form-label">Past Written Disclosure Date</label>
+                                                                    <input name="Past_Written_Disclosure_Date" type="date" id="basic-datepicker" class="form-control" placeholder="Basic datepicker">
+                                                                </div>
+                                                            </div>
+                                                        </div><!--end row -->
+                                                    </div> <!--end accordion body -->
+                                                </div><!--end accordion collapse -->
+                                            </div><!--end accordion item -->
+                                        </div><!--end accordion -->
                                     </div>
                                 <!---------------------------- END IP FORM   --------------------------->
 
