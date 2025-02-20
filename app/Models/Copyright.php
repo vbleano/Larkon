@@ -11,12 +11,15 @@ class Copyright extends Model
 {
     use HasFactory, Notifiable;
 
+    protected $primaryKey = 'CopyrightID';
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
     protected $fillable = [
+        'discID',
         'Date_of_Creation_of_Copyrightable_Material',
         'Place_of_Creation',
     ];
@@ -41,5 +44,8 @@ class Copyright extends Model
             'email_verified_at' => 'datetime',
             'Funding Sources' => 'array'
         ];
+    }
+    public function copyright(){
+        return $this->hasOne(Patents::class, 'DiscID', 'CopyrightID');
     }
 }

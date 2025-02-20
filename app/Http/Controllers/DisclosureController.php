@@ -33,7 +33,7 @@ class DisclosureController extends Controller{
                 'DisclosureDesc' => 'required|string',
                 'Funding_Sources' => 'required|string',
                 'University_Facilities' => 'required|string',
-                'Plan_To_Commercialize' => 'nullable'
+                'Plan_To_Commercialize' => 'required|boolean'
             ]);
             // <--------------- start disclosure Creation ------------------->
             $disclosure = Disclosure::create([
@@ -46,7 +46,7 @@ class DisclosureController extends Controller{
                 'Month_Submitted' => date('M'),
                 'Date_Submitted' => date('d'),
                 'Status' => '1',
-                'Plan_To_Commercialize' => $request->Plan_to_Commercialize == true ? 1:0,
+                'Plan_To_Commercialize' => $request->Plan_To_Commercialize,
                 'University_Facilities' => $request->input('University_Facilities'),
            ]);
 
@@ -66,7 +66,7 @@ class DisclosureController extends Controller{
             'Constituent_University' => 'required|string|max:255',
             'College_Unit' => 'required|string|max:255',
             'Department_Institute' => 'required|string|max:255', // Fixed typo
-            'Contact_Number' => 'required|string|max:13', // Fixed validation
+            'Contact_Number' => 'required|string|max:11', // Fixed validation
             'Nature_of_Contribution' => 'required|string|max:255',
             'Percentage_of_Contribution' => 'required|integer|min:0|max:100', // Fixed range
             'Civil_Status' => 'required|in:Single,Married,Divorced,Separated,Widowed', // Fixed enum issue
@@ -132,11 +132,51 @@ class DisclosureController extends Controller{
                     'Future_Disclosure_Plans' => $request->Future_Disclosure_Plans,
                     'TRL' => $request->TRL,
             ]);
+            }elseif($request->has('Trademark_Application') == true){
+                $validatedTM = $request->validate([
+                    'Type_of_Mark' => 'required|in:Word_Mark,Figurative_Mark,Figurative_with_Word_Mark,3D_Mark,Stamped_or_Marked_container_of_good',
+                    'Description_of_the_Mark' => 'required|string',
+                    'Disclaimer' => 'nullable|string',
+                    'Translation_Transliteration' => 'required|string|max:255',
+                    'Collective_Mark' => 'required|boolean',
+                    'Word_to_be_Trademarked' => 'required|string|max:255',
+                    'Mark_has_any_color' => 'required|boolean',
+                    'Colors_of_the_Mark' => 'nullable|string|max:255',
+                    'List_of_specific_goods_services' => 'required|string',
+                    'Future_Potential_Applications' => 'nullable|string',
+                    'NICE_Classification' => 'required|in:Class_1,Class_2,Class_3,Class_4,Class_5,Class_6,Class_7,Class_8,Class_9,Class_10,Class_11,
+                                            Class_12,Class_13,Class_14,Class_15,Class_16,Class_17,Class_18,Class_19,Class_20,Class_21,Class_22,Class_23,Class_24,Class_25,
+                                            Class_26,Class_27,Class_28,Class_29,Class_30,Class_31,Class_32,Class_33,Class_34,Class_35,Class_36,Class_37,Class_38,Class_39,
+                                            Class_40,Class_41,Class_42,Class_43,Class_44,Class_45'
+                    ]);
+                Trademark::create([
+                    'discID' => $disclosure->discID,
+                    'Type_of_Mark' => $request->Type_of_Mark,
+                    'Description_of_the_Mark' => $request->Description_of_the_Mark,
+                    'Disclaimer' => $request->Disclaimer,
+                    'Translation_Transliteration' => $request->Translation_Transliteration,
+                    'Collective_Mark' => $request->Collective_Mark,
+                    'Word_to_be_Trademarked' => $request->Word_to_be_Trademarked,
+                    'Mark_has_any_color' => $request->Mark_has_any_color,
+                    'Colors_of_the_Mark' => $request->Colors_of_the_Mark,
+                    'List_of_specific_goods_services' => $request->List_of_specific_goods_services,
+                    'Future_Potential_Applications' => $request->Future_Potential_Applications,
+                    'NICE_Classification' => $request->NICE_Classification,
+                    ]);
+            }else if($request->has('Copyright_Application') == true){
+                $validatedCopyright = $request->validate([
+                    'Date_of_Creation_of_Copyrightable_Material' => 'required|date',
+                    'Place_of_Creation' => 'required|string|max:255',
+                    ]);
+                Copyright::create([
+                    'discID' => $disclosure->discID,
+                    'Date_of_Creation_of_Copyrightable_Material' => $request->Date_of_Creation_of_Copyrightable_Material,
+                    'Place_of_Creation' => $request->Place_of_Creation,
+                    ]);
             }else{
                 return redirect()->back(); // Redirect to login page or homepage
             }
 
-            return redirect()->back();
         } else{
             return redirect('/login'); // Redirect to login page or homepage
         }
@@ -155,7 +195,7 @@ class DisclosureController extends Controller{
         if (Auth::user()) {
             $disclosure = Disclosure::find($id);
             $IAC = IAC::where('discID','=',$id)->first();
-            
+
             return view('/general/disclosureDetails')->with(['disclosure'=>$disclosure,'IAC'=>$IAC]);
         } else{
             return redirect('/login'); // Redirect to login page or homepage
@@ -166,7 +206,7 @@ class DisclosureController extends Controller{
         if (Auth::user()) {
             $IAC = IAC::find($id);
             $disclosure = Disclosure::where('discID','=',$id)->first();
-            
+
             return view('/general/IACDetails')->with(['disclosure'=>$disclosure,'IAC'=>$IAC]);
         } else{
             return redirect('/login'); // Redirect to login page or homepage
@@ -211,7 +251,7 @@ class DisclosureController extends Controller{
 
     public function test(){
         if (Auth::user()) {
-            return view('/support/privacy-policy');
+            return view('/components/ui/modal');
         }else{
             return redirect('/login'); // Redirect to login page or homepage
         }
@@ -221,7 +261,7 @@ class DisclosureController extends Controller{
         if (Auth::user()) {
             $disclosure = Disclosure::find($id);
             $disclosure->delete();
-            
+
             // <--------- DELETE IAC LINKS HERE -------------->
             // <--------- DELETE IP LINKS HERE -------------->
             // <--------- DELETE Partners LINKS HERE -------------->
