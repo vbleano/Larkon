@@ -16,7 +16,8 @@ return new class extends Migration
             $table->unsignedInteger('discID')->nullable;
             $table->foreign ('discID')
             ->references('discID')
-            ->on('disclosures');
+            ->on('disclosures')
+            ->onDelete('cascade');
 
 
             $table->string('Company_Name');

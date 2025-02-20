@@ -16,7 +16,8 @@ return new class extends Migration
             $table->unsignedInteger('discID')->nullable;
             $table->foreign ('discID')
             ->references('discID')
-            ->on('disclosures');
+            ->on('disclosures')
+            ->onDelete('cascade');
 
             $table->date('Date_of_Creation_of_Copyrightable_Material');
             $table->string('Place_of_Creation');

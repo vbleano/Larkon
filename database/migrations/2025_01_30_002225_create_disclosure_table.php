@@ -17,7 +17,8 @@ return new class extends Migration
             $table->unsignedInteger('user_id')->nullable;
             $table->foreign ('user_id')
             ->references('id')
-            ->on('users');
+            ->on('users')
+            ->onDelete('cascade');
 
             $table->string('Disclosure_Title');
             $table->mediumText('Short_Description');

@@ -36,11 +36,13 @@ Route::group(['prefix' => '/', 'middleware' => 'auth'], function () {
     Route::get('/disclosure/{id}/details', [DisclosureController::class, 'viewSpecificDisclosurePage'])->name('viewSpecificDisclosurePage');
     Route::get('/IAC/{id}/details', [DisclosureController::class, 'viewIAC'])->name('viewIAC');
     Route::get('/profile', [UserController::class, 'profile'])->middleware('auth');
+    Route::get('/edit/{id}', [DisclosureController::class, 'editDisclosure'])->name('editDisclosure');
     Route::get('/test', [DisclosureController::class, 'test'])->name('test');
 
     // <--------- POSTS --------->
     Route::post('/CreateDisclosure', [DisclosureController::class, 'validateDisc'])->name('CreateDisclosure');
     Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
+    Route::post('/update/{id}', [DisclosureController::class, 'updateDisclosure'])->name('updateDisclosure');
 
 });
 

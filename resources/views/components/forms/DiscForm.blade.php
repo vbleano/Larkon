@@ -92,6 +92,14 @@
                                             </div> <!-- end col -->
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
+                                                    <div>
+                                                        <label for="choices-text-remove-button" class="form-label text-muted">Implementing Agency</label>
+                                                        <input name="Implementing_Agency" class="form-control" id="choices-text-remove-button" data-choices data-choices-limit="10" data-choices-removeItem type="text" />
+                                                    </div>
+                                                </div>
+                                            </div> <!-- end col -->
+                                            <div class="col-lg-6">
+                                                <div class="mb-3">
                                                     <div class="form-check form-check-inline">
                                                         <input name="Plan_To_Commercialize" type="checkbox" class="form-check-input" id="customCheck3">
                                                         <label class="form-check-label" for="customCheck3">Check this if you plan to Commercialize</label>

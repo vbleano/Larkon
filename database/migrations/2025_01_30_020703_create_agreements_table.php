@@ -16,7 +16,8 @@ return new class extends Migration
             $table->unsignedInteger('PartnerID')->nullable;
             $table->foreign ('PartnerID')
             ->references('PartnerID')
-            ->on('partners');
+            ->on('partners')
+            ->onDelete('cascade');
 
             $table->date('Contract_Effectivity Date');
             $table->date('Contract_Expiry Date');

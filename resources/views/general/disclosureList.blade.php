@@ -59,8 +59,8 @@
                                 <td>
                                 
                                     <div class="d-flex gap-2">
-                                        <a href="#!" class="btn btn-light btn-sm"><iconify-icon icon="solar:eye-broken" class="align-middle fs-18"></iconify-icon></a>
-                                        <a href="disclosure/{{$disclosure->discID}}/details" class="btn btn-soft-primary btn-sm"><iconify-icon icon="solar:pen-2-broken" class="align-middle fs-18"></iconify-icon></a>
+                                        <a href="disclosure/{{$disclosure->discID}}/details" class="btn btn-light btn-sm"><iconify-icon icon="solar:eye-broken" class="align-middle fs-18"></iconify-icon></a>
+                                        <a href="edit/{{$disclosure->discID}}" class="btn btn-soft-primary btn-sm"><iconify-icon icon="solar:pen-2-broken" class="align-middle fs-18"></iconify-icon></a>
                                         <a type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalCenter" class="btn btn-soft-danger btn-sm"><iconify-icon icon="solar:trash-bin-minimalistic-2-broken" class="align-middle fs-18"></iconify-icon></a>
 
                                         <!-- Modal -->
