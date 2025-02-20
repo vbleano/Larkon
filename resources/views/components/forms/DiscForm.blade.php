@@ -9,6 +9,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="mb-5">
+
                         <form action="{{route('CreateDisclosure')}}" method="POST">
                             @csrf
                             <div id="horizontalwizard">
@@ -50,58 +51,91 @@
                                         <div class="row">
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
-                                                    <label for="basicUser" class="form-label">Disclosure Title</label>
+                                                    <label for="basicUser" class="form-label fw-bold">Disclosure Title</label>
                                                     <input id="DisclosureTitle" type="text" name="Disclosure_Title" class="form-control" placeholder="Enter Disclosure Title">
+                                                    @error('Disclosure_Title')
+                                                        <span class="text-danger ">{{$message}}</span>
+                                                    @enderror
                                                 </div>
                                             </div> <!-- end col -->
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
-                                                    <label for="basicUser" class="form-label">Type of IP</label>
+                                                    <label for="basicUser" class="form-label fw-bold">Type of IP</label>
                                                     <div class="w-80 mb-3">
-                                                        <select name="Type_of_IP" class="form-control" id="choices-multiple-remove-button" data-choices data-choices-removeItem name="choices-multiple-remove-button" multiple>
+                                                        <select name="Type_of_IP" class="form-control mb-1" id="choices-multiple-remove-button" data-choices data-choices-removeItem name="choices-multiple-remove-button" multiple>
                                                             <option value="1" selected>Patent</option>
                                                             <option value="2">Utility Model</option>
                                                             <option value="3">Industrial Design</option>
                                                             <option value="4">Trademark</option>
                                                             <option value="5">Copyright</option>
                                                         </select>
+                                                        @error('Type_of_IP')
+                                                            <span class="text-danger">{{$message}}</span>
+                                                        @enderror
                                                     </div>
                                                 </div>
                                             </div> <!-- end col -->
                                             <div class="col-lg-12">
                                                 <div class="mb-3">
-                                                    <label for="example-textarea" class="form-label">Disclosure Description</label>
+                                                    <label for="example-textarea" class="form-label fw-bold">Disclosure Description</label>
                                                     <textarea name="DisclosureDesc" class="form-control" id="example-textarea" rows="5"></textarea>
+                                                    @error('DisclosureDesc')
+                                                        <span class="text-danger">{{$message}}</span>
+                                                    @enderror
                                                 </div>
                                             </div> <!-- end col -->
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
                                                     <div>
-                                                        <label for="choices-text-remove-button" class="form-label text-muted">Funding Sources</label>
+                                                        <label for="choices-text-remove-button" class="form-label text-muted fw-bold">Funding Sources</label>
                                                         <input name="Funding_Sources" class="form-control" id="choices-text-remove-button" data-choices data-choices-limit="10" data-choices-removeItem type="text" />
                                                     </div>
+                                                    @error('Funding_Sources')
+                                                        <span class="text-danger mt-2">{{$message}}</span>
+                                                    @enderror
                                                 </div>
                                             </div> <!-- end col -->
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
                                                     <div>
-                                                        <label for="choices-text-remove-button" class="form-label text-muted">University Facilities and Equipments Used</label>
+                                                        <label for="choices-text-remove-button" class="form-label text-muted fw-bold">University Facilities and Equipments Used</label>
                                                         <input name="University_Facilities" class="form-control" id="choices-text-remove-button" data-choices data-choices-limit="10" data-choices-removeItem type="text" />
                                                     </div>
+                                                    @error('University_Facilities')
+                                                        <span class="text-danger mt-2">{{$message}}</span>
+                                                    @enderror
                                                 </div>
                                             </div> <!-- end col -->
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
-                                                    <div class="form-check form-check-inline">
-                                                        <input name="Plan_To_Commercialize" type="checkbox" class="form-check-input" id="customCheck3">
-                                                        <label class="form-check-label" for="customCheck3">Check this if you plan to Commercialize</label>
+                                                    <label class="form-label fw-bold">Do you Plan to Commercialize your Invention?</label>
+                                                    <div>
+                                                        <label class="me-3 mb-1">
+                                                            <input class="form-label fw-bold" type="radio" name="Plan_To_Commercialize" value="1" onclick="toggleRadio(this)"> Yes
+                                                        </label>
+                                                        <label>
+                                                            <input class="form-label fw-bold" type="radio" name="Plan_To_Commercialize" value="0" onclick="toggleRadio(this)"> No
+                                                        </label>
+                                                        @error('Plan_To_Commercialize')
+                                                            <span class="text-danger">{{$message}}</span>
+                                                        @enderror
                                                     </div>
                                                 </div>
                                             </div> <!-- end col -->
+                                            <script>
+                                                function toggleRadio(radio) {
+                                                    if (radio.checked) {
+                                                        if (radio.previousChecked) {
+                                                            radio.checked = false; // Uncheck if clicked again
+                                                        }
+                                                        radio.previousChecked = radio.checked;
+                                                    }
+                                                }
+                                            </script>
                                             <div class="col-lg-12">
                                                 <div class="mb-3">
                                                     <div class="mb-3">
-                                                        <label class="form-check-label" for="customCheck3">Upload MOA/ Research Agreements/ Research Funding Agreements</label>
+                                                        <label class="form-check-label fw-bold" for="customCheck3">Upload MOA/ Research Agreements/ Research Funding Agreements</label>
                                                     </div>
                                                     <div class="dropzone">
                                                         <div class="fallback">
@@ -267,7 +301,7 @@
                                                     <div class="col-md-4">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="subAffiliation">Sub Affiliation</label>
-                                                            <input type="number" id="subAffiliation" name="Sub_Affiliation" class="form-control" placeholder="Sub Affiliation">
+                                                            <input type="text" id="subAffiliation" name="Sub_Affiliation" class="form-control" placeholder="Sub Affiliation">
                                                         </div>
                                                     </div><!-- end col -->
                                                     <div class="col-md-6">
@@ -312,7 +346,7 @@
                                                     <div class="col-md-6">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="phoneNumber">Phone Number</label>
-                                                            <input type="number" id="phoneNumber" name="Contact_Number" class="form-control" placeholder="09*********">
+                                                            <input type="" id="phoneNumber" name="Contact_Number" class="form-control" placeholder="09*********">
                                                         </div>
                                                     </div><!--end col -->
                                                     <div class="col-md-6">
@@ -382,7 +416,7 @@
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
                                                                     <div>
-                                                                        <label for="choices-text-remove-button" class="form-label text-muted">Type/s of Invention</label>
+                                                                        <label for="choices-text-remove-button" class="form-label text-muted fw-bold">Type/s of Invention</label>
                                                                         {{-- <input class="form-control" id="choices-text-remove-button" name="Type of Invention" data-choices data-choices-limit="10" data-choices-removeItem type="text" /> --}}
                                                                         <select id="choices-text-remove-button" name="Type_of_Invention" class="form-select">
                                                                             <option value="" disabled selected>Select a Type of Invention</option>
@@ -398,51 +432,51 @@
                                                             </div>
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
-                                                                    <label for="basicUser" class="form-label">Purpose of Invention</label>
+                                                                    <label for="basicUser" class="form-label fw-bold">Purpose of Invention</label>
                                                                     <input name="Purpose_of_Invention" id="basicUser" type="text" class="form-control" placeholder="">
                                                                 </div>
                                                             </div> <!-- end col -->
                                                             <div class="col-lg-12">
                                                                 <div class="mb-3">
-                                                                    <label for="basicUser" class="form-label">Key / Novel features of the Invention</label>
+                                                                    <label for="basicUser" class="form-label fw-bold">Key / Novel features of the Invention</label>
                                                                     <input name="Key_Novel_Features" id="basicUser" type="text" class="form-control" placeholder="">
                                                                 </div>
                                                             </div> <!-- end col -->
                                                             <div class="col-lg-12">
                                                                 <div class="mb-3">
-                                                                    <label for="example-textarea" class="form-label"> Background of the Invention</label>
+                                                                    <label for="example-textarea" class="form-label fw-bold"> Background of the Invention</label>
                                                                     <textarea name="Background_of_Invention" class="form-control" id="example-textarea" rows="5"></textarea>
                                                                 </div>
                                                             </div> <!-- end col -->
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
-                                                                    <label for="basicUser" class="form-label">Application or Use of Invention</label>
+                                                                    <label for="basicUser" class="form-label fw-bold">Application or Use of Invention</label>
                                                                     <input name="Application_use_of_Invention" id="basicUser" type="text" class="form-control" placeholder="">
                                                                 </div>
                                                             </div> <!-- end col -->
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
-                                                                    <label for="basicUser" class="form-label"> Stage of Development </label>
+                                                                    <label for="basicUser" class="form-label fw-bold"> Stage of Development </label>
                                                                     <input name="Stage_of_Development" id="basicUser" type="text" class="form-control" placeholder="Technology Status (Prototyping, clinical trial phase 1, etc.)">
                                                                 </div>
                                                             </div> <!-- end col -->
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
-                                                                    <label for="basicUser" class="form-label"> R&D Cost </label>
+                                                                    <label for="basicUser" class="form-label fw-bold"> R&D Cost </label>
                                                                     <input name="R_and_D_Cost" id="basicUser" type="text" class="form-control" placeholder="Please provide a range (e.g. 1000 - 2000)">
                                                                 </div>
                                                             </div> <!-- end col -->
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
                                                                     <div>
-                                                                        <label for="choices-text-remove-button" class="form-label text-muted">Potential Partners</label>
+                                                                        <label for="choices-text-remove-button" class="form-label text-muted fw-bold">Potential Partners</label>
                                                                         <input name="Potential_Partners" class="form-control" id="choices-text-remove-button" data-choices data-choices-limit="10" data-choices-removeItem type="text" />
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
-                                                                <label for="example-select" class="form-label">Technology Readiness Level (TRL)</label>
+                                                                <label for="example-select" class="form-label fw-bold">Technology Readiness Level (TRL)</label>
                                                                     <select name="TRL" class="form-select" id="example-select">
                                                                         <option value="" disabled selected>Select a TRL </option>
                                                                         <option value="TRL1">TRL1</option>
@@ -461,39 +495,39 @@
                                                         <div class="row">
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
-                                                                    <label for="example-select" class="form-label">Past Oral Disclosure Date</label>
+                                                                    <label for="example-select" class="form-label fw-bold">Past Oral Disclosure Date</label>
                                                                     <input name="Past_Oral_Disclosure_Date" type="date" id="basic-datepicker" class="form-control" placeholder="Basic datepicker">
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
-                                                                    <label for="example-select" class="form-label">Past Oral Disclosure Description</label>
+                                                                    <label for="example-select" class="form-label fw-bold">Past Oral Disclosure Description</label>
                                                                     <textarea name="Past_Oral_Disclosure" class="form-control" id="example-textarea" rows="2"></textarea>
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
-                                                                    <label for="example-select" class="form-label">Past Written Disclosure Date</label>
+                                                                    <label for="example-select" class="form-label fw-bold">Past Written Disclosure Date</label>
                                                                     <input name="Past_Written_Disclosure_Date" type="date" id="basic-datepicker" class="form-control" placeholder="Basic datepicker">
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
-                                                                    <label for="example-select" class="form-label">Past Written Disclosure Description</label>
+                                                                    <label for="example-select" class="form-label fw-bold">Past Written Disclosure Description</label>
                                                                     <textarea name="Past_Written_Disclosure" class="form-control" id="example-textarea" rows="2"></textarea>
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-12">
                                                                 <div class="mb-3">
-                                                                    <label for="example-select" class="form-label">Future Disclosure Plans</label>
+                                                                    <label for="example-select" class="form-label fw-bold">Future Disclosure Plans</label>
                                                                     <textarea name="Future_Disclosure_Plans" class="form-control" id="example-textarea" rows="2"></textarea>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-12">
                                                             <div class="mb-3">
-                                                                <div class="mb-3">
-                                                                    <label class="form-check-label" for="customCheck3">Manuscript / Technical Description / Terminal Report</label>
+                                                                <div class="mb-2">
+                                                                    <label class="form-check-label fw-bold" for="customCheck3">Manuscript / Technical Description / Terminal Report</label>
                                                                 </div>
                                                                 <div class="dropzone">
                                                                     <div class="fallback">
@@ -511,8 +545,8 @@
                                                         </div> <!-- end col -->
                                                         <div class="col-lg-12">
                                                             <div class="mb-3">
-                                                                <div class="mb-3">
-                                                                    <label class="form-check-label" for="customCheck3">Drawings, Flowcharts, Processes</label>
+                                                                <div class="mb-2">
+                                                                    <label class="form-check-label fw-bold" for="customCheck3">Drawings, Flowcharts, Processes</label>
                                                                 </div>
                                                                 <div class="dropzone">
                                                                     <div class="fallback">
@@ -530,8 +564,8 @@
                                                         </div> <!-- end col -->
                                                         <div class="col-lg-12">
                                                             <div class="mb-3">
-                                                                <div class="mb-3">
-                                                                    <label class="form-check-label" for="customCheck3">Related Literature or Patents</label>
+                                                                <div class="mb-2">
+                                                                    <label class="form-check-label fw-bold" for="customCheck3">Related Literature or Patents</label>
                                                                 </div>
                                                                 <div class="dropzone">
                                                                     <div class="fallback">
@@ -549,8 +583,8 @@
                                                         </div> <!-- end col -->
                                                         <div class="col-lg-12">
                                                             <div class="mb-3">
-                                                                <div class="mb-3">
-                                                                    <label class="form-check-label" for="customCheck3">Financial Report</label>
+                                                                <div class="mb-2">
+                                                                    <label class="form-check-label fw-bold" for="customCheck3">Financial Report</label>
                                                                 </div>
                                                                 <div class="dropzone">
                                                                     <div class="fallback">
@@ -584,7 +618,7 @@
                                                         <div class="row">
                                                             <div class="mb-3">
                                                                 <div class="form-check d-inline-block">
-                                                                    <input name="Patent_Application" type="checkbox" class="form-check-input" id="customCheck1">
+                                                                    <input name="Trademark_Application" type="checkbox" class="form-check-input" id="customCheck1">
                                                                     <label class="form-check-label text-danger fw-bold" for="customCheck1">
                                                                         CHECK THIS IF YOU ARE APPLYING FOR TRADEMARK PROTECTION
                                                                     </label>
@@ -592,16 +626,207 @@
                                                             </div>
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
-                                                                    <label for="example-select" class="form-label">Past Written Disclosure Date</label>
-                                                                    <input name="Past_Written_Disclosure_Date" type="date" id="basic-datepicker" class="form-control" placeholder="Basic datepicker">
+                                                                <label for="example-select" class="form-label fw-bold">Type of Mark</label>
+                                                                    <select name="Type_of_Mark" class="form-select" id="example-select">
+                                                                        <option value="" disabled selected>Select a Type of Mark </option>
+                                                                        <option value="Word_Mark">Word Mark</option>
+                                                                        <option value="Figurative_Mark">Figurative Mark</option>
+                                                                        <option value="Figurative_with_Word_Mark">Figurative with Word Mark</option>
+                                                                        <option value="3D_Mark">3D Mark</option>
+                                                                        <option value="Stamped_or_Marked_container_of_good">Stamped or Marked container of good</option>
+                                                                    </select>
                                                                 </div>
                                                             </div>
+                                                            <div class="col-lg-6">
+                                                                <div class="mb-3">
+                                                                    <label for="basicUser" class="form-label fw-bold">Description of the Mark </label>
+                                                                    <input name="Description_of_the_Mark" id="basicUser" type="text" class="form-control" placeholder="">
+                                                                </div>
+                                                            </div> <!-- end col -->
+                                                            <div class="col-lg-12">
+                                                                <div class="mb-3">
+                                                                    <label for="basicUser" class="form-label fw-bold">Disclaimer (Explanation)</label>
+                                                                    <input name="Disclaimer" id="basicUser" type="text" class="form-control" placeholder="">
+                                                                </div>
+                                                            </div> <!-- end col -->
+                                                            <div class="col-lg-12">
+                                                                <div class="mb-3">
+                                                                    <label for="basicUser" class="form-label fw-bold">Translation or Transliteration</label>
+                                                                    <input name="Translation_Transliteration" id="basicUser" type="text" class="form-control" placeholder="">
+                                                                </div>
+                                                            </div> <!-- end col -->
+                                                            <div class="col-lg-6">
+                                                                <div class="mb-3">
+                                                                    <label class="form-label fw-bold">Collective Mark</label>
+                                                                    <div>
+                                                                        <label class="me-3">
+                                                                            <input class="form-label fw-bold" type="radio" name="Collective_Mark" value="1" onclick="toggleRadio(this)"> Yes
+                                                                        </label>
+                                                                        <label>
+                                                                            <input class="form-label fw-bold" type="radio" name="Collective_Mark" value="0" onclick="toggleRadio(this)"> No
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div> <!-- end col -->
+                                                            <script>
+                                                                function toggleRadio(radio) {
+                                                                    if (radio.checked) {
+                                                                        if (radio.previousChecked) {
+                                                                            radio.checked = false; // Uncheck if clicked again
+                                                                        }
+                                                                        radio.previousChecked = radio.checked;
+                                                                    }
+                                                                }
+                                                            </script>
+                                                            <div class="col-lg-6">
+                                                                <div class="mb-3">
+                                                                    <label class="form-label fw-bold">Does your trademark have any color?</label>
+                                                                    <div>
+                                                                        <label class="me-3">
+                                                                            <input class="form-label fw-bold" type="radio" name="Mark_has_any_color" value="1" onclick="toggleRadio(this)"> Yes
+                                                                        </label>
+                                                                        <label>
+                                                                            <input class="form-label fw-bold" type="radio" name="Mark_has_any_color" value="0" onclick="toggleRadio(this)"> No
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div> <!-- end col -->
+                                                            <script>
+                                                                function toggleRadio(radio) {
+                                                                    if (radio.checked) {
+                                                                        if (radio.previousChecked) {
+                                                                            radio.checked = false; // Uncheck if clicked again
+                                                                        }
+                                                                        radio.previousChecked = radio.checked;
+                                                                    }
+                                                                }
+                                                            </script>
+                                                            <div class="col-lg-6">
+                                                                <div class="mb-3">
+                                                                    <label for="basicUser" class="form-label fw-bold">Work to be Trademarked</label>
+                                                                    <input name="Word_to_be_Trademarked" id="basicUser" type="text" class="form-control" placeholder="For Work Mark Only">
+                                                                </div>
+                                                            </div> <!-- end col -->
+                                                            <div class="col-lg-6">
+                                                                <div class="mb-3">
+                                                                    <label for="basicUser" class="form-label fw-bold">Color/s of the Mark</label>
+                                                                    <input name="Colors_of_the_Mark" id="basicUser" type="text" class="form-control" placeholder="">
+                                                                </div>
+                                                            </div> <!-- end col -->
+                                                            <div class="col-lg-6">
+                                                                <div class="mb-3">
+                                                                    <label for="basicUser" class="form-label fw-bold">Purpose of the Mark</label>
+                                                                    <input name="Purpose_of_the_Mark" id="basicUser" type="text" class="form-control" placeholder="">
+                                                                </div>
+                                                            </div> <!-- end col -->
+                                                            <div class="col-lg-6">
+                                                                <div class="mb-3">
+                                                                    <label for="basicUser" class="form-label fw-bold">List of Specific Goods or Services</label>
+                                                                    <input name="List_of_specific_goods_services" id="basicUser" type="text" class="form-control" placeholder="">
+                                                                </div>
+                                                            </div> <!-- end col -->
+                                                            <div class="col-lg-12">
+                                                                <div class="mb-3">
+                                                                <label for="example-select" class="form-label fw-bold">NICE Classification</label>
+                                                                    <select name="NICE_Classification" class="form-select" id="example-select">
+                                                                        <option value="" disabled selected>Select a NICE Classification </option>
+                                                                        <option value="Class_1">Class 1</option>
+                                                                        <option value="Class_2">Class 2</option>
+                                                                        <option value="Class_3">Class 3</option>
+                                                                        <option value="Class_4">Class 4</option>
+                                                                        <option value="Class_5">Class 5</option>
+                                                                        <option value="Class_6">Class 6</option>
+                                                                        <option value="Class_7">Class 7</option>
+                                                                        <option value="Class_8">Class 8</option>
+                                                                        <option value="Class_9">Class 9</option>
+                                                                        <option value="Class_10">Class 10</option>
+                                                                        <option value="Class_11">Class 11</option>
+                                                                        <option value="Class_12">Class 12</option>
+                                                                        <option value="Class_13">Class 13</option>
+                                                                        <option value="Class_14">Class 14</option>
+                                                                        <option value="Class_15">Class 15</option>
+                                                                        <option value="Class_16">Class 16</option>
+                                                                        <option value="Class_17">Class 17</option>
+                                                                        <option value="Class_18">Class 18</option>
+                                                                        <option value="Class_19">Class 19</option>
+                                                                        <option value="Class_20">Class 20</option>
+                                                                        <option value="Class_21">Class 21</option>
+                                                                        <option value="Class_22">Class 22</option>
+                                                                        <option value="Class_23">Class 23</option>
+                                                                        <option value="Class_24">Class 24</option>
+                                                                        <option value="Class_25">Class 25</option>
+                                                                        <option value="Class_26">Class 26</option>
+                                                                        <option value="Class_27">Class 27</option>
+                                                                        <option value="Class_28">Class 28</option>
+                                                                        <option value="Class_29">Class 29</option>
+                                                                        <option value="Class_30">Class 30</option>
+                                                                        <option value="Class_31">Class 31</option>
+                                                                        <option value="Class_32">Class 32</option>
+                                                                        <option value="Class_33">Class 33</option>
+                                                                        <option value="Class_34">Class 34</option>
+                                                                        <option value="Class_35">Class 35</option>
+                                                                        <option value="Class_36">Class 36</option>
+                                                                        <option value="Class_37">Class 37</option>
+                                                                        <option value="Class_38">Class 38</option>
+                                                                        <option value="Class_39">Class 39</option>
+                                                                        <option value="Class_40">Class 40</option>
+                                                                        <option value="Class_41">Class 41</option>
+                                                                        <option value="Class_42">Class 42</option>
+                                                                        <option value="Class_43">Class 43</option>
+                                                                        <option value="Class_44">Class 44</option>
+                                                                        <option value="Class_45">Class 45</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-12">
+                                                                <div class="mb-3">
+                                                                    <label for="example-select" class="form-label fw-bold">Future/Potential Application</label>
+                                                                    <textarea name="Future_Potential_Applications" class="form-control" id="example-textarea" rows="2"></textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-12">
+                                                                <div class="mb-3">
+                                                                    <div class="mb-2">
+                                                                        <label class="form-check-label fw-bold" for="customCheck3">Copy of the Mark</label>
+                                                                    </div>
+                                                                    <div class="dropzone">
+                                                                        <div class="fallback">
+                                                                            <input name="file" type="file" multiple="multiple">
+                                                                        </div>
+                                                                        <div class="dz-message needsclick">
+                                                                            <i class="h1 bx bx-cloud-upload"></i>
+                                                                            <h3>Drop files here or click to upload.</h3>
+                                                                            <span class="text-muted fs-13">
+                                                                                Selected / Dropped files are <strong>not</strong> actually uploaded.
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div> <!-- end col -->
+                                                            <div class="col-lg-12">
+                                                                <div class="mb-3">
+                                                                    <div class="mb-2">
+                                                                        <label class="form-check-label fw-bold" for="customCheck3">Proof of Actual Use</label>
+                                                                    </div>
+                                                                    <div class="dropzone">
+                                                                        <div class="fallback">
+                                                                            <input name="file" type="file" multiple="multiple">
+                                                                        </div>
+                                                                        <div class="dz-message needsclick">
+                                                                            <i class="h1 bx bx-cloud-upload"></i>
+                                                                            <h3>Drop files here or click to upload.</h3>
+                                                                            <span class="text-muted fs-13">
+                                                                                Selected / Dropped files are <strong>not</strong> actually uploaded.
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div> <!-- end col -->
                                                         </div><!--end row -->
                                                     </div><!--end accordion body -->
                                                 </div><!--end accordion collapse -->
                                             </div><!--end accordion item -->
                                         </div>
-
                                             <!-- Copyright Accordion Item -->
                                         <div class="accordion" id="accordionExample">
                                             <div class="accordion-item ">
@@ -623,10 +848,73 @@
                                                             </div><!--end col -->
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
-                                                                    <label for="example-select" class="form-label">Past Written Disclosure Date</label>
-                                                                    <input name="Past_Written_Disclosure_Date" type="date" id="basic-datepicker" class="form-control" placeholder="Basic datepicker">
+                                                                    <label for="example-select" class="form-label fw-bold">Date of Creation of Copyrightable Material</label>
+                                                                    <input name="Date_of_Creation_of_Copyrightable_Material" type="date" id="basic-datepicker" class="form-control" placeholder="Basic datepicker">
                                                                 </div>
                                                             </div>
+                                                            <div class="col-lg-6">
+                                                                <div class="mb-3">
+                                                                    <label for="basicUser" class="form-label fw-bold">Place of Creation</label>
+                                                                    <input name="Place_of_Creation" id="basicUser" type="text" class="form-control" placeholder="">
+                                                                </div>
+                                                            </div> <!-- end col -->
+                                                            <div class="col-lg-12">
+                                                                <div class="mb-3">
+                                                                    <div class="mb-2">
+                                                                        <label class="form-check-label fw-bold" for="customCheck3">Publication</label>
+                                                                    </div>
+                                                                    <div class="dropzone">
+                                                                        <div class="fallback">
+                                                                            <input name="file" type="file" multiple="multiple">
+                                                                        </div>
+                                                                        <div class="dz-message needsclick">
+                                                                            <i class="h1 bx bx-cloud-upload"></i>
+                                                                            <h3>Drop files here or click to upload.</h3>
+                                                                            <span class="text-muted fs-13">
+                                                                                Selected / Dropped files are <strong>not</strong> actually uploaded.
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div> <!-- end col -->
+                                                            <div class="col-lg-12">
+                                                                <div class="mb-3">
+                                                                    <div class="mb-2">
+                                                                        <label class="form-check-label fw-bold" for="customCheck3">Copy of the Copyrightable Material</label>
+                                                                    </div>
+                                                                    <div class="dropzone">
+                                                                        <div class="fallback">
+                                                                            <input name="file" type="file" multiple="multiple">
+                                                                        </div>
+                                                                        <div class="dz-message needsclick">
+                                                                            <i class="h1 bx bx-cloud-upload"></i>
+                                                                            <h3>Drop files here or click to upload.</h3>
+                                                                            <span class="text-muted fs-13">
+                                                                                Selected / Dropped files are <strong>not</strong> actually uploaded.
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div> <!-- end col -->
+                                                            <div class="col-lg-12">
+                                                                <div class="mb-3">
+                                                                    <div class="mb-2">
+                                                                        <label class="form-check-label fw-bold" for="customCheck3">ID's of the Authors</label>
+                                                                    </div>
+                                                                    <div class="dropzone">
+                                                                        <div class="fallback">
+                                                                            <input name="file" type="file" multiple="multiple">
+                                                                        </div>
+                                                                        <div class="dz-message needsclick">
+                                                                            <i class="h1 bx bx-cloud-upload"></i>
+                                                                            <h3>Drop files here or click to upload.</h3>
+                                                                            <span class="text-muted fs-13">
+                                                                                Selected / Dropped files are <strong>not</strong> actually uploaded.
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div> <!-- end col -->
                                                         </div><!--end row -->
                                                     </div> <!--end accordion body -->
                                                 </div><!--end accordion collapse -->

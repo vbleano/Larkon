@@ -64,4 +64,10 @@ class Disclosure extends Model
     public function patents(){
         return $this->hasMany(Patents::class, 'DiscID', 'PatentID');
     }
+    public function trademark(){
+        return $this->hasOne(Patents::class, 'DiscID', 'TrademarkID');
+    }
+    public function copyright(){
+        return $this->hasOne(Patents::class, 'DiscID', 'CopyrightID');
+    }
 }

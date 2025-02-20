@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('copyrights', function (Blueprint $table) {
-            $table->increments('Copyright ID');
+            $table->increments('CopyrightID');
             $table->unsignedInteger('discID')->nullable;
             $table->foreign ('discID')
             ->references('discID')

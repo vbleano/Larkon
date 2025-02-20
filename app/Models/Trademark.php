@@ -10,13 +10,14 @@ use Illuminate\Notifications\Notifiable;
 class Trademark extends Model
 {
     use HasFactory, Notifiable;
-
+    protected $primaryKey = 'TrademarkID';
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
     protected $fillable = [
+        'discID',
         'Type_of_Mark',
         'Description_of_the_Mark',
         'Disclaimer',
@@ -50,5 +51,8 @@ class Trademark extends Model
             'email_verified_at' => 'datetime',
             'Funding Sources' => 'array'
         ];
+    }
+    public function trademark(){
+        return $this->hasOne(Patents::class, 'DiscID', 'TrademarkID');
     }
 }
