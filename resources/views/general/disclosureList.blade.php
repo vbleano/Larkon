@@ -2,6 +2,12 @@
 
 @section('content')
 <div class="row">
+    @if (session()->has('success'))
+        <div class="alert alert-success alert-dismissable fade show" style="display: flex; justify-content: space-between; align-items: center;" role="alert">
+            {{session('success')}}
+        <button type="button" class="btn-close " data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
     <div class="col-xl-12">
         <div class="card">
             <div class="d-flex card-header justify-content-between align-items-center">
@@ -41,7 +47,7 @@
                         </thead>
                         <tbody>
                             @foreach($disclosures as $disclosure)
-                            
+
                             <tr>
                                 <td>
                                      {{$disclosure->discID}}
@@ -57,7 +63,7 @@
                                 <td> -</td>
                                 <td> <span class="badge border border-secondary text-secondary  px-2 py-1 fs-13">Looking for Partners</span></td>
                                 <td>
-                                
+
                                     <div class="d-flex gap-2">
                                         <a href="disclosure/{{$disclosure->discID}}/details" class="btn btn-light btn-sm"><iconify-icon icon="solar:eye-broken" class="align-middle fs-18"></iconify-icon></a>
                                         <a href="edit/{{$disclosure->discID}}" class="btn btn-soft-primary btn-sm"><iconify-icon icon="solar:pen-2-broken" class="align-middle fs-18"></iconify-icon></a>

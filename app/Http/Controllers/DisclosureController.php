@@ -112,7 +112,7 @@ class DisclosureController extends Controller{
                     'Past_Oral_Disclosure_Date' => 'nullable|date',
                     'Past_Written_Disclosure' => 'nullable|string',
                     'Past_Written_Disclosure_Date' => 'nullable|date',
-                    'Future_Disclosure_Plans' => 'required|string',
+                    'Future_Disclosure_Plans' => 'nullable|string',
                     'TRL' => 'required|in:TRL1,TRL2,TRL3,TRL4,TRL5,TRL6,TRL7,TRL8,TRL9',
                 ]);
                 Patents::create([
@@ -174,7 +174,7 @@ class DisclosureController extends Controller{
                     'Place_of_Creation' => $request->Place_of_Creation,
                     ]);
             }else{
-                return redirect()->back(); // Redirect to login page or homepage
+                return redirect('/ViewAllDisclosures')->with('success', 'You have successfully submitted a Disclosure'); // Redirect to login page or homepage
             }
 
         } else{
@@ -251,7 +251,7 @@ class DisclosureController extends Controller{
 
     public function test(){
         if (Auth::user()) {
-            return view('/components/ui/modal');
+            return view('/components/advanced/toastify');
         }else{
             return redirect('/login'); // Redirect to login page or homepage
         }

@@ -9,7 +9,6 @@
             <div class="card">
                 <div class="card-body">
                     <div class="mb-5">
-
                         <form action="{{route('CreateDisclosure')}}" method="POST">
                             @csrf
                             <div id="horizontalwizard">
@@ -70,7 +69,7 @@
                                                             <option value="5">Copyright</option>
                                                         </select>
                                                         @error('Type_of_IP')
-                                                            <span class="text-danger">{{$message}}</span>
+                                                            <span class="text-danger mt-1">{{$message}}</span>
                                                         @enderror
                                                     </div>
                                                 </div>
@@ -80,7 +79,7 @@
                                                     <label for="example-textarea" class="form-label fw-bold">Disclosure Description</label>
                                                     <textarea name="DisclosureDesc" class="form-control" id="example-textarea" rows="5"></textarea>
                                                     @error('DisclosureDesc')
-                                                        <span class="text-danger">{{$message}}</span>
+                                                        <span class="text-danger mt-1">This is Required please input a Disclosure Description</span>
                                                     @enderror
                                                 </div>
                                             </div> <!-- end col -->
@@ -111,6 +110,9 @@
                                                     <div>
                                                         <label for="choices-text-remove-button" class="form-label text-muted">Implementing Agency</label>
                                                         <input name="Implementing_Agency" class="form-control" id="choices-text-remove-button" data-choices data-choices-limit="10" data-choices-removeItem type="text" />
+                                                        @error('Implementing_Agency')
+                                                            <span class="text-danger-mt-1">{{$message}}</span>
+                                                        @enderror
                                                     </div>
                                                 </div>
                                             </div> <!-- end col -->
@@ -118,16 +120,16 @@
                                                 <div class="mb-3">
                                                     <label class="form-label fw-bold">Do you Plan to Commercialize your Invention?</label>
                                                     <div>
-                                                        <label class="me-3 mb-1">
+                                                        <label class="me-3">
                                                             <input class="form-label fw-bold" type="radio" name="Plan_To_Commercialize" value="1" onclick="toggleRadio(this)"> Yes
                                                         </label>
                                                         <label>
                                                             <input class="form-label fw-bold" type="radio" name="Plan_To_Commercialize" value="0" onclick="toggleRadio(this)"> No
                                                         </label>
-                                                        @error('Plan_To_Commercialize')
-                                                            <span class="text-danger">{{$message}}</span>
-                                                        @enderror
                                                     </div>
+                                                    @error('Plan_To_Commercialize')
+                                                        <span class="text-danger">{{$message}}</span>
+                                                    @enderror
                                                 </div>
                                             </div> <!-- end col -->
                                             <script>
@@ -243,54 +245,81 @@
                                                                 <option value="Colombia">Colombia</option>
                                                                 <option value="Albania">Albania</option>
                                                             </select>
+                                                            @error('Country_of_Citizenship')
+                                                                <span class="text-danger mt-1">{{$message}}</span>
+                                                            @enderror
                                                         </div>
                                                     </div><!-- end col -->
                                                     <div class="col-md-4">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="lastName">Last Name</label>
                                                             <input type="text" id="lastName" name="Last_Name" class="form-control" placeholder="Doe">
+                                                            @error('Last_Name')
+                                                                <span class="text-danger mt-1">{{$message}}</span>
+                                                            @enderror
                                                         </div>
                                                     </div><!-- end col -->
                                                     <div class="col-md-4">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="firstName">First Name</label>
                                                             <input type="text" id="firstName" name="First_Name" class="form-control" placeholder="John">
+                                                            @error('First_Name')
+                                                                <span class="text-danger mt-1">{{$message}}</span>
+                                                            @enderror
                                                         </div>
                                                     </div><!-- end col -->
                                                     <div class="col-md-4">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="middleName">Middle Initial</label>
                                                             <input type="text" id="middleName" name="Middle_Name" class="form-control" placeholder="Z">
+                                                            @error('Middle_Name')
+                                                                <span class="text-danger mt-1">{{$message}}</span>
+                                                            @enderror
                                                         </div>
                                                     </div><!-- end col -->
                                                     <div class="col-md-12">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="homeAddress">Home Address</label>
                                                             <input type="text" id="homeAddress" name="Home_Address" class="form-control" placeholder="Santa Mesa Manila">
+                                                            @error('Home_Address')
+                                                                <span class="text-danger mt-1">{{$message}}</span>
+                                                            @enderror
                                                         </div>
                                                     </div><!-- end col -->
                                                     <div class="col-md-12">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="workAddress">Work Address</label>
                                                             <input type="text" id="workAddress" name="Work_Address" class="form-control" placeholder="Taft Avenue Ermita">
+                                                            @error('Work_Address')
+                                                                <span class="text-danger mt-1">{{$message}}</span>
+                                                            @enderror
                                                         </div>
                                                     </div><!-- end col -->
                                                     <div class="col-md-4">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="constituentUniversity">Constituent University</label>
                                                             <input type="text" id="constituentUniversity" name="Constituent_University" class="form-control" placeholder="UP - Manila">
+                                                            @error('Constituent_University')
+                                                                <span class="text-danger mt-1">{{$message}}</span>
+                                                            @enderror
                                                         </div>
                                                     </div><!-- end col -->
                                                     <div class="col-md-4">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="department">Department / Institute</label>
                                                             <input type="text" id="Department_Institute" name="Department_Institute" class="form-control" placeholder="TTBDO">
+                                                            @error('Department_Institute')
+                                                                <span class="text-danger mt-1">{{$message}}</span>
+                                                            @enderror
                                                         </div>
                                                     </div><!-- end col -->
                                                     <div class="col-md-4">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="collegeUnit">College Unit</label>
                                                             <input type="text" id="collegeUnit" name="College_Unit" class="form-control" placeholder="College of Nursing">
+                                                            @error('College_Unit')
+                                                                <span class="text-danger mt-1">{{$message}}</span>
+                                                            @enderror
                                                         </div>
                                                     </div><!-- end col -->
 
@@ -298,24 +327,36 @@
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="salutatory">Salutatory</label>
                                                             <input type="text" id="salutatory" name="Salutatory" class="form-control" placeholder="Job Title">
+                                                            @error('Salutatory')
+                                                                <span class="text-danger mt-1">{{$message}}</span>
+                                                            @enderror
                                                         </div>
                                                     </div><!-- end col -->
                                                     <div class="col-md-4">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="mainAffiliation">Main Affiliation</label>
                                                             <input type="text" id="mainAffiliation" name="Main_Affiliation" class="form-control" placeholder="Main Affiliation">
+                                                            @error('Main_Affiliation')
+                                                                <span class="text-danger mt-1">{{$message}}</span>
+                                                            @enderror
                                                         </div>
                                                     </div><!-- end col -->
                                                     <div class="col-md-4">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="subAffiliation">Sub Affiliation</label>
                                                             <input type="text" id="subAffiliation" name="Sub_Affiliation" class="form-control" placeholder="Sub Affiliation">
+                                                            @error('Sub_Affiliation')
+                                                                <span class="text-danger mt-1">{{$message}}</span>
+                                                            @enderror
                                                         </div>
                                                     </div><!-- end col -->
                                                     <div class="col-md-6">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="nature">Nature of Contribution</label>
                                                             <input type="text" id="Nature_of_Contribution" name="Nature_of_Contribution" class="form-control" placeholder="Role in the Invention">
+                                                            @error('Nature_of_Contribution')
+                                                                <span class="text-danger mt-1">{{$message}}</span>
+                                                            @enderror
                                                         </div>
                                                     </div><!-- end col -->
                                                     <div class="col-md-6">
@@ -332,9 +373,11 @@
                                                                 <input type="range" id="percent_slider" min="1" max="100" value="50"
                                                                        class="form-range flex-grow-1" oninput="syncInput(this.value)">
                                                             </div>
+                                                            @error('Percentage_of_Contribution')
+                                                                <span class="text-danger mt-1">{{$message}}</span>
+                                                            @enderror
                                                         </div>
                                                     </div>
-
                                                     <script>
                                                     function syncInput(value) {
                                                         document.getElementById('percent').value = value;
@@ -349,18 +392,27 @@
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="emailAddress">Email Address</label>
                                                             <input type="email" id="emailAddress" name="Email_Address" class="form-control" placeholder="@up.edu.ph">
+                                                            @error('Email_Address')
+                                                                <span class="text-danger mt-1">{{$message}}</span>
+                                                            @enderror
                                                         </div>
                                                     </div><!-- end col -->
                                                     <div class="col-md-6">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="phoneNumber">Phone Number</label>
-                                                            <input type="" id="phoneNumber" name="Contact_Number" class="form-control" placeholder="09*********">
+                                                            <input type="" id="phoneNumber" name="Contact_Number" class="form-control" placeholder="09123456789">
+                                                            @error('Contact_Number')
+                                                                <span class="text-danger mt-1">{{$message}}</span>
+                                                            @enderror
                                                         </div>
                                                     </div><!--end col -->
                                                     <div class="col-md-6">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="birthday">Date of Birth</label>
                                                             <input type="date" id="birthday" name="Date_of_Birth" class="form-control" placeholder="">
+                                                            @error('Date_of_Birth')
+                                                                <span class="text-danger mt-1">{{$message}}</span>
+                                                            @enderror
                                                         </div>
                                                     </div><!-- end col -->
                                                     <div class="col-md-6">
@@ -373,6 +425,9 @@
                                                                 <option value="Non_binary">Non-Binary</option>
                                                                 <option value="Prefer_not_to_say">Refuse to Say</option>
                                                             </select>
+                                                            @error('Gender_Sex')
+                                                                <span class="text-danger mt-1">{{$message}}</span>
+                                                            @enderror
                                                         </div>
                                                     </div><!-- end col -->
                                                     <div class="col-md-6">
@@ -386,12 +441,18 @@
                                                                 <option value="Separated">Separated</option>
                                                                 <option value="Widowed">Widowed</option>
                                                             </select>
+                                                            @error('Civil_Status')
+                                                                <span class="text-danger mt-1">{{$message}}</span>
+                                                            @enderror
                                                         </div>
                                                     </div><!-- end col -->
                                                     <div class="col-md-6">
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold" for="nationality">Nationality</label>
                                                             <input type="text" id="nationality" name="Nationality" class="form-control" placeholder="Filipino">
+                                                            @error('Nationality')
+                                                                <span class="text-danger mt-1">{{$message}}</span>
+                                                            @enderror
                                                         </div>
                                                     </div><!-- end col -->
                                                 </div><!-- end row -->
@@ -435,6 +496,9 @@
                                                                             <option value="Herbal_Medicine_Drugs">Herbal Medicine/Drugs</option>
                                                                             <option value="Industrial_Design">Industrial Design</option>
                                                                         </select>
+                                                                        @error('Type_of_Invention')
+                                                                            <span class="text-danger mt-1">{{$message}}</span>
+                                                                        @enderror
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -442,36 +506,54 @@
                                                                 <div class="mb-3">
                                                                     <label for="basicUser" class="form-label fw-bold">Purpose of Invention</label>
                                                                     <input name="Purpose_of_Invention" id="basicUser" type="text" class="form-control" placeholder="">
+                                                                    @error('Purpose_of_Invention')
+                                                                        <span class="text-danger mt-1">{{$message}}</span>
+                                                                    @enderror
                                                                 </div>
                                                             </div> <!-- end col -->
                                                             <div class="col-lg-12">
                                                                 <div class="mb-3">
                                                                     <label for="basicUser" class="form-label fw-bold">Key / Novel features of the Invention</label>
                                                                     <input name="Key_Novel_Features" id="basicUser" type="text" class="form-control" placeholder="">
+                                                                    @error('Key_Novel_Features')
+                                                                        <span class="text-danger mt-1">{{$message}}</span>
+                                                                    @enderror
                                                                 </div>
                                                             </div> <!-- end col -->
                                                             <div class="col-lg-12">
                                                                 <div class="mb-3">
                                                                     <label for="example-textarea" class="form-label fw-bold"> Background of the Invention</label>
                                                                     <textarea name="Background_of_Invention" class="form-control" id="example-textarea" rows="5"></textarea>
+                                                                    @error('Background_of_Invention')
+                                                                        <span class="text-danger mt-1">{{$message}}</span>
+                                                                    @enderror
                                                                 </div>
                                                             </div> <!-- end col -->
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
                                                                     <label for="basicUser" class="form-label fw-bold">Application or Use of Invention</label>
                                                                     <input name="Application_use_of_Invention" id="basicUser" type="text" class="form-control" placeholder="">
+                                                                    @error('Application_use_of_Invention')
+                                                                        <span class="text-danger mt-1">{{$message}}</span>
+                                                                    @enderror
                                                                 </div>
                                                             </div> <!-- end col -->
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
                                                                     <label for="basicUser" class="form-label fw-bold"> Stage of Development </label>
                                                                     <input name="Stage_of_Development" id="basicUser" type="text" class="form-control" placeholder="Technology Status (Prototyping, clinical trial phase 1, etc.)">
+                                                                    @error('Stage_of_Development')
+                                                                        <span class="text-danger mt-1">{{$message}}</span>
+                                                                    @enderror
                                                                 </div>
                                                             </div> <!-- end col -->
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
                                                                     <label for="basicUser" class="form-label fw-bold"> R&D Cost </label>
                                                                     <input name="R_and_D_Cost" id="basicUser" type="text" class="form-control" placeholder="Please provide a range (e.g. 1000 - 2000)">
+                                                                    @error('R_and_D_Cost')
+                                                                        <span class="text-danger mt-1">{{$message}}</span>
+                                                                    @enderror
                                                                 </div>
                                                             </div> <!-- end col -->
                                                             <div class="col-lg-6">
@@ -479,6 +561,9 @@
                                                                     <div>
                                                                         <label for="choices-text-remove-button" class="form-label text-muted fw-bold">Potential Partners</label>
                                                                         <input name="Potential_Partners" class="form-control" id="choices-text-remove-button" data-choices data-choices-limit="10" data-choices-removeItem type="text" />
+                                                                        @error('Potential_Partners')
+                                                                            <span class="text-danger mt-1">{{$message}}</span>
+                                                                        @enderror
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -497,6 +582,9 @@
                                                                         <option value="TRL8">TRL8</option>
                                                                         <option value="TRL9">TRL9</option>
                                                                     </select>
+                                                                    @error('TRL')
+                                                                        <span class="text-danger mt-1">{{$message}}</span>
+                                                                    @enderror
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -612,7 +700,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- START of Trademark accordion -->
+                                        <!-------------------- START of Trademark accordion -------------------->
                                         <div class="accordion" id="accordionExample">
                                             <!-- Trademark Accordion Item -->
                                             <div class="accordion-item">
@@ -643,24 +731,36 @@
                                                                         <option value="3D_Mark">3D Mark</option>
                                                                         <option value="Stamped_or_Marked_container_of_good">Stamped or Marked container of good</option>
                                                                     </select>
+                                                                    @error('Type_of_Mark')
+                                                                        <span class="text-danger mt-1">{{$message}}</span>
+                                                                    @enderror
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
                                                                     <label for="basicUser" class="form-label fw-bold">Description of the Mark </label>
                                                                     <input name="Description_of_the_Mark" id="basicUser" type="text" class="form-control" placeholder="">
+                                                                    @error('Description_of_the_Mark')
+                                                                        <span class="text-danger mt-1">{{$message}}</span>
+                                                                    @enderror
                                                                 </div>
                                                             </div> <!-- end col -->
                                                             <div class="col-lg-12">
                                                                 <div class="mb-3">
                                                                     <label for="basicUser" class="form-label fw-bold">Disclaimer (Explanation)</label>
                                                                     <input name="Disclaimer" id="basicUser" type="text" class="form-control" placeholder="">
+                                                                    @error('Disclaimer')
+                                                                        <span class="text-danger mt-1">{{$message}}</span>
+                                                                    @enderror
                                                                 </div>
                                                             </div> <!-- end col -->
                                                             <div class="col-lg-12">
                                                                 <div class="mb-3">
                                                                     <label for="basicUser" class="form-label fw-bold">Translation or Transliteration</label>
                                                                     <input name="Translation_Transliteration" id="basicUser" type="text" class="form-control" placeholder="">
+                                                                    @error('Translation_Transliteration')
+                                                                        <span class="text-danger mt-1">{{$message}}</span>
+                                                                    @enderror
                                                                 </div>
                                                             </div> <!-- end col -->
                                                             <div class="col-lg-6">
@@ -674,6 +774,9 @@
                                                                             <input class="form-label fw-bold" type="radio" name="Collective_Mark" value="0" onclick="toggleRadio(this)"> No
                                                                         </label>
                                                                     </div>
+                                                                    @error('Collective_Mark')
+                                                                        <span class="text-danger mt-1">{{$message}}</span>
+                                                                    @enderror
                                                                 </div>
                                                             </div> <!-- end col -->
                                                             <script>
@@ -697,6 +800,9 @@
                                                                             <input class="form-label fw-bold" type="radio" name="Mark_has_any_color" value="0" onclick="toggleRadio(this)"> No
                                                                         </label>
                                                                     </div>
+                                                                    @error('Mark_has_any_color')
+                                                                        <span class="text-danger mt-1">{{$message}}</span>
+                                                                    @enderror
                                                                 </div>
                                                             </div> <!-- end col -->
                                                             <script>
@@ -713,24 +819,36 @@
                                                                 <div class="mb-3">
                                                                     <label for="basicUser" class="form-label fw-bold">Work to be Trademarked</label>
                                                                     <input name="Word_to_be_Trademarked" id="basicUser" type="text" class="form-control" placeholder="For Work Mark Only">
+                                                                    @error('Word_to_be_Trademarked')
+                                                                        <span class="text-danger mt-1">{{$message}}</span>
+                                                                    @enderror
                                                                 </div>
                                                             </div> <!-- end col -->
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
                                                                     <label for="basicUser" class="form-label fw-bold">Color/s of the Mark</label>
                                                                     <input name="Colors_of_the_Mark" id="basicUser" type="text" class="form-control" placeholder="">
+                                                                    @error('Colors_of_the_Mark')
+                                                                        <span class="text-danger mt-1">{{$message}}</span>
+                                                                    @enderror
                                                                 </div>
                                                             </div> <!-- end col -->
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
                                                                     <label for="basicUser" class="form-label fw-bold">Purpose of the Mark</label>
                                                                     <input name="Purpose_of_the_Mark" id="basicUser" type="text" class="form-control" placeholder="">
+                                                                    @error('Purpose_of_the_Mark')
+                                                                        <span class="text-danger mt-1">{{$message}}</span>
+                                                                    @enderror
                                                                 </div>
                                                             </div> <!-- end col -->
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
                                                                     <label for="basicUser" class="form-label fw-bold">List of Specific Goods or Services</label>
                                                                     <input name="List_of_specific_goods_services" id="basicUser" type="text" class="form-control" placeholder="">
+                                                                    @error('List_of_specific_goods_services')
+                                                                        <span class="text-danger mt-1">{{$message}}</span>
+                                                                    @enderror
                                                                 </div>
                                                             </div> <!-- end col -->
                                                             <div class="col-lg-12">
@@ -784,6 +902,9 @@
                                                                         <option value="Class_44">Class 44</option>
                                                                         <option value="Class_45">Class 45</option>
                                                                     </select>
+                                                                    @error('NICE_Classification')
+                                                                        <span class="text-danger mt-1">{{$message}}</span>
+                                                                    @enderror
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-12">
@@ -835,7 +956,7 @@
                                                 </div><!--end accordion collapse -->
                                             </div><!--end accordion item -->
                                         </div>
-                                            <!-- Copyright Accordion Item -->
+                                            <!----------------------------------- Copyright Accordion Item ------------------------------------->
                                         <div class="accordion" id="accordionExample">
                                             <div class="accordion-item ">
                                                 <h2 class="accordion-header" id="headingThree">
@@ -858,12 +979,18 @@
                                                                 <div class="mb-3">
                                                                     <label for="example-select" class="form-label fw-bold">Date of Creation of Copyrightable Material</label>
                                                                     <input name="Date_of_Creation_of_Copyrightable_Material" type="date" id="basic-datepicker" class="form-control" placeholder="Basic datepicker">
+                                                                    @error('Date_of_Creation_of_Copyrightable_Material')
+                                                                        <span class="text-danger mt-1">{{$message}}</span>
+                                                                    @enderror
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
                                                                     <label for="basicUser" class="form-label fw-bold">Place of Creation</label>
                                                                     <input name="Place_of_Creation" id="basicUser" type="text" class="form-control" placeholder="">
+                                                                    @error('Place_of_Creation')
+                                                                        <span class="text-danger mt-1">{{$message}}</span>
+                                                                    @enderror
                                                                 </div>
                                                             </div> <!-- end col -->
                                                             <div class="col-lg-12">
@@ -958,7 +1085,7 @@
                                 </div> <!-- tab-content -->
                             </div> <!-- end #horizontal wizard-->
                         </form>
-                        @if ($errors->any())
+                        {{-- @if ($errors->any())
                         <div class="mb-3">
                             @foreach ($errors->all() as $error)
                                 <li class="text-red-500 list-none">
@@ -966,7 +1093,7 @@
                                 </li>
                             @endforeach
                             </div>
-                        @endif
+                        @endif --}}
                     </div>
                 </div> <!-- end card body -->
             </div> <!-- end card -->
